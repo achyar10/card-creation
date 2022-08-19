@@ -21,7 +21,11 @@ class CategoryService
 
     public function findAll()
     {
-        return Category::orderBy('id', 'desc')->get();
+        $query = Category::orderBy('id', 'desc');
+        if (isset($this->req->tag_name)) {
+            $query->where('tag_name', 'like', '%' . $this->req->tag_name . '%');
+        }
+        return $query->get();
     }
 
     public function getById($id)

@@ -32,7 +32,7 @@ class CardService
     public function create()
     {
         $nameFile = null;
-        if ($this->req->image) $nameFile = $this->upload('Card', $this->req->image);
+        if ($this->req->image) $nameFile = $this->upload('card', $this->req->image);
         $data =  Card::create([
             'name' => $this->req->name,
             'category_id' => $this->req->category_id,
@@ -48,7 +48,7 @@ class CardService
         $data->name = $this->req->name;
         $data->category_id = $this->req->category_id;
         $data->is_active = $this->req->is_active;
-        if ($this->req->image) $data->image = $this->upload('Card', $this->req->image);
+        if ($this->req->image) $data->image = $this->upload('card', $this->req->image);
         $data->save();
         return $data;
     }

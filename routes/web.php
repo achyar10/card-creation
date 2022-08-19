@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -19,9 +20,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [LandingController::class, 'index'])->name('home');
+Route::get('/login', [LandingController::class, 'login']);
+Route::get('/register', [LandingController::class, 'register'])->name('reg');
+Route::post('/register', [LandingController::class, 'createMember'])->name('reg');
+
+Route::get('/theme', [LandingController::class, 'category'])->name('theme.category');
 
 Route::middleware(['guest'])->controller(AuthController::class)->group(function () {
     Route::get('/auth/login', 'index')->name('login');
