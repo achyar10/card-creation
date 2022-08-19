@@ -27,6 +27,12 @@
                         <span key="t-cards">Kartu</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('member') }}" class="waves-effect">
+                        <i class="bx bx-user"></i>
+                        <span key="t-members">Member</span>
+                    </a>
+                </li>
 
             </ul>
         </div>

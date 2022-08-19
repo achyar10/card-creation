@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -71,6 +72,17 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::put('/card/{id}/edit', 'update');
         Route::delete('/card', 'destroy')->name('card');
         Route::get('/card/{id}/detail', 'show')->name('detail');
+    });
+
+    // Member
+    Route::controller(MemberController::class)->group(function () {
+        Route::get('/member', 'index')->name('member');
+        Route::get('/member/create', 'create')->name('memberCreate');
+        Route::post('/member', 'store')->name('member');
+        Route::get('/member/{id}/edit', 'edit');
+        Route::put('/member/{id}/edit', 'update');
+        Route::delete('/member', 'destroy')->name('member');
+        Route::get('/member/{id}/detail', 'show')->name('detail');
     });
 
     
