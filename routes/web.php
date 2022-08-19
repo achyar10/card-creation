@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\UserController;
@@ -59,6 +60,17 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::put('/category/{id}/edit', 'update');
         Route::delete('/category', 'destroy')->name('category');
         Route::get('/category/{id}/detail', 'show')->name('detail');
+    });
+
+    // Card
+    Route::controller(CardController::class)->group(function () {
+        Route::get('/card', 'index')->name('card');
+        Route::get('/card/create', 'create')->name('cardCreate');
+        Route::post('/card', 'store')->name('card');
+        Route::get('/card/{id}/edit', 'edit');
+        Route::put('/card/{id}/edit', 'update');
+        Route::delete('/card', 'destroy')->name('card');
+        Route::get('/card/{id}/detail', 'show')->name('detail');
     });
 
     

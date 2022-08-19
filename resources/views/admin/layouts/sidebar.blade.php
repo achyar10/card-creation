@@ -15,24 +15,16 @@
                     </a>
                 </li>
 
-            </ul>
-            <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title" key="t-menu">Web</li>
-
                 <li>
                     <a href="{{ route('category') }}" class="waves-effect">
                         <i class="bx bx-package"></i>
                         <span key="t-categories">Kategori</span>
                     </a>
                 </li>
-            </ul>
-            <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title" key="t-managements">Management Users</li>
-
                 <li>
-                    <a href="{{ route('users') }}" class="waves-effect">
-                        <i class="bx bx-user"></i>
-                        <span key="t-users">Kelola Pengguna</span>
+                    <a href="{{ route('card') }}" class="waves-effect">
+                        <i class="bx bx-package"></i>
+                        <span key="t-cards">Kartu</span>
                     </a>
                 </li>
 

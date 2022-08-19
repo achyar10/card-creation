@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title', 'Ubah Kategori')
+@section('title', 'Tambah Kartu')
 @section('content')
     <div class="page-content">
         <div class="container-fluid">
@@ -16,19 +16,33 @@
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ url("admin/$uri/$row->id/edit") }}" method="post"
-                                enctype="multipart/form-data">
+                            <form action="{{ route($uri) }}" method="post" enctype="multipart/form-data">
                                 @csrf
-                                @method('PUT')
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="form-group mb-2">
-                                            <label for="">Nama Kategori</label>
-                                            <input type="text" name="tag_name"
-                                                class="form-control @error('tag_name') is-invalid @enderror"
-                                                value="{{ old('tag_name', $row->tag_name) }}" placeholder="Kategori"
-                                                autocomplete="off">
-                                            @error('tag_name')
+                                            <label for="">Kategori</label>
+                                            <select name="category_id"
+                                                class="form-control select2 @error('category_id') is-invalid @enderror">
+                                                <option value="">---Pilih Kategori---</option>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}"
+                                                        {{ old('category_id') == $category->id ? 'selected' : null }}>
+                                                        {{ $category->tag_name }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('category_id')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <label for="">Nama Kartu</label>
+                                            <input type="text" name="name"
+                                                class="form-control @error('name') is-invalid @enderror"
+                                                value="{{ old('name') }}" placeholder="Contoh: Happy Eid" autocomplete="off">
+                                            @error('name')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -38,10 +52,8 @@
                                             <label for="">Status Aktif <span class="text-danger">*</span></label>
                                             <select id="is_active" name="is_active"
                                                 class="form-control @error('is_active') is-invalid @enderror">
-                                                <option value="1" {{ $row->is_active ? 'selected' : null }}>Publish
-                                                </option>
-                                                <option value="0" {{ !$row->is_active ? 'selected' : null }}>Draft
-                                                </option>
+                                                <option value="1">Publish</option>
+                                                <option value="0">Draft</option>
                                             </select>
                                             @error('is_active')
                                                 <div class="invalid-feedback">
@@ -50,16 +62,11 @@
                                             @enderror
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="">Thumbnail Gambar</label><br>
-                                            @if ($row->thumbnail)
-                                                <img id="target" src="{{ asset("category/$row->thumbnail") }}" alt="no image"
-                                                    class="img-thumbnail" style="height: 150px">
-                                            @else
-                                                <img id="target" src="{{ asset('assets/images/user.jpeg') }}"
-                                                    alt="no image" class="img-thumbnail" style="height: 150px">
-                                            @endif
-                                            <input type="file" name="thumbnail" id="thumbnail" class="form-control">
-                                            @error('thumbnail')
+                                            <label for="">File Gambar</label><br>
+                                            <img id="target" src="{{ asset('assets/images/placeholder.jpg') }}"
+                                                alt="no image" class="img-thumbnail" style="height: 150px;">
+                                            <input type="file" name="image" id="image" class="form-control">
+                                            @error('image')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -93,7 +100,7 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-        $("#thumbnail").change(function() {
+        $("#image").change(function() {
             readURL(this);
         });
     </script>

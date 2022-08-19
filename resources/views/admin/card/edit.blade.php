@@ -23,12 +23,28 @@
                                 <div class="row">
                                     <div class="col-md-9">
                                         <div class="form-group mb-2">
-                                            <label for="">Nama Kategori</label>
-                                            <input type="text" name="tag_name"
-                                                class="form-control @error('tag_name') is-invalid @enderror"
-                                                value="{{ old('tag_name', $row->tag_name) }}" placeholder="Kategori"
-                                                autocomplete="off">
-                                            @error('tag_name')
+                                            <label for="">Kategori</label>
+                                            <select name="category_id"
+                                                class="form-control select2 @error('category_id') is-invalid @enderror">
+                                                <option value="">---Pilih Kategori---</option>
+                                                @foreach ($categories as $category)
+                                                    <option value="{{ $category->id }}"
+                                                        {{ old('category_id', $row->category_id) == $category->id ? 'selected' : null }}>
+                                                        {{ $category->tag_name }}</option>
+                                                @endforeach
+                                            </select>
+                                            @error('category_id')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <label for="">Nama Kartu</label>
+                                            <input type="text" name="name"
+                                                class="form-control @error('name') is-invalid @enderror"
+                                                value="{{ old('name', $row->name) }}" placeholder="Contoh: Happy Eid" autocomplete="off">
+                                            @error('name')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -51,15 +67,15 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Thumbnail Gambar</label><br>
-                                            @if ($row->thumbnail)
-                                                <img id="target" src="{{ asset("category/$row->thumbnail") }}" alt="no image"
+                                            @if ($row->image)
+                                                <img id="target" src="{{ asset("card/$row->image") }}" alt="no image"
                                                     class="img-thumbnail" style="height: 150px">
                                             @else
                                                 <img id="target" src="{{ asset('assets/images/user.jpeg') }}"
                                                     alt="no image" class="img-thumbnail" style="height: 150px">
                                             @endif
-                                            <input type="file" name="thumbnail" id="thumbnail" class="form-control">
-                                            @error('thumbnail')
+                                            <input type="file" name="image" id="image" class="form-control">
+                                            @error('image')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>
@@ -93,7 +109,7 @@
                 reader.readAsDataURL(input.files[0]);
             }
         }
-        $("#thumbnail").change(function() {
+        $("#image").change(function() {
             readURL(this);
         });
     </script>
