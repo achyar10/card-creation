@@ -4,7 +4,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
@@ -38,6 +40,12 @@ Route::middleware(['guest'])->controller(AuthController::class)->group(function 
 // OAUTH
 Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
 Route::get('/auth/google/callback', [GoogleController::class, 'handleCallbackGoogle'])->name('google.callback');
+
+Route::get('/auth/facebook', [FacebookController::class, 'redirectToFacebook'])->name('facebook.login');
+Route::get('/auth/facebook/callback', [FacebookController::class, 'handleCallbackFacebook'])->name('facebook.callback');
+
+Route::get('/auth/instagram', [InstagramController::class, 'redirectToInstagram'])->name('instagram.login');
+Route::get('/auth/instagram/callback', [InstagramController::class, 'handleCallbackInstagram'])->name('instagram.callback');
 
 // Route::middleware('auth:members')->controller(LandingController::class)->group(function () {
 //     Route::get('/theme', 'category')->name('theme.category');

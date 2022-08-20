@@ -67,17 +67,17 @@
 
                 <div class="row mb-4">
                     <div class="col-4">
-                        <a href="#" class="btn btn-cust-secondary">
+                        <a href="{{ route('google.login') }}" class="btn btn-cust-secondary">
                             <img class="img-fluid social-icon" src="{{ asset('frontend/images/google.png') }}">
                         </a>
                     </div>
                     <div class="col-4">
-                        <a href="#" class="btn btn-cust-secondary">
+                        <a href="{{ route('facebook.login') }}" class="btn btn-cust-secondary">
                             <img class="img-fluid social-icon" src="{{ asset('frontend/images/facebook.png') }}">
                         </a>
                     </div>
                     <div class="col-4">
-                        <a href="#" class="btn btn-cust-secondary">
+                        <a href="{{ route('instagram.login') }}" class="btn btn-cust-secondary">
                             <img class="img-fluid social-icon" src="{{ asset('frontend/images/instagram.png') }}">
                         </a>
                     </div>

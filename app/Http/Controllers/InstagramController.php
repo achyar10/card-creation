@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Illuminate\Support\Facades\Hash;
 
-class GoogleController extends Controller
+class InstagramController extends Controller
 {
-    public function redirectToGoogle()
+    public function redirectToInstagram()
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('instagram')->redirect();
     }
 
-    public function handleCallbackGoogle(Request $request)
+    public function handleCallbackInstagram(Request $request)
     {
         try {
-            $user = Socialite::driver('google')->user();
+            $user = Socialite::driver('instagram')->user();
             $findMember = Member::where('oauth_id', $user->getId())->first();
 
             if ($findMember) {
@@ -26,7 +26,7 @@ class GoogleController extends Controller
             }
             $new = Member::create([
                 'oauth_id' => $user->getId(),
-                'oauth_from' => 'google',
+                'oauth_from' => 'instagram',
                 'name' => $user->getName(),
                 'email' => $user->getEmail(),
                 'password' => Hash::make('merdeka', ['rounds' => 10]),

@@ -15,6 +15,7 @@ class Member extends Model
         'email',
         'oauth_id',
         'password',
+        'oauth_from',
     ];
 
     protected $hidden = [
