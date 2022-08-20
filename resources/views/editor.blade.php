@@ -15,11 +15,21 @@
             <div class="col-12 content-header mb-4">
                 <h2 class="fw-bold">Tuliskan Pesan Spesialmu!</h2>
             </div>
-            <div class="col-12 content-content mb-4">
+            <div class="col-12 content-content">
                 <div class="container w-100 bg-light p-2 rounded mb-4">
-                    <div class="w-100 preview-image text-center" id="image" data-image="{{ asset('/card/' . $row->image) }}">
+                    <div class="w-100 preview-image text-center" data-card="{{ $row->id }}" data-id="{{ $member_id }}"
+                        id="image" data-image="{{ asset('/card/' . $row->image) }}">
                         <div id="editor_container"></div>
                     </div>
+                </div>
+            </div>
+            <div class="row w-100 m-0">
+                <div class="col">
+                    <a href="#" id="preview" class="btn btn-cust-primary w-100 mb-4" style="display: none">
+                        <div class="w-100 d-flex flex-row justify-content-center">
+                            Preview
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -28,9 +38,10 @@
     </script>
     <script>
         const dataImg = document.querySelector('#image');
+        const preview = document.querySelector('#preview');
         let imageUrl = dataImg.getAttribute('data-image');
-        let image = null;
-        let files = null;
+        let member_id = dataImg.getAttribute('data-id');
+        let card_id = dataImg.getAttribute('data-card');
         const {
             TABS,
             TOOLS
@@ -38,8 +49,26 @@
         const config = {
             source: imageUrl,
             onSave: async (imageInfo, designState) => {
-                image = imageInfo.imageBase64;
-                
+                const file = imageInfo.imageBase64;
+                const ext = imageInfo.extension;
+                fetch('/api/upload', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            file,
+                            ext,
+                            member_id,
+                            card_id
+                        }),
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        preview.style.display = 'block';
+                        preview.href = '/share/' + data.id;
+                    })
+
             },
             annotationsCommon: {
                 fill: '#ff0000',

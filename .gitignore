@@ -2,6 +2,7 @@
 /public/build
 /public/hot
 /public/category
+/public/creations
 /public/card
 /public/storage
 /storage/*.key

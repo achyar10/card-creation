@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Creation;
 use App\Services\CardService;
 use App\Services\CategoryService;
 use App\Services\MemberService;
@@ -74,7 +75,16 @@ class LandingController extends Controller
         $session = request()->session()->all();
         if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['row'] = $this->card->getById($id);
+        $data['member_id'] = $session['login_member']->id;
         return view('editor', $data);
+    }
+
+    public function share($id)
+    {
+        $session = request()->session()->all();
+        if (!isset($session['login_member'])) return redirect()->route('signIn');
+        $data['row'] = Creation::where('id', $id)->first();
+        return view('share', $data);
     }
 
     public function createMember(Request $request)
