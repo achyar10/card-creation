@@ -35,6 +35,18 @@
                                             @enderror
                                         </div>
                                         <div class="form-group mb-2">
+                                            <label for="">Tags</label>
+                                            <input type="text" name="tags"
+                                                class="form-control tags-input @error('tags') is-invalid @enderror"
+                                                placeholder="Contoh: #Newyear" value="{{ old('tags', $row->tags) }}"
+                                                autocomplete="off">
+                                            @error('tags')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group mb-2">
                                             <label for="">Status Aktif <span class="text-danger">*</span></label>
                                             <select id="is_active" name="is_active"
                                                 class="form-control @error('is_active') is-invalid @enderror">
@@ -52,8 +64,8 @@
                                         <div class="form-group mb-2">
                                             <label for="">Thumbnail Gambar</label><br>
                                             @if ($row->thumbnail)
-                                                <img id="target" src="{{ asset("category/$row->thumbnail") }}" alt="no image"
-                                                    class="img-thumbnail" style="height: 150px">
+                                                <img id="target" src="{{ asset("category/$row->thumbnail") }}"
+                                                    alt="no image" class="img-thumbnail" style="height: 150px">
                                             @else
                                                 <img id="target" src="{{ asset('assets/images/user.jpeg') }}"
                                                     alt="no image" class="img-thumbnail" style="height: 150px">

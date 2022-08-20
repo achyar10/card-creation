@@ -21,9 +21,9 @@ class CategoryService
 
     public function findAll()
     {
-        $query = Category::orderBy('id', 'desc');
-        if (isset($this->req->tag_name)) {
-            $query->where('tag_name', 'like', '%' . $this->req->tag_name . '%');
+        $query = Category::where('is_active', true)->orderBy('id', 'desc');
+        if (isset($this->req->tags)) {
+            $query->where('tags', 'like', '%' . $this->req->tags . '%');
         }
         return $query->get();
     }
@@ -35,7 +35,9 @@ class CategoryService
 
     public function getByIdCards($id)
     {
-        return Category::with('cards')->where('id', $id)->first();
+        return Category::with(['cards' => function ($q) {
+            $q->where('is_active', true);
+        }])->where('id', $id)->first();
     }
 
     public function create()
@@ -44,6 +46,7 @@ class CategoryService
         if ($this->req->thumbnail) $nameFile = $this->upload('category', $this->req->thumbnail);
         $data =  Category::create([
             'tag_name' => $this->req->tag_name,
+            'tags' => $this->req->tags,
             'thumbnail' => $nameFile,
             'is_active' => $this->req->is_active,
         ]);
@@ -54,6 +57,7 @@ class CategoryService
     {
         $data = Category::find($id);
         $data->tag_name = $this->req->tag_name;
+        $data->tags = $this->req->tags;
         $data->is_active = $this->req->is_active;
         if ($this->req->thumbnail) $data->thumbnail = $this->upload('category', $this->req->thumbnail);
         $data->save();

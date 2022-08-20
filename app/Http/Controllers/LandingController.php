@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Creation;
 use App\Services\CardService;
 use App\Services\CategoryService;
@@ -59,6 +60,17 @@ class LandingController extends Controller
         $session = request()->session()->all();
         if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['categories'] = $this->category->findAll();
+        $categories = Category::where('is_active', true)->get();
+        $tags = [];
+        foreach ($categories as $key) {
+            $pieces = json_decode($key->tags);
+            if (count((array)$pieces) > 1) {
+                for ($i = 0; $i < count((array)$pieces); $i++) {
+                    array_push($tags, $pieces[$i]->value);
+                }
+            }
+        }
+        $data['tags'] = $tags;
         return view('category', $data);
     }
 

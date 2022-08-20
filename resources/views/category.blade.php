@@ -11,16 +11,16 @@
                                 search
                             </span>
                         </button>
-                        <input type="text" name="tag_name" class="form-control custom-form-control" placeholder="Cari.."
-                            aria-label="Cari.." value="{{ request()->tag_name }}">
+                        <input type="text" name="tags" class="form-control custom-form-control" placeholder="Cari.."
+                            aria-label="Cari.." value="{{ request()->tags }}">
                     </div>
                 </form>
             </div>
             <div class="col-12 content-content mb-4">
                 <div class="w-100 mb-4">
-                    @foreach ($categories as $row)
-                        <a href="?tag_name={{ str_replace('#', '', $row->tag_name) }}" style="text-decoration: none;"><span
-                                class="hashtags">{{ $row->tag_name }}</span></a>
+                    @foreach ($tags as $row)
+                        <a href="?tags={{ str_replace('#', '', $row) }}" style="text-decoration: none;"><span
+                                class="hashtags">{{ $row }}</span></a>
                     @endforeach
                 </div>
                 <div class="row w-100">

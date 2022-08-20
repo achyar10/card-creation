@@ -23,7 +23,7 @@
                                     <thead class="bg-light">
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Tag</th>
+                                            <th>Nama Kategori</th>
                                             <th>Status</th>
                                             <th>Tanggal Update</th>
                                             <th>Aksi</th>
