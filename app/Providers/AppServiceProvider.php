@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        Schema::defaultStringLength(255);
+        Schema::defaultStringLength(191);
         config(['copyright' => 'Powered By Good Time']);
     }
 }
