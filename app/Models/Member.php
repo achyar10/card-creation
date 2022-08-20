@@ -9,5 +9,15 @@ class Member extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'phone',
+        'email',
+        'oauth_id',
+        'password',
+    ];
+
+    protected $hidden = [
+        'password',
+    ];
 }

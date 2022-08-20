@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Member;
 use App\Services\CategoryService;
 use App\Services\MemberService;
 use Illuminate\Http\Request;
@@ -22,16 +21,40 @@ class LandingController extends Controller
 
     public function login()
     {
+        $session = request()->session()->all();
+        if (isset($session['login_member'])) return redirect()->route('theme.category');
         return view('login');
+    }
+
+    public function postLogin(Request $request)
+    {
+        $request->validate(['phone' => 'required', 'password' => 'required']);
+
+        if ($this->member->signIn()) {
+            $session = $this->member->signIn();
+            $request->session()->put('login_member', $session);
+            return redirect()->intended(route('theme.category'));
+        }
+        return redirect()->route('signIn')->with('error', 'No Handphone atau Password salah!');
+    }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget('login_member');
+        return redirect()->route('signIn');
     }
 
     public function register()
     {
+        $session = request()->session()->all();
+        if (isset($session['login_member'])) return redirect()->route('theme.category');
         return view('register');
     }
 
     public function category()
     {
+        $session = request()->session()->all();
+        if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['categories'] = $this->category->findAll();
         return view('category', $data);
     }
@@ -43,7 +66,8 @@ class LandingController extends Controller
             'password' => 'required',
             'phone' => 'required|unique:members',
         ]);
-        $this->member->create();
+        $data = $this->member->create();
+        $request->session()->put('login_member', $data);
         return redirect()->route('theme.category')->with('success', 'Data berhasil ditambah');
     }
 }

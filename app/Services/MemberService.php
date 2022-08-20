@@ -61,7 +61,7 @@ class MemberService
 
     public function signIn()
     {
-        $check = Member::where('email', $this->req->email)->first();
+        $check = Member::where('phone', $this->req->phone)->first();
         if ($check) {
             if (Hash::check($this->req->password, $check->password)) {
                 return $check;

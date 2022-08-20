@@ -9,26 +9,47 @@
                 <h4 class="text-white content-subtitle">Silakan melakukan login</h4>
             </div>
             <div class="col-12 text-center content-content mb-4">
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">
-                        <span class="material-symbols-outlined">
-                            phone
+                <form action="" method="post">
+                    @csrf
+                    @if (session('error'))
+                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
+                            {{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+                    @error('phone')
+                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
+                            {{ $message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @enderror
+                    @error('password')
+                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
+                            {{ $message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @enderror
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">
+                            <span class="material-symbols-outlined">
+                                phone
+                            </span>
                         </span>
-                    </span>
-                    <input type="text" class="form-control custom-form-control" placeholder="No. Handphone"
-                        aria-label="No. Handphone">
-                </div>
+                        <input type="number" name="phone" class="form-control custom-form-control"
+                            placeholder="No. Handphone" aria-label="No. Handphone" value="{{ old('phone') }}" autofocus>
+                    </div>
 
-                <div class="input-group mb-4">
-                    <span class="input-group-text" id="basic-addon1">
-                        <span class="material-symbols-outlined">
-                            key
+                    <div class="input-group mb-4">
+                        <span class="input-group-text" id="basic-addon1">
+                            <span class="material-symbols-outlined">
+                                key
+                            </span>
                         </span>
-                    </span>
-                    <input type="password" class="form-control custom-form-control" placeholder="Password"
-                        aria-label="Password">
-                </div>
-                <a href="search.html" class="btn btn-cust-secondary w-100">Masuk</a>
+                        <input type="password" name="password" class="form-control custom-form-control"
+                            placeholder="Password" aria-label="Password">
+                    </div>
+                    <button type="submit" class="btn btn-cust-secondary w-100">Masuk</button>
+                </form>
             </div>
 
             <div class="col-12 text-center content-footer">
@@ -36,7 +57,7 @@
 
                 <div class="row mb-4">
                     <div class="col-4">
-                        <a href="#" class="btn btn-cust-secondary">
+                        <a href="{{ route('google.login') }}" class="btn btn-cust-secondary">
                             <img class="img-fluid social-icon" src="{{ asset('frontend/images/google.png') }}">
                         </a>
                     </div>

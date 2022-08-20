@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\UserController;
@@ -21,7 +22,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [LandingController::class, 'index'])->name('home');
-Route::get('/login', [LandingController::class, 'login']);
+Route::get('/logout', [LandingController::class, 'logout'])->name('signOut');
+Route::get('/login', [LandingController::class, 'login'])->name('signIn');
+Route::post('/login', [LandingController::class, 'postLogin'])->name('signIn');
 Route::get('/register', [LandingController::class, 'register'])->name('reg');
 Route::post('/register', [LandingController::class, 'createMember'])->name('reg');
 
@@ -31,6 +34,14 @@ Route::middleware(['guest'])->controller(AuthController::class)->group(function 
     Route::get('/auth/login', 'index')->name('login');
     Route::post('/auth/login', 'login')->name('login');
 });
+
+// OAUTH
+Route::get('/auth/google', [GoogleController::class, 'redirectToGoogle'])->name('google.login');
+Route::get('/auth/google/callback', [GoogleController::class, 'handleCallbackGoogle'])->name('google.callback');
+
+// Route::middleware('auth:members')->controller(LandingController::class)->group(function () {
+//     Route::get('/theme', 'category')->name('theme.category');
+// });
 
 Route::get('/admin', function () {
     return redirect()->route('dashboard');
@@ -88,6 +99,4 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::delete('/member', 'destroy')->name('member');
         Route::get('/member/{id}/detail', 'show')->name('detail');
     });
-
-    
 });
