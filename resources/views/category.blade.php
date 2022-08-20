@@ -26,7 +26,7 @@
                 <div class="row w-100">
                     @foreach ($categories as $row)
                         <div class="col-6 col-md-4 mb-4">
-                            <a href="pick-template.html">
+                            <a href="{{ url("/template/$row->id") }}">
                                 <img class="img-fluid rounded" src="{{ asset('category/' . $row->thumbnail) }}">
                             </a>
                         </div>

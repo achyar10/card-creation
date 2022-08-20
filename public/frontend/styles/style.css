@@ -250,3 +250,7 @@ html, body {
         max-width: 250px;
     }
 }
+
+.konvajs-content {
+    height: 400px !important;
+}

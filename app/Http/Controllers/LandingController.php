@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\CardService;
 use App\Services\CategoryService;
 use App\Services\MemberService;
 use Illuminate\Http\Request;
@@ -12,6 +13,7 @@ class LandingController extends Controller
     {
         $this->member = new MemberService($request);
         $this->category = new CategoryService($request);
+        $this->card = new CardService($request);
     }
 
     public function index()
@@ -57,6 +59,22 @@ class LandingController extends Controller
         if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['categories'] = $this->category->findAll();
         return view('category', $data);
+    }
+
+    public function template($id)
+    {
+        $session = request()->session()->all();
+        if (!isset($session['login_member'])) return redirect()->route('signIn');
+        $data['row'] = $this->category->getByIdCards($id);
+        return view('template', $data);
+    }
+
+    public function editor($id)
+    {
+        $session = request()->session()->all();
+        if (!isset($session['login_member'])) return redirect()->route('signIn');
+        $data['row'] = $this->card->getById($id);
+        return view('editor', $data);
     }
 
     public function createMember(Request $request)

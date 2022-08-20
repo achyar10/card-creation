@@ -33,6 +33,11 @@ class CategoryService
         return Category::find($id);
     }
 
+    public function getByIdCards($id)
+    {
+        return Category::with('cards')->where('id', $id)->first();
+    }
+
     public function create()
     {
         $nameFile = null;

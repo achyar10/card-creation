@@ -31,6 +31,8 @@ Route::get('/register', [LandingController::class, 'register'])->name('reg');
 Route::post('/register', [LandingController::class, 'createMember'])->name('reg');
 
 Route::get('/theme', [LandingController::class, 'category'])->name('theme.category');
+Route::get('/template/{id}', [LandingController::class, 'template'])->name('theme.template');
+Route::get('/editor/{id}', [LandingController::class, 'editor'])->name('theme.editor');
 
 Route::middleware(['guest'])->controller(AuthController::class)->group(function () {
     Route::get('/auth/login', 'index')->name('login');
