@@ -9,6 +9,7 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\LandingController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\TwitterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,9 @@ Route::get('/auth/facebook/callback', [FacebookController::class, 'handleCallbac
 
 Route::get('/auth/instagram', [InstagramController::class, 'redirectToInstagram'])->name('instagram.login');
 Route::get('/auth/instagram/callback', [InstagramController::class, 'handleCallbackInstagram'])->name('instagram.callback');
+
+Route::get('/auth/twitter', [TwitterController::class, 'redirectToTwitter'])->name('twitter.login');
+Route::get('/auth/twitter/callback', [TwitterController::class, 'handleCallbackTwitter'])->name('twitter.callback');
 
 // Route::middleware('auth:members')->controller(LandingController::class)->group(function () {
 //     Route::get('/theme', 'category')->name('theme.category');
