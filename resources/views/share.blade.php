@@ -83,14 +83,18 @@
 
         async function share() {
             try {
-                let files = document.getElementById('image').src
+                let image = document.getElementById('image').src
+                const blob = await (await fetch(image)).blob();
+                files = new File([blob], image, { type: blob.type });
                 await navigator.share({
                     title: 'Hello',
                     text: 'Check out this image!',
                     files: [files],
                 });
-                console.log('shared successfully')
+                console.log('shared successfully');
+                return true;
             } catch (err) {
+                console.log(err)
                 alert(`Your system doesn't support sharing these files.`)
             }
         }

@@ -67,6 +67,7 @@
                     .then(data => {
                         preview.style.display = 'block';
                         preview.href = '/share/' + data.id;
+                        window.location.href = preview.href;
                     })
 
             },
