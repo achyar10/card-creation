@@ -12,11 +12,11 @@
     </style>
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/pintura.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css') }}">
-    <div class="main-content container">
+    <!--<div class="main-content container">-->
         <div data-card="{{ $row->id }}" data-id="{{ $member_id }}" id="image"
             data-image="{{ asset('/card/' . $row->image) }}" style="display: none;"></div>
-        <div class="my-editor"></div>
-    </div>
+        <div class="my-editor mb-2"></div>
+    <!--</div>-->
 
     <script type="module">
         
@@ -31,7 +31,9 @@
         const pintura = appendDefaultEditor(".my-editor", {
             // The source image to load
             src: imageUrl,
+            enableMoveTool: true,
             markupEditorToolbar: [
+                ['move', 'Move', { disabled: false }],
                 ['text', 'Text', { disabled: false }],
                 ['sharpie', 'Sharpie', { disabled: false }],
                 ['eraser', 'Eraser', { disabled: false }],
@@ -96,7 +98,7 @@
                 .then(data => {
                     preview.style.display = 'block';
                     preview.href = '/share/' + data.id;
-                    // window.location.href = preview.href;
+                    window.location.href = preview.href;
                 })
         });
 
