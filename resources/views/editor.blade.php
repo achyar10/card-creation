@@ -13,27 +13,9 @@
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/pintura.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css') }}">
     <div class="main-content container">
-        <div class="content-wrapper row">
-            <div class="col-12 content-header mb-4">
-                <h2 class="fw-bold">Tuliskan Pesan Spesialmu!</h2>
-            </div>
-            <div class="col-12 content-content">
-                <div data-card="{{ $row->id }}" data-id="{{ $member_id }}" id="image"
-                    data-image="{{ asset('/card/' . $row->image) }}" style="display: none;"></div>
-                <div class="container w-100 bg-light p-2 rounded mb-4">
-                    <div class="my-editor"></div>
-                </div>
-            </div>
-            <div class="row w-100 m-0">
-                <div class="col">
-                    <a href="#" id="preview" class="btn btn-cust-primary w-100 mb-4" style="display: none">
-                        <div class="w-100 d-flex flex-row justify-content-center">
-                            Preview
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <div data-card="{{ $row->id }}" data-id="{{ $member_id }}" id="image"
+            data-image="{{ asset('/card/' . $row->image) }}" style="display: none;"></div>
+        <div class="my-editor"></div>
     </div>
 
     <script type="module">
