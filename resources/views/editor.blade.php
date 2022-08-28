@@ -16,6 +16,7 @@
         <div data-card="{{ $row->id }}" data-id="{{ $member_id }}" id="image"
             data-image="{{ asset('/card/' . $row->image) }}" style="display: none;"></div>
         <div class="my-editor mb-2"></div>
+        <a href="#" id="preview" style="display: none"></a>
     <!--</div>-->
 
     <script type="module">
@@ -96,7 +97,7 @@
                 })
                 .then(response => response.json())
                 .then(data => {
-                    preview.style.display = 'block';
+                    // preview.style.display = 'block';
                     preview.href = '/share/' + data.id;
                     window.location.href = preview.href;
                 })
