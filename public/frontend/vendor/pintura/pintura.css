@@ -3373,5 +3373,6 @@ html:not(.pintura-editor-validated) .pintura-editor:after {
   pointer-events: none;
   text-decoration: none;
   background: #db3840;
+  display: none;
 }
     
