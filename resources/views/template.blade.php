@@ -30,13 +30,13 @@
                 <div class="container w-100 bg-light p-4 rounded mb-4">
                     <h5 class="fw-bold mb-4">Preview</h5>
                     <div class="w-100 preview-image text-center">
-                        @if (count($row->cards) > 1)
+                        @if (count($row->cards) > 0)
                             <img class="img-fluid rounded" id="preview"
                                 src="{{ asset('card/' . $row->cards[0]->image) }}">
                         @endif
                     </div>
                 </div>
-                @if (count($row->cards) > 1)
+                @if (count($row->cards) > 0)
                     <a href="{{ url('/editor/' . $row->cards[0]->id) }}" id="link"
                         class="btn btn-cust-primary w-100">Pilih</a>
                 @endif
