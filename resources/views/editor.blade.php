@@ -36,9 +36,9 @@
             markupEditorToolbar: [
                 ['move', 'Move', { disabled: false }],
                 ['text', 'Text', { disabled: false }],
-                ['sharpie', 'Sharpie', { disabled: false }],
+                // ['sharpie', 'Sharpie', { disabled: false }],
                 ['eraser', 'Eraser', { disabled: false }],
-                ['rectangle', 'Rectangle', { disabled: false }],
+                // ['rectangle', 'Rectangle', { disabled: false }],
             ],
 
             // This will set a square crop aspect ratio
