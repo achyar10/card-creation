@@ -71,12 +71,12 @@
             locale: { labelButtonExport: 'SIMPAN' },
             utils: [
                     'annotate',
-                    'sticker',
-                    'crop',
+                    // 'sticker',
+                    // 'crop',
                     'filter',
-                    'finetune',
-                    'frame',
-                    'resize',
+                    // 'finetune',
+                    // 'frame',
+                    // 'resize',
             ],
         });
 
