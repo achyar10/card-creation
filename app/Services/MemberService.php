@@ -33,8 +33,9 @@ class MemberService
     {
         $data =  Member::create([
             'name' => $this->req->name,
+            'fullname' => $this->req->fullname,
             'email' => $this->req->email,
-            'password' => Hash::make($this->req->password, ['rounds' => 10]),
+            'photo' => $this->req->photo,
             'phone' => $this->req->phone,
             'oauth_id' => $this->req->oauth_id,
         ]);
@@ -47,8 +48,15 @@ class MemberService
         $data->name = $this->req->name;
         $data->email = $this->req->email;
         $data->phone = $this->req->phone;
+        $data->photo = $this->req->photo;
         $data->oauth_id = $this->req->oauth_id;
         $data->save();
+        return $data;
+    }
+
+    public function updatePoint($id, $point)
+    {
+        $data = Member::where('id', $id)->increment('point', $point);
         return $data;
     }
 
