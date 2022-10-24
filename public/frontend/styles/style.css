@@ -111,6 +111,36 @@ body {
     background-position: bottom;
 }
 
+.section__home2::after {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 60%;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/bg/bg2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.section__home3::before {
+    content: ' ';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/bg/bg2.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+.point__counter {
+    font-size: 2rem;
+}
+
 .section__home_carousel {
     height: 300px;
 }

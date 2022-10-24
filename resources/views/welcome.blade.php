@@ -64,5 +64,27 @@
                 </div>
             </div>
         </section>
+
+        <section class="section section__home3" id="scrollspySection3">
+            <div class="section__content container">
+                <div class="col-md-6">
+                    <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
+                </div>
+                <div class="col-md-6 mb-4">
+                    <img class="d-block img-fluid home__logo mb-4" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                    <h3 class="mb-4">Kumpulin Poin Reward Yuk!</h3>
+                    <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi peserta dengan poin terbanyak.</p>
+                    <div class="point__counter">
+                        <span class="point__digit">6</span>
+                        <span class="point__digit">6</span>
+                        <span class="point__digit">6</span>
+                        <span class="point__unit">Poin</span>
+                    </div>
+                    <div class="w-100">
+                        <a class="btn btn-cust-yellow" href="#">Ayo buat kartumu sekarang!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
 @endsection
