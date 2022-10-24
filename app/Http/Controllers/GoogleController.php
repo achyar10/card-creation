@@ -29,7 +29,7 @@ class GoogleController extends Controller
                 'oauth_from' => 'google',
                 'name' => $user->getName(),
                 'email' => $user->getEmail(),
-                'password' => Hash::make('merdeka', ['rounds' => 10]),
+                'photo' => $user->getAvatar()
             ]);
             $request->session()->put('login_member', $new);
             return redirect()->intended(route('theme.category'));
