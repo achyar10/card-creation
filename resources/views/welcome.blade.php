@@ -1,36 +1,21 @@
 @extends('layouts')
 @section('title', 'Home')
 @section('content')
-    <div class="top-ornament">
-        <div class="row m-0 w-100">
-            <div class="col-6 m-0 p-0 text-start">
-                <img class="ornament topleft-ornament" src="{{ asset('frontend/images/element_2.png') }}">
+    <div class="main-content container" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+        <section class="section section__home1" id="scrollspySection1">
+            <div class="section__bg">
+                <img
+                    class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}"
+                    alt="Rainforest view with sunset"
+                />
             </div>
-
-            <div class="col-6 m-0 p-0 text-end">
-                <img class="ornament topright-ornament" src="{{ asset('frontend/images/element_3.png') }}">
+            <div class="section__content">
+                <div class="col-12 text-center mb-4">
+                    <img class="img-fluid home__logo" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                    <p class="text-white lh-lg mb-4">Hai, kamu bisa berkreasi seru membuat ucapan untuk diberikan kepada orang spesial di momen-momen istimewa. <br> Ikuti petunjuk dan selamat berkreasi!</p>
+                    <a class="btn btn-cust-yellow w-25">Lihat Aturan Main</a>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="main-content container d-flex flex-column justify-content-center">
-        <div class="home-wrapper row">
-            <div class="col-12 text-center">
-                <img class="img-fluid center-ornament" src="{{ asset('frontend/images/m_element_3.png') }}">
-            </div>
-            <div class="col-12 text-center">
-                <a href="/login" class="btn btn-cust-secondary w-50">Mulai</a>
-            </div>
-        </div>
-    </div>
-    <div class="bottom-ornament">
-        <div class="row m-0 w-100 align-items-end ">
-            <div class="col-6 m-0 p-0 text-start">
-                <img class="ornament bottomleft-ornament" src="{{ asset('frontend/images/element_1.png') }}">
-            </div>
-
-            <div class="col-6 m-0 p-0 text-end align-items-end ">
-                <img class="ornament bottomright-ornament" src="{{ asset('frontend/images/element_4.png') }}">
-            </div>
-        </div>
+        </section>
     </div>
 @endsection

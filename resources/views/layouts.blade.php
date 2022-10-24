@@ -13,14 +13,15 @@
 </head>
 
 <body>
-    <div class="main-wrapper with-bg">
-        <div class="outer-wrapper chocochip">
+    <header class="header-wrapper">
+        @include('navbar')
+    </header>
+    <main class="main-wrapper chocochip">
 
-            {{-- content --}}
-            @yield('content')
+        {{-- content --}}
+        @yield('content')
 
-        </div>
-    </div>
+    </main>
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
 </body>
 

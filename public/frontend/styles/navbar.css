@@ -1,0 +1,72 @@
+/*
+* Navbar style
+*/
+
+.gt-navbar {
+    --bs-navbar-padding-x: 0rem;
+    --bs-navbar-padding-y: 0.5rem;
+    --bs-navbar-font-weight: 600;
+    --bs-navbar-color: rgb(255, 255, 255);
+    --bs-navbar-hover-color: rgb(255, 224, 30);
+    --bs-navbar-active-color: rgb(255, 224, 30);
+    --bs-navbar-bg: rgb(215, 2, 39);
+    --bs-navbar-toggler-border-color: var(--bs-navbar-color);
+    --bs-navbar-nav-link-padding-x: 1rem;
+    --bs-navbar-link-padding-y: 0.5rem;
+    --bs-navbar-link-font-weight: 700;
+    --bs-navbar-link-color: var(--bs-navbar-color);
+    --bs-navbar-link-hover-color: var(--bs-navbar-hover-color);
+    --bs-navbar-link-disabled-color: var(--bs-navbar-disabled-color);
+    background-color: var(--bs-navbar-bg);
+    font-weight: 600;
+}
+
+.gt-navbar .navbar-info {
+    display: flex;
+}
+
+.navbar-collapse .member-point {
+    display: none;
+}
+
+.member-point {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(255, 224, 30);
+    border-radius: var(--bs-border-radius-2xl);
+}
+
+.point {
+    width: 100%;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    display: block;
+    text-align: center;
+}
+
+.point-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
+    width: 100%;
+}
+
+.point-icon,
+.profile-icon {
+    width: 36px;
+    height: 36px;
+}
+
+@media screen and (min-width: 992px) {
+    .gt-navbar .navbar-info {
+        display: none;
+    }
+
+    .navbar-collapse .member-point {
+        display: flex;
+    }
+}

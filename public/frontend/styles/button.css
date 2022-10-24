@@ -1,0 +1,80 @@
+/* Buttons */
+
+.btn .material-symbols-outlined {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.btn-cust {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-border-radius: 3rem;
+}
+
+.btn-cust-primary {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: rgb(215, 2, 39);
+    --bs-btn-border-color: rgb(215, 2, 39);
+    --bs-btn-border-radius: 3rem;
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: rgb(218, 21, 56);
+    --bs-btn-hover-border-color: rgb(218, 21, 56);
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: rgb(218, 21, 56);
+    --bs-btn-active-border-color: rgb(218, 21, 56);
+}
+
+.btn-cust-secondary {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: rgb(215 2 39);
+    --bs-btn-bg: var(--bs-white);
+    --bs-btn-border-color: rgb(215 2 39);
+    --bs-btn-border-radius: 3rem;
+    --bs-btn-hover-color: rgb(218, 21, 56);
+    --bs-btn-hover-bg: rgb(228, 228, 228);
+    --bs-btn-hover-border-color: rgb(218, 21, 56);
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: rgb(228, 228, 228);
+    --bs-btn-active-border-color: rgb(218, 21, 56);
+}
+
+.btn-cust-blue {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: rgb(24, 92, 238);
+    --bs-btn-border-color: rgb(24, 92, 238);
+    --bs-btn-border-radius: 3rem;
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: rgb(39, 104, 245);
+    --bs-btn-hover-border-color: rgb(39, 104, 245);
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: rgb(39, 104, 245);
+    --bs-btn-active-border-color: rgb(39, 104, 245);
+}
+
+.btn-cust-yellow {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-black);
+    --bs-btn-bg: rgb(255, 224, 30);
+    --bs-btn-border-color: rgb(255, 224, 30);
+    --bs-btn-border-radius: 3rem;
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-hover-bg: rgb(248, 222, 52);
+    --bs-btn-hover-border-color: rgb(248, 222, 52);
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: rgb(255, 224, 30);
+    --bs-btn-active-border-color: rgb(255, 224, 30);
+}
