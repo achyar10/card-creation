@@ -2,13 +2,13 @@
 @section('title', 'Home')
 @section('content')
     <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+        <div class="section__bg">
+            <img
+                class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}"
+                alt="Rainforest view with sunset"
+            />
+        </div>
         <section class="section section__home1" id="scrollspySection1">
-            <div class="section__bg">
-                <img
-                    class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}"
-                    alt="Rainforest view with sunset"
-                />
-            </div>
             <div class="section__content container">
                 <div class="col-12 text-center">
                     <img class="img-fluid home__logo" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
@@ -71,15 +71,15 @@
                     <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
                 </div>
                 <div class="col-md-6 mb-4">
-                    <img class="d-block img-fluid home__logo mb-4" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
-                    <h3 class="mb-4">Kumpulin Poin Reward Yuk!</h3>
-                    <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi peserta dengan poin terbanyak.</p>
-                    <div class="point__counter">
+                    <img class="d-block img-fluid home__logo" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                    <h3 class="my-4">Kumpulin Poin Reward Yuk!</h3>
+                    <div class="point__counter mb-4">
                         <span class="point__digit">6</span>
                         <span class="point__digit">6</span>
                         <span class="point__digit">6</span>
                         <span class="point__unit">Poin</span>
                     </div>
+                    <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi peserta dengan poin terbanyak.</p>
                     <div class="w-100">
                         <a class="btn btn-cust-yellow" href="#">Ayo buat kartumu sekarang!</a>
                     </div>
