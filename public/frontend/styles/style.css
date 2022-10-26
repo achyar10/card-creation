@@ -1,9 +1,12 @@
 @import url('./button.css');
 @import url('./navbar.css');
+@import url('./modal.css');
 
 :root {
     --gt-yellow: #ffe01e;
     --gt-red: #d70227;
+    --gt-modal-bg: #d70227;
+    --gt-modal-color: #ffffff;
 }
 
 html,
@@ -40,9 +43,10 @@ body {
 
 .section {
     position: relative;
+    min-height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     color: var(--bs-white);
 }
 
@@ -66,14 +70,12 @@ body {
 }
 
 .section__content {
-    padding: 1rem;
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-content: flex-start;
     justify-content: start;
-    position: relative;
 }
 
 @media screen and (max-width: 768px) {
@@ -102,6 +104,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
+    z-index: -1;
 }
 
 .section__home2::before {
