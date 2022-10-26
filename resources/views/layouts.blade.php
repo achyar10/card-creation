@@ -22,7 +22,7 @@
         @yield('content')
 
     </main>
-    <footer>
+    <footer class="footer-wrapper">
         @include('footer')
     </footer>
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>

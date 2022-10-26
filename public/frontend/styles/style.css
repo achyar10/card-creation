@@ -21,7 +21,6 @@ body {
 
 .main-content {
     scroll-snap-type: y mandatory;
-    height: 100vh;
 }
 
 .section {
@@ -143,6 +142,13 @@ body {
 
 .section__home_carousel {
     height: 300px;
+}
+
+/* Footer */
+.footer-wrapper {
+    width: 100%;
+    display: block;
+    background-color: #ffe01e;
 }
 
 /* Carousel */
