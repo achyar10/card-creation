@@ -37,11 +37,22 @@
                 </div>
             </div>
             <div class="section__content container">
-                <div class="col-12 mb-4">
-                    <h3 class="w-50">Pilih Kategori Cardmu disini</h3>
+                <div class="col-12 mb-5">
+                    <h3 class="w-50">Pilih Momen disini</h3>
                 </div>
                 <div class="col-12 section__home_carousel">
-                    <div id="homeCarousel" class="carousel home__carousel slide" data-bs-ride="carousel">
+                    <div class="gallery mt-5">
+                        <div class="gallery-container">
+                            <img class="gallery-item" src="{{ asset('frontend/images/cards/card_1.png') }}" />
+                            <img class="gallery-item" src="{{ asset('frontend/images/cards/card_2.png') }}" />
+                            <img class="gallery-item" src="{{ asset('frontend/images/cards/card_3.png') }}" />
+                            <img class="gallery-item" src="{{ asset('frontend/images/cards/card_4.png') }}" />
+                            <img class="gallery-item" src="{{ asset('frontend/images/cards/card_1.png') }}" />
+                        </div>
+                        <div class="gallery-controls"></div>
+
+                    </div>
+                    {{-- <div id="homeCarousel" class="carousel home__carousel slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
                             <div class="row carousel-item active">
                                 <div class="col-md-3 text-center">
@@ -84,7 +95,7 @@
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </section>
@@ -104,7 +115,8 @@
                         <span class="point__digit">8</span>
                         <span class="point__unit">Poin</span>
                     </div>
-                    <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi peserta dengan
+                    <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi peserta
+                        dengan
                         poin terbanyak.</p>
                     <div class="w-100">
                         <a class="btn btn-cust-yellow" href="#">Ayo buat kartumu sekarang!</a>
