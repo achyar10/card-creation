@@ -17,7 +17,7 @@
                     </p>
                     <div class="row">
                         <div class="col-md-4 mx-auto">
-                            <form action="" method="POST">
+                            <form action="{{ route('theme.category') }}" method="GET">
                                 @csrf
                                 @error('fullname')
                                     <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
