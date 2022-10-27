@@ -35,13 +35,10 @@
                                             @enderror
                                         </div>
                                         <div class="form-group mb-2">
-                                            <label for="">Tags</label>
-                                            <textarea name="description" class="form-control" autocomplete="off">{{ old('description', $row->description) }}</textarea>
-                                            @error('description')
-                                                <div class="invalid-feedback">
-                                                    {{ $message }}
-                                                </div>
-                                            @enderror
+                                            <label for="">Deskripsi</label>
+                                            <input id="x" type="hidden" name="description">
+                                            <trix-editor input="x">{!! $row->description !!}
+                                            </trix-editor>
                                         </div>
                                     </div>
                                     <div class="col-md-3">

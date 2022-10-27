@@ -34,7 +34,9 @@
                                         </div>
                                         <div class="form-group mb-2">
                                             <label for="">Deskripsi</label>
-                                            <textarea name="description" class="form-control" value="{{ old('description') }}" autocomplete="off"></textarea>
+                                            <input id="x" type="hidden" name="description">
+                                            <trix-editor input="x">
+                                            </trix-editor>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
