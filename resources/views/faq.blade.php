@@ -31,7 +31,7 @@
                                         aria-labelledby="flush-heading{{ $loop->index }}"
                                         data-bs-parent="#accordionFlushExample">
                                         <div class="accordion-body text-white">
-                                            {{ $faq->description }}
+                                            {!! $faq->description !!}
                                         </div>
                                     </div>
                                 </div>
