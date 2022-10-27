@@ -12,7 +12,7 @@
                 <div class="text-center">
                     <img class="" height="200px" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                     <h4 class="mb-4">Data Diri</h4>
-                    <p class="fs-6 fw-lighter mb-4">Masukan nama sesuai KTP dan nomor<br>handphone mu yang dapat dihubungi
+                    <p class="fs-6 fw-light mb-4">Masukan nama sesuai KTP dan nomor<br>handphone mu yang dapat dihubungi
                         jika kamu mendapatkan hadiah.
                     </p>
                     <div class="row">

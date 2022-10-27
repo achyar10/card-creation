@@ -12,7 +12,7 @@
                 <div class="text-center">
                     <img class="" height="200px" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                     <h4 class="mb-4">Sebelum mulai, login dulu yuk!</h4>
-                    <p class="fs-6 fw-lighter mb-4">Silahkan memilih akun yang kamu miliki<br>
+                    <p class="fs-6 fw-light mb-4">Silahkan memilih akun yang kamu miliki<br>
                         untuk dapat masuk
                         kedalam aplikasi.
                     </p>

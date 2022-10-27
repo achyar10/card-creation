@@ -12,7 +12,7 @@
             </button>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
+            <ul class="navbar-nav fw-normal">
                 <li class="nav-item">
                     <a class="nav-link" href="/#scrollspySection1">Beranda</a>
                 </li>

@@ -11,6 +11,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href="{{ asset('frontend/styles/style.css') }}" rel="stylesheet">
     <link href="{{ asset('frontend/styles/carousel.css') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">

@@ -14,7 +14,7 @@
 .btn-cust-primary {
     --bs-btn-padding-x: 2rem;
     --bs-btn-padding-y: .75rem;
-    --bs-btn-font-weight: 600;
+    --bs-btn-font-weight: 500;
     --bs-btn-color: var(--bs-white);
     --bs-btn-bg: rgb(215, 2, 39);
     --bs-btn-border-color: rgb(215, 2, 39);
@@ -31,7 +31,7 @@
 .btn-cust-secondary {
     --bs-btn-padding-x: 2rem;
     --bs-btn-padding-y: .75rem;
-    --bs-btn-font-weight: 600;
+    --bs-btn-font-weight: 500;
     --bs-btn-color: rgb(215 2 39);
     --bs-btn-bg: var(--bs-white);
     --bs-btn-border-color: rgb(215 2 39);
@@ -48,7 +48,7 @@
 .btn-cust-blue {
     --bs-btn-padding-x: 2rem;
     --bs-btn-padding-y: .75rem;
-    --bs-btn-font-weight: 600;
+    --bs-btn-font-weight: 500;
     --bs-btn-color: var(--bs-white);
     --bs-btn-bg: rgb(24, 92, 238);
     --bs-btn-border-color: rgb(24, 92, 238);
@@ -65,7 +65,7 @@
 .btn-cust-yellow {
     --bs-btn-padding-x: 2rem;
     --bs-btn-padding-y: .75rem;
-    --bs-btn-font-weight: 600;
+    --bs-btn-font-weight: 500;
     --bs-btn-color: var(--bs-black);
     --bs-btn-bg: rgb(255, 224, 30);
     --bs-btn-border-color: rgb(255, 224, 30);
@@ -82,7 +82,7 @@
 .btn-cust-white {
     --bs-btn-padding-x: 2rem;
     --bs-btn-padding-y: .75rem;
-    --bs-btn-font-weight: 600;
+    --bs-btn-font-weight: 500;
     --bs-btn-color: var(--bs-black);
     --bs-btn-bg: rgb(247, 247, 245);
     --bs-btn-border-color: rgb(247, 247, 245);
