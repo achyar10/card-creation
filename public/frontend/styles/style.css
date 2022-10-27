@@ -211,6 +211,15 @@ body {
     z-index: 1;
 }
 
+.cloud_left .ornament__img {
+    width: 96px;
+}
+
+.cloud_right {
+    right: 0;
+    z-index: 1;
+}
+
 .firework_right {
     right: 40px;
     top: 300px;

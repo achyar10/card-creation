@@ -26,10 +26,10 @@
                 <div class="ornament__wrapper ornament__cut_left firework_left">
                     <img class="ornament__img" src="{{ asset('frontend/images/decorations/firework.png') }}">
                 </div>
-                <div class="ornament__wrapper ornament__cut_left cloud_left">
+                <div class="ornament__wrapper cloud_left">
                     <img class="ornament__img" src="{{ asset('frontend/images/decorations/cloud_left.png') }}">
                 </div>
-                <div class="ornament__wrapper ornament__cut_right">
+                <div class="ornament__wrapper cloud_right">
                     <img class="ornament__img" src="{{ asset('frontend/images/decorations/cloud_right.png') }}">
                 </div>
                 <div class="ornament__wrapper firework_right">
