@@ -22,6 +22,20 @@
         </section>
 
         <section class="section section__home2" id="scrollspySection2">
+            <div class="section__ornament">
+                <div class="ornament__wrapper ornament__cut_left firework_left">
+                    <img class="ornament__img" src="{{ asset('frontend/images/decorations/firework.png') }}">
+                </div>
+                <div class="ornament__wrapper ornament__cut_left cloud_left">
+                    <img class="ornament__img" src="{{ asset('frontend/images/decorations/cloud_left.png') }}">
+                </div>
+                <div class="ornament__wrapper ornament__cut_right">
+                    <img class="ornament__img" src="{{ asset('frontend/images/decorations/cloud_right.png') }}">
+                </div>
+                <div class="ornament__wrapper firework_right">
+                    <img class="ornament__img" src="{{ asset('frontend/images/decorations/firework.png') }}">
+                </div>
+            </div>
             <div class="section__content container">
                 <div class="col-12 mb-4">
                     <h3 class="w-50">Pilih Kategori Cardmu disini</h3>
