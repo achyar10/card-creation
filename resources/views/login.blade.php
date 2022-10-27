@@ -1,81 +1,45 @@
 @extends('layouts')
 @section('title', 'Login')
 @section('content')
-    <div class="main-content container">
-        <div class="content-wrapper row">
-            <div class="col-12 text-center content-header mb-4">
-                <img class="img-fluid content-logo" src="{{ asset('frontend/images/m_element_3.png') }}">
-                <h1 class="text-white content-title">Halo</h1>
-                <h4 class="text-white content-subtitle">Silakan melakukan login</h4>
-            </div>
-            <div class="col-12 text-center content-content mb-4">
-                <form action="" method="post">
-                    @csrf
-                    @if (session('error'))
-                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
-                            {{ session('error') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @endif
-                    @error('phone')
-                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
-                            {{ $message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @enderror
-                    @error('password')
-                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
-                            {{ $message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @enderror
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                            <span class="material-symbols-outlined">
-                                phone
+    <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" tabindex="0">
+        <div class="section__bg">
+            <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
+        </div>
+
+        <section class="section" id="">
+            <div class="container">
+                <div class="text-center">
+                    <img class="" height="200px" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                    <h4 class="mb-4">Sebelum mulai, login dulu yuk!</h4>
+                    <p class="fs-6 fw-lighter mb-4">Silahkan memilih akun yang kamu miliki<br>
+                        untuk dapat masuk
+                        kedalam aplikasi.
+                    </p>
+                    <div class="d-grid gap-2 col-md-4 col-xs-3 mx-auto">
+                        <a href="{{ route('google.login') }}" class="btn btn-cust-white mb-3 position-relative"> <img
+                                class="img-fluid social-icon" src="{{ asset('frontend/images/google.png') }}">
+                            &nbsp;&nbsp;Email
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">+10
+                                Poin
+                                <span class="visually-hidden">point</span>
                             </span>
-                        </span>
-                        <input type="number" name="phone" class="form-control custom-form-control"
-                            placeholder="No. Handphone" aria-label="No. Handphone" value="{{ old('phone') }}" autofocus>
-                    </div>
-
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="basic-addon1">
-                            <span class="material-symbols-outlined">
-                                key
+                        </a>
+                        <a href="{{ route('facebook.login') }}" class="btn btn-cust-white mb-3 position-relative"> <img
+                                class="img-fluid social-icon" src="{{ asset('frontend/images/facebook.png') }}">
+                            &nbsp;&nbsp;Facebook
+                            <span
+                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">+10
+                                Poin
+                                <span class="visually-hidden">point</span>
                             </span>
-                        </span>
-                        <input type="password" name="password" class="form-control custom-form-control"
-                            placeholder="Password" aria-label="Password">
-                    </div>
-                    <button type="submit" class="btn btn-cust-secondary w-100">Masuk</button>
-                </form>
-            </div>
-
-            <div class="col-12 text-center content-footer">
-                <h4 class="text-white content-subtitle or-login mb-4">atau login dengan</h4>
-
-                <div class="row mb-4">
-                    <div class="col-4">
-                        <a href="{{ route('google.login') }}" class="btn btn-cust-secondary">
-                            <img class="img-fluid social-icon" src="{{ asset('frontend/images/google.png') }}">
-                        </a>
-                    </div>
-                    <div class="col-4">
-                        <a href="{{ route('facebook.login') }}" class="btn btn-cust-secondary">
-                            <img class="img-fluid social-icon" src="{{ asset('frontend/images/facebook.png') }}">
-                        </a>
-                    </div>
-                    <div class="col-4">
-                        <a href="{{ route('twitter.login') }}" class="btn btn-cust-secondary">
-                            <img class="img-fluid social-icon" src="{{ asset('frontend/images/twitter.png') }}">
                         </a>
                     </div>
                 </div>
-
-                <p class="text-white content-subtitle">Belum punya akun? <a href="/register"
-                        class="text-warning text-decoration-none fw-bold">Daftar</a></p>
             </div>
-        </div>
+        </section>
+
+
     </div>
 @endsection
