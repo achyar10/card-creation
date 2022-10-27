@@ -1,5 +1,5 @@
 @extends('layouts')
-@section('title', 'Home')
+@section('title', 'FAQ')
 @section('content')
     <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
         data-bs-smooth-scroll="true" tabindex="0">
@@ -18,18 +18,19 @@
                         <div class="accordion" id="accordionFlushExample">
 
                             @foreach ($faqs as $faq)
-                                <div class="accordion-item mb-3 rounded">
+                                <div class="accordion-item mb-3 rounded bg-light bg-opacity-25">
                                     <h2 class="accordion-header" id="flush-heading{{ $loop->index }}">
-                                        <button class="accordion-button collapsed rounded" type="button"
-                                            data-bs-toggle="collapse" data-bs-target="#flush-collapse{{ $loop->index }}"
-                                            aria-expanded="false" aria-controls="flush-collapse{{ $loop->index }}">
+                                        <button class="accordion-button collapsed rounded bg-light bg-opacity-25 text-white"
+                                            type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapse{{ $loop->index }}" aria-expanded="false"
+                                            aria-controls="flush-collapse{{ $loop->index }}">
                                             {{ $faq->title }}
                                         </button>
                                     </h2>
                                     <div id="flush-collapse{{ $loop->index }}" class="accordion-collapse collapse rounded"
                                         aria-labelledby="flush-heading{{ $loop->index }}"
                                         data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
+                                        <div class="accordion-body text-white">
                                             {{ $faq->description }}
                                         </div>
                                     </div>
