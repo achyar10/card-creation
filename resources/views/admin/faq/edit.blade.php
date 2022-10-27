@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title', 'Ubah Kategori')
+@section('title', 'Ubah FAQ')
 @section('content')
     <div class="page-content">
         <div class="container-fluid">
