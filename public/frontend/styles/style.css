@@ -76,6 +76,7 @@ body {
     flex-direction: row;
     align-content: flex-start;
     justify-content: start;
+    z-index: 10;
 }
 
 @media screen and (max-width: 768px) {
@@ -171,6 +172,49 @@ body {
 
 .section__home_carousel {
     height: 300px;
+}
+
+/* Ornament */
+.section__ornament {
+    position: relative;
+    z-index: inherit;
+}
+
+.ornament__wrapper {
+    position: absolute;
+    z-index: -1;
+}
+
+.ornament__cut_left {
+    left: -60px;
+}
+
+.ornament__cut_right {
+    right: -60px;
+}
+
+.ornament__img {
+    width: 128px;
+}
+
+.firework_left {
+    top: -100px;
+    z-index: 1;
+}
+
+.firework_left .ornament__img {
+    width: 250px;
+}
+
+.cloud_left {
+    top: 250px;
+    z-index: 1;
+}
+
+.firework_right {
+    right: 40px;
+    top: 300px;
+    z-index: 1;
 }
 
 /* Carousel */
