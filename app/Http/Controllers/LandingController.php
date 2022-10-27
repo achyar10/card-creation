@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Creation;
 use App\Services\CardService;
 use App\Services\CategoryService;
+use App\Services\DisclaimerService;
 use App\Services\FaqService;
 use App\Services\MemberService;
 use Illuminate\Http\Request;
@@ -18,6 +19,7 @@ class LandingController extends Controller
         $this->category = new CategoryService($request);
         $this->card = new CardService($request);
         $this->faq = new FaqService($request);
+        $this->disclaimer = new DisclaimerService($request);
     }
 
     public function index()
@@ -59,10 +61,14 @@ class LandingController extends Controller
 
     public function faq()
     {
-        // $session = request()->session()->all();
-        // if (isset($session['login_member'])) return redirect()->route('theme.category');
         $data['faqs'] = $this->faq->findAll();
         return view('faq', $data);
+    }
+
+    public function disclaimer()
+    {
+        $data['disclaimer'] = $this->disclaimer->first();
+        return view('disclaimer', $data);
     }
 
     public function category()

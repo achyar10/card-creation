@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DisclaimerController;
 use App\Http\Controllers\FacebookController;
 use App\Http\Controllers\FaqController;
 use App\Http\Controllers\GoogleController;
@@ -33,6 +34,7 @@ Route::get('/register', [LandingController::class, 'register'])->name('reg');
 Route::post('/register', [LandingController::class, 'createMember'])->name('reg');
 
 Route::get('/faq', [LandingController::class, 'faq'])->name('faq');
+Route::get('/disclaimer', [LandingController::class, 'disclaimer'])->name('disclaimer');
 Route::get('/theme', [LandingController::class, 'category'])->name('theme.category');
 Route::get('/template/{id}', [LandingController::class, 'template'])->name('theme.template');
 Route::get('/editor/{id}', [LandingController::class, 'editor'])->name('theme.editor');
@@ -127,5 +129,11 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::put('/faq/{id}/edit', 'update');
         Route::delete('/faq', 'destroy')->name('faq');
         Route::get('/faq/{id}/detail', 'show')->name('detail');
+    });
+
+    // Disclaimer
+    Route::controller(DisclaimerController::class)->group(function () {
+        Route::get('/disclaimer', 'index')->name('disclaimer');
+        Route::put('/disclaimer', 'update')->name('disclaimer');
     });
 });
