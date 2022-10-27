@@ -17,7 +17,7 @@
                         kedalam aplikasi.
                     </p>
                     <div class="d-grid gap-2 col-md-4 col-xs-3 mx-auto">
-                        <a href="{{ route('google.login') }}" class="btn btn-cust-white mb-3 position-relative"> <img
+                        <a href="{{ route('theme.category') }}" class="btn btn-cust-white mb-3 position-relative"> <img
                                 class="img-fluid social-icon" src="{{ asset('frontend/images/google.png') }}">
                             &nbsp;&nbsp;Email
                             <span
@@ -26,7 +26,7 @@
                                 <span class="visually-hidden">point</span>
                             </span>
                         </a>
-                        <a href="{{ route('facebook.login') }}" class="btn btn-cust-white mb-3 position-relative"> <img
+                        <a href="{{ route('theme.category') }}" class="btn btn-cust-white mb-3 position-relative"> <img
                                 class="img-fluid social-icon" src="{{ asset('frontend/images/facebook.png') }}">
                             &nbsp;&nbsp;Facebook
                             <span

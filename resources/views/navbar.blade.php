@@ -16,17 +16,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/#scrollspySection1">Beranda</a>
                 </li>
-                <li class="nav-item {{ Request::is('/moment') ? 'active' : '' }}">
-                    <a class="nav-link" href="/#scrollspySection2">Moment</a>
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('/moment') ? 'active' : '' }}"
+                        href="/#scrollspySection2">Moment</a>
                 </li>
-                <li class="nav-item {{ Request::is('/rules') ? 'active' : '' }}">
+                <li class="nav-item">
                     <a class="nav-link" href="{{ url('/rules') }}">Aturan Main</a>
                 </li>
-                <li class="nav-item {{ Request::is('/faq') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ url('/faq') }}">FAQ</a>
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('faq') ? 'active' : '' }}" href="{{ url('/faq') }}">FAQ</a>
                 </li>
-                <li class="nav-item {{ Request::is('/disclaimer') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ url('/disclaimer') }}">Disclaimer</a>
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('disclaimer') ? 'active' : '' }}"
+                        href="{{ url('/disclaimer') }}">Disclaimer</a>
                 </li>
             </ul>
             <div class="ms-4">
