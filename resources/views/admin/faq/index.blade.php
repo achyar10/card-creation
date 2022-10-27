@@ -1,5 +1,5 @@
 @extends('admin.layouts.main')
-@section('title', 'Kelola Kategori')
+@section('title', 'Kelola FAQ')
 @section('content')
     <div class="page-content">
         <div class="container-fluid">
