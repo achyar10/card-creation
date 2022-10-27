@@ -22,6 +22,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ route('faq') }}" class="waves-effect">
+                        <i class="bx bx-package"></i>
+                        <span key="t-faqs">FAQ</span>
+                    </a>
+                </li>
+                <li>
                     <a href="{{ route('card') }}" class="waves-effect">
                         <i class="bx bx-package"></i>
                         <span key="t-cards">Kartu</span>
