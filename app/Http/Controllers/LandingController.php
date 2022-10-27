@@ -34,6 +34,13 @@ class LandingController extends Controller
         return view('login');
     }
 
+    public function profile()
+    {
+        // $session = request()->session()->all();
+        // if (isset($session['login_member'])) return redirect()->route('theme.category');
+        return view('profile.update');
+    }
+
     public function postLogin(Request $request)
     {
         $request->validate(['phone' => 'required', 'password' => 'required']);
