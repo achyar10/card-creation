@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Creation;
 use App\Services\CardService;
 use App\Services\CategoryService;
+use App\Services\FaqService;
 use App\Services\MemberService;
 use Illuminate\Http\Request;
 
@@ -16,6 +17,7 @@ class LandingController extends Controller
         $this->member = new MemberService($request);
         $this->category = new CategoryService($request);
         $this->card = new CardService($request);
+        $this->faq = new FaqService($request);
     }
 
     public function index()
@@ -25,8 +27,8 @@ class LandingController extends Controller
 
     public function login()
     {
-        $session = request()->session()->all();
-        if (isset($session['login_member'])) return redirect()->route('theme.category');
+        // $session = request()->session()->all();
+        // if (isset($session['login_member'])) return redirect()->route('theme.category');
         return view('login');
     }
 
@@ -50,15 +52,23 @@ class LandingController extends Controller
 
     public function register()
     {
-        $session = request()->session()->all();
-        if (isset($session['login_member'])) return redirect()->route('theme.category');
+        // $session = request()->session()->all();
+        // if (isset($session['login_member'])) return redirect()->route('theme.category');
         return view('register');
+    }
+
+    public function faq()
+    {
+        // $session = request()->session()->all();
+        // if (isset($session['login_member'])) return redirect()->route('theme.category');
+        $data['faqs'] = $this->faq->findAll();
+        return view('faq', $data);
     }
 
     public function category()
     {
-        $session = request()->session()->all();
-        if (!isset($session['login_member'])) return redirect()->route('signIn');
+        // $session = request()->session()->all();
+        // if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['categories'] = $this->category->findAll();
         $categories = Category::where('is_active', true)->get();
         $tags = [];
@@ -76,25 +86,25 @@ class LandingController extends Controller
 
     public function template($id)
     {
-        $session = request()->session()->all();
-        if (!isset($session['login_member'])) return redirect()->route('signIn');
+        // $session = request()->session()->all();
+        // if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['row'] = $this->category->getByIdCards($id);
         return view('template', $data);
     }
 
     public function editor($id)
     {
-        $session = request()->session()->all();
-        if (!isset($session['login_member'])) return redirect()->route('signIn');
+        // $session = request()->session()->all();
+        // if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['row'] = $this->card->getById($id);
-        $data['member_id'] = $session['login_member']->id;
+        // $data['member_id'] = $session['login_member']->id;
         return view('editor', $data);
     }
 
     public function share($id)
     {
-        $session = request()->session()->all();
-        if (!isset($session['login_member'])) return redirect()->route('signIn');
+        // $session = request()->session()->all();
+        // if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['row'] = Creation::where('id', $id)->first();
         return view('share', $data);
     }
