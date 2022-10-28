@@ -110,9 +110,15 @@
                         src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                     <h3 class="my-4">Kumpulin Poin Reward Yuk!</h3>
                     <div class="point__counter mb-4">
-                        <span class="point__digit">6</span>
-                        <span class="point__digit">5</span>
-                        <span class="point__digit">8</span>
+                        <div class="point__digit_wrapper">
+                            <span class="point__digit">6</span>
+                        </div>
+                        <div class="point__digit_wrapper">
+                            <span class="point__digit">5</span>
+                        </div>
+                        <div class="point__digit_wrapper">
+                            <span class="point__digit">8</span>
+                        </div>
                         <span class="point__unit">Poin</span>
                     </div>
                     <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi peserta
