@@ -159,17 +159,34 @@ body {
 .point__counter {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-end;
 }
 
-.point__counter .point__digit {
-    color: var(--gt-yellow);
-    padding: .75rem;
-    margin-right: .5rem;
-    font-size: 3rem;
-    font-weight: 700;
+.point__digit_wrapper {
     background-color: var(--bs-white);
+    padding: 1.25rem;
+    margin-right: .5rem;
     border-radius: var(--bs-border-radius);
+}
+
+.point__counter .point__digit {
+    background: var(--gt-yellow-bg);
+    color: var(--bs-text-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+    .point__digit_wrapper {
+        padding: .75rem;
+    }
+
+    .point__counter .point__digit {
+        font-size: 2rem;
+    }
 }
 
 .point__counter .point__unit {

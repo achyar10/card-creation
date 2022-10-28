@@ -25,10 +25,16 @@
                                     <p>zefru.awaludin@gmail.com</p>
                                 </div>
                                 <div class="col-lg-6 d-flex align-items-stretch flex-column justify-content-center">
-                                    <div class="point__counter mb-4 d-flex justify-content-between">
-                                        <span class="point__digit flex-grow-1 text-center">6</span>
-                                        <span class="point__digit flex-grow-1 text-center">5</span>
-                                        <span class="point__digit flex-grow-1 text-center">8</span>
+                                    <div class="point__counter mb-4 d-flex flex-row flex-nowrap justify-content-center">
+                                        <div class="point__digit_wrapper">
+                                            <span class="point__digit text-center">6</span>
+                                        </div>
+                                        <div class="point__digit_wrapper">
+                                            <span class="point__digit text-center">5</span>
+                                        </div>
+                                        <div class="point__digit_wrapper">
+                                            <span class="point__digit text-center">8</span>
+                                        </div>
                                     </div>
                                     <h4 class="d-block w-100 mb-4 text-center">Poin</h4>
                                     <a href="/point-history" class="btn btn-cust-white">
