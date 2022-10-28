@@ -399,11 +399,15 @@ body {
     border: none;
 }
 
+.input-group > .form-floating:not(:first-child) > .form-control,
+.input-group > .form-floating:not(:first-child) > .form-select,
+.input-group > :not(:first-child):not(.dropdown-menu):not(.form-floating):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: 0;
+}
+
 .custom-form-control {
     border-top-left-radius: 3rem;
-    ;
     border-bottom-left-radius: 3rem;
-    ;
     border-top-right-radius: 3rem;
     border-bottom-right-radius: 3rem;
     border: none;
