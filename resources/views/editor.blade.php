@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/pintura.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css') }}">
     <!--<div class="main-content container">-->
-        <div data-card="{{ $row->id }}" data-id="{{ $member_id }}" id="image"
-            data-image="{{ asset('/card/' . $row->image) }}" style="display: none;"></div>
-        <div class="my-editor mb-2"></div>
-        <a href="#" id="preview" style="display: none"></a>
+    <div data-card="1" data-id="1" id="image" data-image="{{ asset('/card/' . $row->image) }}" style="display: none;">
+    </div>
+    <div class="my-editor mb-2"></div>
+    <a href="#" id="preview" style="display: none"></a>
     <!--</div>-->
 
     <script type="module">
