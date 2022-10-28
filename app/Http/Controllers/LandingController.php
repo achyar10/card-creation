@@ -43,7 +43,53 @@ class LandingController extends Controller
 
     public function historyPoint()
     {
-        return view('profile.history');
+        $socials = [
+            [
+                'icon' => 'frontend/images/whatsapp.png',
+                'name' => 'WhatsApp (Share)',
+                'date' => date('d F'),
+                'point' => '+10'
+            ],
+            [
+                'icon' => 'frontend/images/email.png',
+                'name' => 'Share (Email)',
+                'date' => date('d F'),
+                'point' => '+10'
+            ],
+            [
+                'icon' => 'frontend/images/instagram.png',
+                'name' => 'Instagram (Share)',
+                'date' => date('d F'),
+                'point' => '+10'
+            ],
+            [
+                'icon' => 'frontend/images/twitter.png',
+                'name' => 'Twitter (Share)',
+                'date' => date('d F'),
+                'point' => '+10'
+            ],
+            [
+                'icon' => 'frontend/images/facebook.png',
+                'name' => 'Facebook (Share)',
+                'date' => date('d F'),
+                'point' => '+10'
+            ],
+            [
+                'icon' => 'frontend/images/email.png',
+                'name' => 'Sign Up (Email)',
+                'date' => date('d F'),
+                'point' => '+10'
+            ],
+            [
+                'icon' => 'frontend/images/signup.png',
+                'name' => 'Sign Up',
+                'date' => date('d F'),
+                'point' => '+5'
+            ],
+        ];
+        return view('profile.history', [
+            'socials' => $socials
+        ]);
     }
 
     public function postLogin(Request $request)
