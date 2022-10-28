@@ -122,36 +122,29 @@ body {
     z-index: -1;
 }
 
-.section__home2::before {
-    content: ' ';
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.8;
-    background-image: url("../images/bg/bg1.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    z-index: -1;
+.section__home2 {
+    background-color: rgb(164 1 40 / 80%)
 }
 
 .section__home2::after {
     content: ' ';
     position: absolute;
     left: 0;
-    top: 60%;
+    top: 70%;
     bottom: 0;
     width: 100%;
-    height: 100%;
     background-image: url("../images/bg/bg2.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    z-index: -1;
+    z-index: 1;
 }
 
-.section__home3::before {
+.section__home3 {
+    background-color: rgb(125 0 30);
+}
+
+/* .section__home3::before {
     content: ' ';
     position: absolute;
     left: 0;
@@ -162,7 +155,7 @@ body {
     background-repeat: no-repeat;
     background-position: bottom;
     z-index: -1;
-}
+} */
 
 .point__counter {
     display: flex;
@@ -199,10 +192,6 @@ body {
 
 .point__counter .point__unit {
     font-size: 1.5rem;
-}
-
-.section__home_carousel {
-    height: 300px;
 }
 
 /* Ornament */
