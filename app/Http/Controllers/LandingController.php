@@ -41,6 +41,11 @@ class LandingController extends Controller
         return view('profile.index');
     }
 
+    public function historyPoint()
+    {
+        return view('profile.history');
+    }
+
     public function postLogin(Request $request)
     {
         $request->validate(['phone' => 'required', 'password' => 'required']);

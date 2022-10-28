@@ -89,6 +89,15 @@ body {
     .section__content {
         flex-direction: column;
     }
+
+    .section__content > * {
+        flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+        margin-top: var(--bs-gutter-y);
+    }
 }
 
 .home__logo {
@@ -102,10 +111,9 @@ body {
     content: ' ';
     position: absolute;
     left: 0;
-    top: 50%;
+    top: 70%;
     bottom: 0;
     width: 100%;
-    height: 50%;
     opacity: 0.8;
     background-image: url("../images/bg/bg1.png");
     background-size: cover;
@@ -249,6 +257,23 @@ body {
     z-index: 1;
 }
 
+.goodtime_product {
+    top: 50vh;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.goodtime_product .ornament__img {
+    width: 400px;
+}
+
+@media screen and (max-width: 768px) {
+    .goodtime_product {
+        display: none;
+    }
+}
+
 /* Carousel */
 
 .carousel-inner .carousel-item.active,
@@ -263,7 +288,7 @@ body {
 
 /* Leaderboard */
 .leaderboard {
-    --gt-leaderboard-gold-bg: #ffe01e;
+    --gt-leaderboard-gold-bg: linear-gradient(57.35deg, #E8B363 6.86%, #E8BA6E 38.33%, #EFCC8F 51.33%, #E4B577 67.63%, #E39A3E 90.8%);
     --gt-leaderboard-silver-bg: #d70227;
     --gt-leaderboard-bronze-bg: #7d001e;
     --gt-leaderboard-regular-bg: #ffffff;
@@ -285,11 +310,10 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--gt-leaderboard-regular-bg);
+    background-color: rgb(255 255 255 / 50%);
     color: var(--gt-leaderboard-color-bg-light);
-    font-weight: 700;
-    border-radius: var(--bs-border-radius-xl);
-    padding: .75rem 1.25rem;
+    border-radius: var(--bs-border-radius-pill);
+    padding: .75rem;
 }
 
 .leaderboard .leaderboard__item:not(:last-child) {
@@ -297,38 +321,64 @@ body {
 }
 
 .leaderboard .leaderboard__regular {
-    background-color: var(--gt-leaderboard-regular-bg);
+    background: var(--gt-leaderboard-regular-bg);
     color: var(--gt-leaderboard-color-bg-light);
 }
 
 .leaderboard .leaderboard__gold {
-    background-color: var(--gt-leaderboard-gold-bg);
+    background: var(--gt-leaderboard-gold-bg);
     color: var(--gt-leaderboard-color-bg-light);
 }
 
 .leaderboard .leaderboard__silver {
-    background-color: var(--gt-leaderboard-silver-bg);
+    background: var(--gt-leaderboard-silver-bg);
     color: var(--gt-leaderboard-color-bg-dark);
 }
 
 .leaderboard .leaderboard__bronze {
-    background-color: var(--gt-leaderboard-bronze-bg);
+    background: var(--gt-leaderboard-bronze-bg);
     color: var(--gt-leaderboard-color-bg-dark);
 }
 
-.leaderboard__item .leaderboard__rank span:first-child {
+.leaderboard__rank .rank__icon,
+.leaderboard__rank .rank__name {
     display: inline-block;
+    margin: 0;
+}
+
+.rank__name span {
+    display: block;
+}
+
+.leaderboard__item .leaderboard__rank {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.leaderboard__item .leaderboard__rank > .rank__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     margin-right: 1rem;
     border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    border: 1px solid #ffffff;
+    width: 32px;
+    height: 32px;
+    background-color: rgb(255 255 255 / 40%);
     text-align: center;
 }
 
+.leaderboard__item .leaderboard__rank > .rank__icon img {
+    width: 24px;
+    height: 24px;
+}
+
 .leaderboard__item .leaderboard__point {
+    min-width: 64px;
     padding: .5rem .75rem;
-    border-radius: var(--bs-border-radius-lg);
+    text-align: center;
+    border-radius: var(--bs-border-radius-pill);
 }
 
 .leaderboard__gold .leaderboard__point,
