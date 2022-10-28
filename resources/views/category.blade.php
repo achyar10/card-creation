@@ -13,12 +13,12 @@
 
                 <form action="" method="get">
                     <div class="input-group mb-3">
+                        <input type="text" name="tags" class="form-control custom-form-control" placeholder="Cari.." aria-label="Cari.." value="{{ request()->tags }}">
                         <button type="submit" class="input-group-text" id="basic-addon1">
                             <span class="material-symbols-outlined">
                                 search
                             </span>
                         </button>
-                        <input type="text" name="tags" class="form-control custom-form-control" placeholder="Cari.." aria-label="Cari.." value="{{ request()->tags }}">
                     </div>
                 </form>
                 <div class="row">
