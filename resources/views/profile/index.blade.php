@@ -69,8 +69,8 @@
                                 <h4 class="leaderboard__title">Peringkat Saya</h4>
                                 <div class="leaderboard__item leaderboard__regular">
                                     <div class="leaderboard__rank">
-                                        <span>4</span>
-                                        <span>Zefry</span>
+                                        <span class="rank__icon">4</span>
+                                        <p class="rank__name">Zefry</p>
                                     </div>
                                     <div class="leaderboard__point">
                                         <span>55</span>
@@ -82,8 +82,8 @@
                                 <h4 class="leaderboard__title">Semua Peringkat</h4>
                                 <div class="leaderboard__item leaderboard__gold">
                                     <div class="leaderboard__rank">
-                                        <span>1</span>
-                                        <span>Asep</span>
+                                        <span class="rank__icon">1</span>
+                                        <span class="rank__name">Asep</span>
                                     </div>
                                     <div class="leaderboard__point">
                                         <span>1200</span>
@@ -91,8 +91,8 @@
                                 </div>
                                 <div class="leaderboard__item leaderboard__silver">
                                     <div class="leaderboard__rank">
-                                        <span>2</span>
-                                        <span>Tata</span>
+                                        <span class="rank__icon">2</span>
+                                        <span class="rank__name">Tata</span>
                                     </div>
                                     <div class="leaderboard__point">
                                         <span>1100</span>
@@ -100,8 +100,8 @@
                                 </div>
                                 <div class="leaderboard__item leaderboard__bronze">
                                     <div class="leaderboard__rank">
-                                        <span>3</span>
-                                        <span>Budi</span>
+                                        <span class="rank__icon">3</span>
+                                        <span class="rank__name">Budi</span>
                                     </div>
                                     <div class="leaderboard__point">
                                         <span>1000</span>
@@ -109,8 +109,8 @@
                                 </div>
                                 <div class="leaderboard__item leaderboard__regular">
                                     <div class="leaderboard__rank">
-                                        <span>4</span>
-                                        <span>Zefry</span>
+                                        <span class="rank__icon">4</span>
+                                        <span class="rank__name">Zefry</span>
                                     </div>
                                     <div class="leaderboard__point">
                                         <span>900</span>
