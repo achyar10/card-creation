@@ -324,9 +324,10 @@ body {
 /* Inputs */
 
 .input-group-text {
-    border-top-left-radius: 3rem;
-    border-bottom-left-radius: 3rem;
-    background-color: #e9ecef;
+    border-top-right-radius: 3rem;
+    border-bottom-right-radius: 3rem;
+    background-color: rgb(234 237 240 / 60%);
+    color: var(--bs-white);
     padding: 1rem 0.75rem;
     border: none;
 }
@@ -340,19 +341,21 @@ body {
     border-bottom-right-radius: 3rem;
     border: none;
     padding: 1rem 0.75rem;
-    background-color: #e9ecef;
-    ;
+    background-color: rgb(234 237 240 / 60%);
+    color: var(--bs-white);
+}
+
+.custom-form-control::placeholder {
+    color: var(--bs-white);
 }
 
 .input-group .custom-form-control {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
     border-top-right-radius: 3rem;
     border-bottom-right-radius: 3rem;
     border: none;
     padding: 1rem 0.75rem;
-    background-color: #e9ecef;
-    ;
+    background-color: rgb(234 237 240 / 60%);
+    color: var(--bs-white);
 }
 
 .chip {
