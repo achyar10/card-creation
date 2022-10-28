@@ -47,6 +47,8 @@ body {
     position: relative;
     min-height: 100vh;
     height: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-direction: column;
     color: var(--bs-white);
@@ -238,6 +240,83 @@ body {
 
 .carousel-item img {
     max-height: 608px;
+}
+
+/* Leaderboard */
+.leaderboard {
+    --gt-leaderboard-gold-bg: #ffe01e;
+    --gt-leaderboard-silver-bg: #d70227;
+    --gt-leaderboard-bronze-bg: #7d001e;
+    --gt-leaderboard-regular-bg: #ffffff;
+    --gt-leaderboard-color-bg-light: #000000;
+    --gt-leaderboard-color-bg-dark: #ffffff;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.leaderboard .leaderboard__title {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.leaderboard .leaderboard__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--gt-leaderboard-regular-bg);
+    color: var(--gt-leaderboard-color-bg-light);
+    font-weight: 700;
+    border-radius: var(--bs-border-radius-xl);
+    padding: .75rem 1.25rem;
+}
+
+.leaderboard .leaderboard__item:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.leaderboard .leaderboard__regular {
+    background-color: var(--gt-leaderboard-regular-bg);
+    color: var(--gt-leaderboard-color-bg-light);
+}
+
+.leaderboard .leaderboard__gold {
+    background-color: var(--gt-leaderboard-gold-bg);
+    color: var(--gt-leaderboard-color-bg-light);
+}
+
+.leaderboard .leaderboard__silver {
+    background-color: var(--gt-leaderboard-silver-bg);
+    color: var(--gt-leaderboard-color-bg-dark);
+}
+
+.leaderboard .leaderboard__bronze {
+    background-color: var(--gt-leaderboard-bronze-bg);
+    color: var(--gt-leaderboard-color-bg-dark);
+}
+
+.leaderboard__item .leaderboard__rank span:first-child {
+    display: inline-block;
+    margin-right: 1rem;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ffffff;
+    text-align: center;
+}
+
+.leaderboard__item .leaderboard__point {
+    padding: .5rem .75rem;
+    border-radius: var(--bs-border-radius-lg);
+}
+
+.leaderboard__gold .leaderboard__point,
+.leaderboard__silver .leaderboard__point,
+.leaderboard__bronze .leaderboard__point {
+    background-color: var(--gt-leaderboard-regular-bg);
+    color: var(--gt-leaderboard-color-bg-light);
 }
 
 /* Inputs */

@@ -38,7 +38,7 @@ class LandingController extends Controller
     {
         // $session = request()->session()->all();
         // if (isset($session['login_member'])) return redirect()->route('theme.category');
-        return view('profile.update');
+        return view('profile.index');
     }
 
     public function postLogin(Request $request)
