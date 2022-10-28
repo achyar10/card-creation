@@ -32,20 +32,23 @@
             <div class="col-md-6 mb-4 pt-4">
                 <div class="leaderboard mb-4">
                     <h4 class="leaderboard__title">Riwayat Poinmu</h4>
+
+                    @foreach ($socials as $social)
                     <div class="leaderboard__item">
                         <div class="leaderboard__rank">
                             <span class="rank__icon">
-                                <img src="{{ asset('frontend/images/twitter.png') }}">
+                                <img src="{{ asset($social['icon']) }}">
                             </span>
                             <p class="rank__name">
-                                <span class="text-white">Twitter (Share)</span>
-                                <span class="text-white">11 Oktober</span>
+                                <span class="text-white">{{ $social['name'] }}</span>
+                                <span class="text-white">{{ $social['date'] }}</span>
                             </p>
                         </div>
                         <div class="leaderboard__point btn-cust-yellow">
-                            <span class="fw-bold">+55</span>
+                            <span class="fw-bold">{{ $social['point'] }}</span>
                         </div>
                     </div>
+                    @endforeach
                 </div>
             </div>
         </div>
