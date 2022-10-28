@@ -355,6 +355,37 @@ body {
     ;
 }
 
+.chip {
+    --gt-chip-active-bg: linear-gradient(57.35deg, #E8B363 6.86%, #E8BA6E 38.33%, #EFCC8F 51.33%, #E4B577 67.63%, #E39A3E 90.8%);
+    --gt-chip-disabled-bg: #7d001e;
+    --gt-chip-bg: rgb(255 255 255 / 50%);
+    --gt-chip-color-bg-light: #000000;
+    --gt-chip-color-bg-dark: #ffffff;
+    display: inline-block;
+    background: var(--gt-chip-bg);
+    color: var(--gt-chip-color-bg-dark);
+    font-weight: 400;
+    border: 0;
+    border-radius: var(--bs-border-radius-pill);
+    padding: .75rem 1.25rem;
+    text-decoration: none;
+}
+
+.chip:hover {
+    color: var(--gt-yellow);
+}
+
+.chip.active {
+    background: var(--gt-chip-active-bg);
+    color: var(--gt-chip-color-bg-light);
+}
+
+.chip.disabled {
+    background: var(--gt-chip-disabled-bg);
+    color: var(--gt-chip-color-bg-dark);
+    opacity: 0.4;
+}
+
 /* Main Content */
 
 .content-wrapper {
