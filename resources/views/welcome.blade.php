@@ -40,7 +40,7 @@
                 <div class="col-12 mb-5">
                     <h3 class="w-50">Pilih Momen disini</h3>
                 </div>
-                <div class="col-12 section__home_carousel">
+                <div class="col-12">
                     <div class="gallery mt-5">
                         <div class="gallery-container">
                             <img class="gallery-item" src="{{ asset('frontend/images/cards/card_1.png') }}" />
