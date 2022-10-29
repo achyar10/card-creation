@@ -21,7 +21,7 @@
     <header class="header-wrapper">
         @include('navbar')
     </header>
-    <main class="main-wrapper chocochip">
+    <main class="main-wrapper">
 
         {{-- content --}}
         @yield('content')
