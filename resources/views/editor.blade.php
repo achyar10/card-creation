@@ -1,26 +1,27 @@
 @extends('layouts')
 @section('title', 'Editor')
 @section('content')
-    <style>
-        .main-wrapper.with-bg {
-            background-image: none !important;
-        }
-
-        .chocochip:before {
-            background-image: none !important;
-        }
-    </style>
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/pintura.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css') }}">
-    <!--<div class="main-content container">-->
-    <div data-card="1" data-id="1" id="image" data-image="{{ asset('/card/' . $row->image) }}" style="display: none;">
+    <div class="main-content">
+        <div class="section__bg">
+            <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
+        </div>
+
+        <section class="section section__home1 p-0">
+            <div class="section__content">
+                <div class="col-12">
+                    <div data-card="1" data-id="1" id="image" data-image="{{ asset('/card/' . $row->image) }}" style="display: none;"></div>
+                    <div class="my-editor"></div>
+                    <a href="#" id="preview" style="display: none"></a>
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="my-editor mb-2"></div>
-    <a href="#" id="preview" style="display: none"></a>
     <!--</div>-->
 
     <script type="module">
-        
+
         import { appendDefaultEditor } from '../frontend/vendor/pintura/pintura.js';
 
         const dataImg = document.querySelector('#image');
@@ -28,7 +29,7 @@
         let imageUrl = dataImg.getAttribute('data-image');
         let member_id = dataImg.getAttribute('data-id');
         let card_id = dataImg.getAttribute('data-card');
-        
+
         const pintura = appendDefaultEditor(".my-editor", {
             // The source image to load
             src: imageUrl,
@@ -42,7 +43,7 @@
             ],
 
             // This will set a square crop aspect ratio
-            imageCropAspectRatio: 1,
+            // imageCropAspectRatio: 1,
 
             // Stickers available to user
             stickers: [
