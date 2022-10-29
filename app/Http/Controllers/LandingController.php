@@ -24,7 +24,8 @@ class LandingController extends Controller
 
     public function index()
     {
-        return view('welcome');
+        $data['categories'] = $this->category->getCaro();
+        return view('welcome', $data);
     }
 
     public function login()
@@ -134,17 +135,18 @@ class LandingController extends Controller
         // $session = request()->session()->all();
         // if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['categories'] = $this->category->findAll();
+        $data['cards'] = $this->card->findAll();
         $categories = Category::where('is_active', true)->get();
         $tags = [];
-        foreach ($categories as $key) {
-            $pieces = json_decode($key->tags);
-            if (count((array)$pieces) > 1) {
-                for ($i = 0; $i < count((array)$pieces); $i++) {
-                    array_push($tags, $pieces[$i]->value);
-                }
-            }
-        }
-        $data['tags'] = $tags;
+        // foreach ($categories as $key) {
+        //     $pieces = json_decode($key->tags);
+        //     if (count((array)$pieces) > 1) {
+        //         for ($i = 0; $i < count((array)$pieces); $i++) {
+        //             array_push($tags, $pieces[$i]->value);
+        //         }
+        //     }
+        // }
+        $data['tags'] = $categories;
         return view('category', $data);
     }
 

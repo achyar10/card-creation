@@ -19,11 +19,16 @@ class CategoryService
         return Category::orderBy('id', 'desc')->paginate(10);
     }
 
+    public function getCaro()
+    {
+        return Category::where('is_active', true)->orderBy('id', 'desc')->paginate(5);
+    }
+
     public function findAll()
     {
         $query = Category::where('is_active', true)->orderBy('id', 'desc');
-        if (isset($this->req->tags)) {
-            $query->where('tags', 'like', '%' . $this->req->tags . '%');
+        if (isset($this->req->tag_name)) {
+            $query->where('tag_name', 'like', '%' . $this->req->tag_name . '%');
         }
         return $query->get();
     }

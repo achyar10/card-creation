@@ -43,59 +43,14 @@
                 <div class="col-12">
                     <div class="gallery mt-5">
                         <div class="gallery-container">
-                            <img class="gallery-item" src="{{ asset('frontend/images/cards/card_1.png') }}" />
-                            <img class="gallery-item" src="{{ asset('frontend/images/cards/card_2.png') }}" />
-                            <img class="gallery-item" src="{{ asset('frontend/images/cards/card_3.png') }}" />
-                            <img class="gallery-item" src="{{ asset('frontend/images/cards/card_4.png') }}" />
-                            <img class="gallery-item" src="{{ asset('frontend/images/cards/card_1.png') }}" />
+                            @foreach ($categories as $category)
+                                <img class="gallery-item" style="cursor: pointer" data-id="{{ $category->id }}"
+                                    src="{{ asset('category/' . $category->thumbnail) }}">
+                            @endforeach
                         </div>
                         <div class="gallery-controls"></div>
 
                     </div>
-                    {{-- <div id="homeCarousel" class="carousel home__carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="row carousel-item active">
-                                <div class="col-md-3 text-center">
-                                    <img src="{{ asset('frontend/images/cards/card_1.png') }}" class="d-inline-block"
-                                        alt="Card 1">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3 text-center">
-                                    <img src="{{ asset('frontend/images/cards/card_2.png') }}" class="d-inline-block"
-                                        alt="Card 1">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3 text-center">
-                                    <img src="{{ asset('frontend/images/cards/card_3.png') }}" class="d-inline-block"
-                                        alt="Card 1">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3 text-center">
-                                    <img src="{{ asset('frontend/images/cards/card_4.png') }}" class="d-inline-block"
-                                        alt="Card 1">
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="col-md-3 text-center">
-                                    <img src="{{ asset('frontend/images/cards/card_4.png') }}" class="d-inline-block"
-                                        alt="Card 1">
-                                </div>
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div> --}}
                 </div>
             </div>
         </section>
@@ -161,4 +116,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const imgs = document.querySelectorAll('.gallery-item');
+
+        for (const img of imgs) {
+            img.addEventListener("click", function() {
+                const id = img.getAttribute('data-id');
+                const redirect = `/theme?category_id=${id}`;
+                window.location.href = redirect;
+            });
+        }
+    </script>
 @endsection
