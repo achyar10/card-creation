@@ -97,3 +97,24 @@
     --bs-btn-active-bg: rgb(247, 247, 245);
     --bs-btn-active-border-color: rgb(247, 247, 245);
 }
+
+.btn-share {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-icon {
+    font-size: 1.5rem;
+}
+
+.share-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-share .share-label {
+    width: 100%;
+}
