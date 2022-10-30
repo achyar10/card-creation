@@ -40,7 +40,7 @@
                                 <span class="visually-hidden">point</span>
                             </span>
                         </a>
-                        <a href="{{ route('profile') }}" class="btn btn-cust-white mb-3 position-relative"> <img
+                        <a href="{{ route('facebook.login') }}" class="btn btn-cust-white mb-3 position-relative"> <img
                                 class="img-fluid social-icon" src="{{ asset('frontend/images/facebook.png') }}">
                             &nbsp;&nbsp;Facebook
                             <span

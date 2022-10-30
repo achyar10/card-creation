@@ -21,21 +21,27 @@
                                     <thead class="bg-light">
                                         <tr>
                                             <th>No</th>
+                                            <th></th>
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>Telepon</th>
+                                            <th>Sign Up Via</th>
+                                            <th>Point</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($rows as $row)
-                                            <tr>
+                                            <tr class="align-middle">
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $row->name }}</td>
+                                                <td><img src="{{ $row->photo }}" class="rounded" alt=""></td>
+                                                <td>{{ $row->fullname }}</td>
                                                 <td>{{ $row->email }}</td>
                                                 <td>{{ $row->phone }}</td>
+                                                <td>{{ $row->oauth_from }}</td>
+                                                <td>{{ $row->point }}</td>
                                                 <td>
-                                                    
+
                                                 </td>
                                             </tr>
                                         @endforeach
