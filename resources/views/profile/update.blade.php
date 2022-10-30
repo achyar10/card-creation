@@ -17,8 +17,9 @@
                     </p>
                     <div class="row">
                         <div class="col-md-4 mx-auto">
-                            <form action="{{ route('theme.category') }}" method="GET">
+                            <form action="{{ route('profile.update') }}" method="post">
                                 @csrf
+                                @method('PUT')
                                 @error('fullname')
                                     <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
                                         {{ $message }}
@@ -34,7 +35,9 @@
                                     </div>
                                 @enderror
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="basic-addon1">
+                                    <span class="input-group-text"
+                                        style="border-top-left-radius: 3rem; border-bottom-left-radius: 3rem;"
+                                        id="basic-addon1">
                                         <span class="material-symbols-outlined">
                                             person
                                         </span><span class="text-danger fs-6">*</span>
@@ -51,7 +54,9 @@
                                 </div>
 
                                 <div class="input-group mb-3">
-                                    <span class="input-group-text" id="basic-addon1">
+                                    <span class="input-group-text"
+                                        style="border-top-left-radius: 3rem; border-bottom-left-radius: 3rem;"
+                                        id="basic-addon1">
                                         <span class="material-symbols-outlined">
                                             phone
                                         </span><span class="text-danger fs-6">*</span>

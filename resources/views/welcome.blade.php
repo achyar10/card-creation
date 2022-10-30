@@ -1,15 +1,19 @@
 @extends('layouts')
 @section('title', 'Home')
 @section('content')
-    <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" tabindex="0">
+    <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" tabindex="0">
         <div class="section__bg">
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Good time background" />
         </div>
         <div class="section__float_bg">
-            <img class="section__img chocochip chocochip1" src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip1"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
             <img class="section__img chocochip chocochip2" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
-            <img class="section__img chocochip chocochip3" src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
-            <img class="section__img chocochip chocochip4" src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip3"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip4"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
             <img class="section__img chocochip chocochip5" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
         </div>
         <section class="section section__home1" id="scrollspySection1">
@@ -71,56 +75,22 @@
                         src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                     <h3 class="my-4">Kumpulin Poin Reward Yuk!</h3>
                     <div class="point__counter mb-4">
-                        <div class="point__digit_wrapper">
-                            <span class="point__digit">6</span>
-                        </div>
-                        <div class="point__digit_wrapper">
-                            <span class="point__digit">5</span>
-                        </div>
-                        <div class="point__digit_wrapper">
-                            <span class="point__digit">8</span>
-                        </div>
+                        @foreach ($points as $point)
+                            <div class="point__digit_wrapper">
+                                <span class="point__digit">{{ $point }}</span>
+                            </div>
+                        @endforeach
                         <span class="point__unit">Poin</span>
                     </div>
                     <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi peserta
                         dengan
                         poin terbanyak.</p>
                     <div class="w-100">
-                        <a class="btn btn-cust-yellow" href="#">Ayo buat kartumu sekarang!</a>
+                        <a class="btn btn-cust-yellow" href="{{ route('theme.category') }}">Ayo buat kartumu sekarang!</a>
                     </div>
                 </div>
             </div>
         </section>
-    </div>
-
-    <div class="modal fade gt-modal" id="rulesModal" aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog gt-modal-dialog">
-            <div class="modal-content gt-modal-content">
-                <div class="modal-header gt-modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body gt-modal-body">
-                    <div class="gt-video text-center">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen></iframe>
-                    </div>
-                    <h4 class="my-4">Aturan Main</h4>
-                    <ol class="lh-lg mb-4">
-                        <li>Pilih kategori kartu ucapan yang cocok denganmu.</li>
-                        <li>Pilih template kartu ucapan yang cocok denganmu.</li>
-                        <li>Tambahkan kreasimu dengan menuliskan kata-kata mutiara atau upload photo/gambar yang kamu
-                            inginkan.</li>
-                        <li>Share ke orang tersayang, teman-teman, atau ke sosmedmu.</li>
-                        <li>Dapatkan kesempatan memenangkan undian berhadiah menarik.</li>
-                    </ol>
-                    <div class="w-100">
-                        <button class="btn btn-cust-yellow" data-bs-dismiss="modal">Ayo buat kartumu sekarang!</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 
     <script>

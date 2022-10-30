@@ -10,6 +10,7 @@ use App\Services\DisclaimerService;
 use App\Services\FaqService;
 use App\Services\MemberService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LandingController extends Controller
 {
@@ -24,6 +25,9 @@ class LandingController extends Controller
 
     public function index()
     {
+        $session = auth()->guard('members')->user();
+        $point = $session ? $session->point : 0;
+        $data['points'] = $this->showPoint($point);
         $data['categories'] = $this->category->getCaro();
         return view('welcome', $data);
     }
@@ -37,16 +41,27 @@ class LandingController extends Controller
 
     public function profile()
     {
-        // $session = request()->session()->all();
-        // if (isset($session['login_member'])) return redirect()->route('theme.category');
-        return view('profile.index');
+        $session = auth()->guard('members')->user();
+        if (!isset($session)) return redirect()->route('signIn');
+        $data['member'] = $session;
+        $data['points'] = $this->showPoint($session->point);
+        return view('profile.index', $data);
     }
 
     public function profileUpdate()
     {
-        // $session = request()->session()->all();
-        // if (isset($session['login_member'])) return redirect()->route('theme.category');
+        $session = auth()->guard('members')->user();
+        if (!isset($session)) return redirect()->route('signIn');
         return view('profile.update');
+    }
+
+    public function profileUpdatePost()
+    {
+        $session = auth()->guard('members')->user();
+        if (!isset($session)) return redirect()->route('signIn');
+
+        $this->member->update($session->id);
+        return redirect()->route('profile');
     }
 
     public function historyPoint()
@@ -112,10 +127,10 @@ class LandingController extends Controller
         return redirect()->route('signIn')->with('error', 'No Handphone atau Password salah!');
     }
 
-    public function logout(Request $request)
+    public function logout()
     {
-        $request->session()->forget('login_member');
-        return redirect()->route('signIn');
+        Auth::guard('members')->logout();
+        return redirect()->route('home');
     }
 
     public function register()
@@ -192,5 +207,15 @@ class LandingController extends Controller
         $data = $this->member->create();
         $request->session()->put('login_member', $data);
         return redirect()->route('theme.category')->with('success', 'Data berhasil ditambah');
+    }
+
+    private function showPoint($point)
+    {
+        $digit = str_pad($point, 3, '0', STR_PAD_LEFT);
+        $points = [];
+        for ($i = 0; $i < strlen($digit); $i++) {
+            array_push($points, $digit[$i]);
+        }
+        return $points;
     }
 }

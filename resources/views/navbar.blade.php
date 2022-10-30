@@ -21,7 +21,8 @@
                         href="/#scrollspySection2">Moment</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/rules') }}">Aturan Main</a>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#rulesModal">Aturan
+                        Main</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('faq') ? 'active' : '' }}" href="{{ url('/faq') }}">FAQ</a>
@@ -32,7 +33,22 @@
                 </li>
             </ul>
             <div class="ms-4">
-                <a href="/login" class="btn btn-cust-yellow">Login | Daftar</a>
+                @if (!auth()->guard('members')->user())
+                    <a href="/login" class="btn btn-cust-yellow">Login | Daftar</a>
+                @else
+                    <a href="{{ route('profile') }}" class="text-decoration-none">
+                        <div class="member-point">
+                            <img class="point-icon rounded-circle p-1"
+                                src="{{ asset('frontend/images/decorations/cookie.png') }}" alt="point icon"
+                                width="36" height="36">
+                            <div class="point-wrapper">
+                                <span class="point">{{ auth()->guard('members')->user()->point }} Poin</span>
+                                <img class="profile-icon rounded-circle"
+                                    src="{{ auth()->guard('members')->user()->photo }}" alt="point icon">
+                            </div>
+                        </div>
+                    </a>
+                @endif
             </div>
         </div>
     </div>

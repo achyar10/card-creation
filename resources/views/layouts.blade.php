@@ -30,6 +30,38 @@
     <footer class="footer-wrapper">
         @include('footer')
     </footer>
+
+    {{-- Aturan Main --}}
+    <div class="modal fade gt-modal" id="rulesModal" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog gt-modal-dialog">
+            <div class="modal-content gt-modal-content">
+                <div class="modal-header gt-modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body gt-modal-body">
+                    <div class="gt-video text-center">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <h4 class="my-4">Aturan Main</h4>
+                    <ol class="lh-lg mb-4">
+                        <li>Pilih kategori kartu ucapan yang cocok denganmu.</li>
+                        <li>Pilih template kartu ucapan yang cocok denganmu.</li>
+                        <li>Tambahkan kreasimu dengan menuliskan kata-kata mutiara atau upload photo/gambar yang kamu
+                            inginkan.</li>
+                        <li>Share ke orang tersayang, teman-teman, atau ke sosmedmu.</li>
+                        <li>Dapatkan kesempatan memenangkan undian berhadiah menarik.</li>
+                    </ol>
+                    <div class="w-100">
+                        <button class="btn btn-cust-yellow" data-bs-dismiss="modal">Ayo buat kartumu sekarang!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('frontend/js/custom.js') }}"></script>
     <script src="{{ asset('frontend/js/carousel.js') }}"></script>

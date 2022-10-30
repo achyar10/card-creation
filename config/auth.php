@@ -43,7 +43,6 @@ return [
         'members' => [
             'driver' => 'session',
             'provider' => 'members',
-            'redirectTo' => 'theme.category'
         ],
     ],
 
