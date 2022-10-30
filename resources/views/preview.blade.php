@@ -1,7 +1,11 @@
 @extends('layouts')
 @section('title', 'Kamu Mendapatkan Ucapan')
+@section('description', 'SELAMAT: ada 1 kartu ucapan special untukmu, yuk lihat ucapannya dan bikin versi kamu disini ya
+    👉 https://arnottsgiftingmoments.com/ ada HADIAH SPECIAL dari GOOD TIME')
 @section('og:title', 'Kamu Mendapatkan Ucapan')
 @section('og:image', $row->url_path)
+@section('og:image:width', '1280')
+@section('og:image:height', '720')
 @section('content')
     <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
         data-bs-smooth-scroll="true" tabindex="0">
