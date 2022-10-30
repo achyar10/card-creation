@@ -5,8 +5,18 @@
         <div class="section__bg">
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
         </div>
+        <div class="section__float_bg">
+            <img class="section__img chocochip chocochip1" src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip2" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip3"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip4"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip5" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+        </div>
         <section class="section">
             <div class="section__content container">
+
                 <div class="col-12 text-center content-header mb-4">
                     <img height="150px" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                     <h5 class="my-3">Momen</h5>

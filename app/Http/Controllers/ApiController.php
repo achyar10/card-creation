@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Creation;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Str;
 
 class ApiController extends Controller
 {
@@ -21,10 +22,17 @@ class ApiController extends Controller
         }
         $save = Creation::create([
             'url_path' => $path,
+            'uuid' => Str::random(32),
             'member_id' => $request->member_id,
             'card_id' => $request->card_id,
         ]);
         return response()->json($save, 200);
+    }
+
+    public function updateCreation(Request $request)
+    {
+        Creation::where('id', $request->id)->update(['member_id' => $request->member_id]);
+        return response()->json('OK', 200);
     }
 
     public function upload($img, $path, $ext)

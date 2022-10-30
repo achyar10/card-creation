@@ -16,7 +16,9 @@
         <section class="section section__home1 p-0">
             <div class="section__content">
                 <div class="col-12">
-                    <div data-card="1" data-id="1" id="image" data-image="{{ asset('/card/' . $row->image) }}" style="display: none;"></div>
+                    <div data-card="{{ $row->id }}"
+                        data-id="{{ auth()->guard('members')->user()? auth()->guard('members')->user()->id: null }}"
+                        id="image" data-image="{{ asset('/card/' . $row->image) }}" style="display: none;"></div>
                     <div class="my-editor"></div>
                     <a href="#" id="preview" style="display: none"></a>
                 </div>

@@ -43,6 +43,7 @@ Route::get('/theme', [LandingController::class, 'category'])->name('theme.catego
 Route::get('/template/{id}', [LandingController::class, 'template'])->name('theme.template');
 Route::get('/editor/{id}', [LandingController::class, 'editor'])->name('theme.editor');
 Route::get('/share/{id}', [LandingController::class, 'share'])->name('theme.share');
+Route::get('/preview/{uuid}', [LandingController::class, 'preview'])->name('theme.preview');
 
 Route::middleware(['guest'])->controller(AuthController::class)->group(function () {
     Route::get('/auth/login', 'index')->name('login');

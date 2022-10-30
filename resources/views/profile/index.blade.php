@@ -128,5 +128,26 @@
                     'leaderboard__point bg-light'
             }
         }
+
+        const recentImage = localStorage.getItem("recentImage");
+        if (recentImage) {
+            setTimeout(() => {
+                fetch('/api/creation', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            id: recentImage,
+                            member_id: myId.value,
+                        }),
+                    })
+                    .then(response => response.json())
+                    .then(res => {
+                        localStorage.removeItem("recentImage");
+                        return window.location.href = '/share/' + recentImage;
+                    })
+            }, 2000);
+        }
     </script>
 @endsection

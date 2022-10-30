@@ -203,19 +203,20 @@ class LandingController extends Controller
 
     public function editor($id)
     {
-        // $session = request()->session()->all();
-        // if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['row'] = $this->card->getById($id);
-        // $data['member_id'] = $session['login_member']->id;
         return view('editor', $data);
     }
 
     public function share($id)
     {
-        // $session = request()->session()->all();
-        // if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['row'] = Creation::where('id', $id)->first();
         return view('share', $data);
+    }
+
+    public function preview($uuid)
+    {
+        $data['row'] = Creation::where('uuid', $uuid)->first();
+        return view('preview', $data);
     }
 
     public function createMember(Request $request)
@@ -229,6 +230,8 @@ class LandingController extends Controller
         $request->session()->put('login_member', $data);
         return redirect()->route('theme.category')->with('success', 'Data berhasil ditambah');
     }
+
+
 
     private function showPoint($point)
     {

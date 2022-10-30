@@ -20,3 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/upload', [ApiController::class, 'uploadFile']);
+Route::put('/creation', [ApiController::class, 'updateCreation']);

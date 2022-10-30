@@ -4,7 +4,16 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@yield('title') | {{ config('app.name') }}</title>
+    <meta name="description" content="@yield('description')" />
+    <meta property="og:title" content="@yield('og:title')" />
+    <meta property="og:url" content="{{ url()->full() }}" />
+    <meta property="og:image" content="@yield('og:image')" />
+    <meta property="og:type" content="greetings" />
+    <meta property="og:locale" content="id_ID" />
+
+    <title>@yield('title')</title>
+
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
