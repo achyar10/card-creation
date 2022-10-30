@@ -26,10 +26,11 @@
                     <input type="hidden"
                         value="{{ auth()->guard('members')->user()? auth()->guard('members')->user()->id: null }}"
                         id="myId">
-                    <h4 class="mb-3">Hore! Desainmu sudah selesai!</h4>
+                    <h4 class="mb-3" id="url" data-url="{{ url('preview/' . $row->uuid) }}">Hore! Desainmu sudah
+                        selesai!</h4>
                     <p class="mb-5">Ayo bagikan dengan keluarga dan orang terdekatmu</p>
                     <div class="d-flex flex-column align-items-center w-100 text-center">
-                        <button
+                        <button onclick="shareWa()"
                             class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <img width="24px" height="24px" src="{{ asset('frontend/images/whatsapp.png') }}">
@@ -58,6 +59,8 @@
                             </div>
                             <span class="share-label">Kembali</span>
                         </a>
+                        <p><button>Share MDN!</button></p>
+                        <p class="result"></p>
                     </div>
                 </div>
             </div>
@@ -67,10 +70,23 @@
     <script>
         const myId = document.querySelector('#myId').value;
         const image = document.querySelector('#image');
+        const url = document.querySelector('#url').getAttribute('data-url');
+        const messageLogin = 'Anda belum melakukan login, silakan login terlebih daulu!';
+
+        function shareWa() {
+            if (!myId) {
+                alert(messageLogin);
+                localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                return window.location.href = '/login';
+            }
+            return window.location.href = `whatsapp://send?text=${url} SELAMAT: ada 1 kartu ucapan special untukmu, yuk lihat ucapannya dan bikin versi kamu disini ya
+    👉 https://arnottsgiftingmoments.com/ ada HADIAH SPECIAL dari GOOD TIME&phone=`;
+
+        }
 
         function saveImage() {
             if (!myId) {
-                alert('Anda belum melakukan login, silakan login terlebih daulu!');
+                alert(messageLogin);
                 localStorage.setItem("recentImage", image.getAttribute('data-id'));
                 return window.location.href = '/login';
             }
