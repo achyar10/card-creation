@@ -607,6 +607,19 @@ body {
     margin-right: -50%;
 }
 
+.socials {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.socials .social-icon {
+    margin: 0 1rem;
+}
+
 .social-icon {
     max-width: 24px;
 }

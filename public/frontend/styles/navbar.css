@@ -92,3 +92,9 @@
         display: flex;
     }
 }
+
+@media screen and (max-width: 991px) {
+    .footer-navbar .socials {
+        flex-grow: 1;
+    }
+}

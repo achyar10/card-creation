@@ -7,14 +7,14 @@
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
         </div>
         <div class="section__float_bg">
-            <img class="section__img chocochip chocochip1"
+            <img class="section__img chocochip chocochip1 animate__animated animate__infinite"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
-            <img class="section__img chocochip chocochip2" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
-            <img class="section__img chocochip chocochip3"
+            <img class="section__img chocochip chocochip2 animate__animated animate__infinite" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip3 animate__animated animate__infinite"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
-            <img class="section__img chocochip chocochip4"
+            <img class="section__img chocochip chocochip4 animate__animated animate__infinite"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
-            <img class="section__img chocochip chocochip5" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip5 animate__animated animate__infinite" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
         </div>
         <section class="section section__home1" id="">
             <div class="section__ornament">
@@ -24,13 +24,13 @@
             </div>
             <div class="section__content container">
                 <div class="col-12 text-center">
-                    <img class="" height="200px" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                    <img class="home__logo animate__animated" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                     <h4 class="mb-4">Sebelum mulai, login dulu yuk!</h4>
                     <p class="fs-6 fw-light mb-4">Silahkan memilih akun yang kamu miliki<br>
                         untuk dapat masuk
                         kedalam aplikasi.
                     </p>
-                    <div class="d-grid gap-2 col-3 mx-auto">
+                    <div class="cta-button">
                         <a href="{{ route('google.login') }}" class="btn btn-cust-white mb-3 position-relative"> <img
                                 class="img-fluid social-icon" src="{{ asset('frontend/images/google.png') }}">
                             &nbsp;&nbsp;Email
