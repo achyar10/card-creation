@@ -6,18 +6,32 @@
         <div class="section__bg">
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
         </div>
-
-        <section class="section" id="">
-            <div class="container">
-                <div class="text-center">
+        <div class="section__float_bg">
+            <img class="section__img chocochip chocochip1"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip2" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip3"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip4"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip5" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+        </div>
+        <section class="section section__home1" id="">
+            <div class="section__ornament">
+                <div class="ornament__wrapper goodtime_product">
+                    <img class="ornament__img" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
+                </div>
+            </div>
+            <div class="section__content container">
+                <div class="col-12 text-center">
                     <img class="" height="200px" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                     <h4 class="mb-4">Sebelum mulai, login dulu yuk!</h4>
                     <p class="fs-6 fw-light mb-4">Silahkan memilih akun yang kamu miliki<br>
                         untuk dapat masuk
                         kedalam aplikasi.
                     </p>
-                    <div class="d-grid gap-2 col-md-4 col-xs-3 mx-auto">
-                        <a href="{{ route('profile') }}" class="btn btn-cust-white mb-3 position-relative"> <img
+                    <div class="d-grid gap-2 col-3 mx-auto">
+                        <a href="{{ route('google.login') }}" class="btn btn-cust-white mb-3 position-relative"> <img
                                 class="img-fluid social-icon" src="{{ asset('frontend/images/google.png') }}">
                             &nbsp;&nbsp;Email
                             <span

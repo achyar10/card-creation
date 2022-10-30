@@ -36,6 +36,8 @@ Route::post('/register', [LandingController::class, 'createMember'])->name('reg'
 Route::get('/faq', [LandingController::class, 'faq'])->name('faq');
 Route::get('/disclaimer', [LandingController::class, 'disclaimer'])->name('disclaimer');
 Route::get('/profile', [LandingController::class, 'profile'])->name('profile');
+Route::get('/profile/update', [LandingController::class, 'profileUpdate'])->name('profile.update');
+Route::put('/profile/update', [LandingController::class, 'profileUpdatePost'])->name('profile.update');
 Route::get('/history', [LandingController::class, 'historyPoint'])->name('history');
 Route::get('/theme', [LandingController::class, 'category'])->name('theme.category');
 Route::get('/template/{id}', [LandingController::class, 'template'])->name('theme.template');

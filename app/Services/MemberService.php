@@ -45,11 +45,8 @@ class MemberService
     public function update($id)
     {
         $data = Member::find($id);
-        $data->name = $this->req->name;
-        $data->email = $this->req->email;
+        $data->fullname = $this->req->fullname;
         $data->phone = $this->req->phone;
-        $data->photo = $this->req->photo;
-        $data->oauth_id = $this->req->oauth_id;
         $data->save();
         return $data;
     }
