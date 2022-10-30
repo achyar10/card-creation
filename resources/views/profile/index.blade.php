@@ -73,55 +73,35 @@
                             <div class="card-body">
                                 <div class="leaderboard mb-4">
                                     <h4 class="leaderboard__title">Peringkat Saya</h4>
-                                    <div class="leaderboard__item leaderboard__regular">
+                                    <div class="leaderboard__item leaderboard__regular" id="leadMyRank">
                                         <div class="leaderboard__rank">
-                                            <span class="rank__icon">4</span>
-                                            <p class="rank__name">Zefry</p>
+                                            <input type="hidden" id="myId"
+                                                value="{{ auth()->guard('members')->user()->id }}">
+                                            <span class="rank__icon" id="rankMe">0</span>
+                                            <p class="rank__name">{{ auth()->guard('members')->user()->fullname }}</p>
                                         </div>
-                                        <div class="leaderboard__point">
-                                            <span>55</span>
+                                        <div class="leaderboard__point" id="leadMyPoint">
+                                            <span>{{ auth()->guard('members')->user()->point }}</span>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="leaderboard">
                                     <h4 class="leaderboard__title">Semua Peringkat</h4>
-                                    <div class="leaderboard__item leaderboard__gold">
-                                        <div class="leaderboard__rank">
-                                            <span class="rank__icon">1</span>
-                                            <span class="rank__name">Asep</span>
-                                        </div>
-                                        <div class="leaderboard__point">
-                                            <span>1200</span>
-                                        </div>
-                                    </div>
-                                    <div class="leaderboard__item leaderboard__silver">
-                                        <div class="leaderboard__rank">
-                                            <span class="rank__icon">2</span>
-                                            <span class="rank__name">Tata</span>
-                                        </div>
-                                        <div class="leaderboard__point">
-                                            <span>1100</span>
-                                        </div>
-                                    </div>
-                                    <div class="leaderboard__item leaderboard__bronze">
-                                        <div class="leaderboard__rank">
-                                            <span class="rank__icon">3</span>
-                                            <span class="rank__name">Budi</span>
-                                        </div>
-                                        <div class="leaderboard__point">
-                                            <span>1000</span>
-                                        </div>
-                                    </div>
-                                    <div class="leaderboard__item leaderboard__regular">
-                                        <div class="leaderboard__rank">
-                                            <span class="rank__icon">4</span>
-                                            <span class="rank__name">Zefry</span>
-                                        </div>
-                                        <div class="leaderboard__point">
-                                            <span>900</span>
-                                        </div>
-                                    </div>
+                                    @foreach ($leaderboards as $leaderboard)
+                                        @if ($leaderboard->point > 0)
+                                            <div class="leads leaderboard__item {{ $loop->iteration == 1 ? 'leaderboard__gold' : ($loop->iteration == 2 ? 'leaderboard__silver' : ($loop->iteration == 3 ? 'leaderboard__bronze' : 'leaderboard__regular')) }}"
+                                                data-id="{{ $leaderboard->id }}" data-rank="{{ $loop->iteration }}">
+                                                <div class="leaderboard__rank">
+                                                    <span class="rank__icon">{{ $loop->iteration }}</span>
+                                                    <span class="rank__name">{{ $leaderboard->fullname }}</span>
+                                                </div>
+                                                <div
+                                                    class="leaderboard__point {{ $loop->iteration == 1 ? 'bg-light bg-opacity-25' : 'bg-light' }}">
+                                                    <span>{{ $leaderboard->point }}</span>
+                                                </div>
+                                            </div>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -129,7 +109,24 @@
                 </div>
             </div>
         </section>
-
-
     </div>
+    <script>
+        const leadMyRank = document.querySelector('#leadMyRank');
+        const leadMyPoint = document.querySelector('#leadMyPoint');
+        const myId = document.querySelector('#myId');
+        const rankMe = document.querySelector('#rankMe');
+        const leads = document.querySelectorAll('.leads');
+
+        for (const lead of leads) {
+            const id = lead.getAttribute('data-id');
+            const rank = lead.getAttribute('data-rank');
+            if (myId.value == id) {
+                rankMe.textContent = rank;
+                leadMyRank.classList.add(rank == 1 ? 'leaderboard__gold' : (rank == 2 ? 'leaderboard__silver' : (rank == 3 ?
+                    'leaderboard__bronze' : 'leaderboard__regular')));
+                leadMyPoint.className = rank == 1 ? 'leaderboard__point bg-light bg-opacity-25' :
+                    'leaderboard__point bg-light'
+            }
+        }
+    </script>
 @endsection

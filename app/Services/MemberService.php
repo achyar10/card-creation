@@ -24,6 +24,11 @@ class MemberService
         return Member::orderBy('name', 'asc')->get();
     }
 
+    public function leaderboard()
+    {
+        return Member::select(['id', 'fullname', 'point'])->orderBy('point', 'desc')->get();
+    }
+
     public function getById($id)
     {
         return Member::find($id);

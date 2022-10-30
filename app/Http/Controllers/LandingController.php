@@ -47,6 +47,9 @@ class LandingController extends Controller
         if (!isset($session)) return redirect()->route('signIn');
         $data['member'] = $session;
         $data['points'] = $this->showPoint($session->point);
+
+        $data['leaderboards'] = $this->member->leaderboard();
+        // return $members;
         return view('profile.index', $data);
     }
 

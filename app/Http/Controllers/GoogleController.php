@@ -28,8 +28,11 @@ class GoogleController extends Controller
         $findMember = Member::where('oauth_id', $user->getId())->first();
 
         if ($findMember) {
-            $request->session()->put('login_member', $findMember);
             Auth::guard('members')->login($findMember);
+            Member::where('id', $findMember->id)->update([
+                'photo' => $user->getAvatar(),
+                'name' => $user->getName(),
+            ]);
             if (empty($findMember->fullname) && empty($findMember->phone)) {
                 return redirect()->intended(route('profile.update'));
             }
