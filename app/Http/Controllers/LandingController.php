@@ -87,7 +87,7 @@ class LandingController extends Controller
         $socials = [
             [
                 'icon' => 'frontend/images/whatsapp.png',
-                'name' => 'WhatsApp (Share)',
+                'name' => 'Share (Whatsapp)',
             ],
             [
                 'icon' => 'frontend/images/email.png',
@@ -95,15 +95,15 @@ class LandingController extends Controller
             ],
             [
                 'icon' => 'frontend/images/instagram.png',
-                'name' => 'Instagram (Share)',
+                'name' => 'Share (Instagram)',
             ],
             [
                 'icon' => 'frontend/images/twitter.png',
-                'name' => 'Twitter (Share)',
+                'name' => 'Share (Twitter)',
             ],
             [
                 'icon' => 'frontend/images/facebook.png',
-                'name' => 'Facebook (Share)',
+                'name' => 'Share (Facebook)',
             ],
             [
                 'icon' => 'frontend/images/email.png',

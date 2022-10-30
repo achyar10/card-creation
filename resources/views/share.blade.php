@@ -37,12 +37,33 @@
                             </div>
                             <span class="share-label">WhatsApp</span>
                         </button>
-                        <button onclick="share()"
+                        <button onclick="share('Share (Facebook)')"
                             class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
-                                <i class="bx bx-share-alt"></i>
+                                <img width="24px" height="24px" src="{{ asset('frontend/images/facebook.png') }}">
                             </div>
-                            <span class="share-label">Share</span>
+                            <span class="share-label">Facebook</span>
+                        </button>
+                        <button onclick="share('Share (Instagram)')"
+                            class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
+                            <div class="share-icon">
+                                <img width="24px" height="24px" src="{{ asset('frontend/images/instagram.png') }}">
+                            </div>
+                            <span class="share-label">Instagram</span>
+                        </button>
+                        <button onclick="share('Share (Email)')"
+                            class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
+                            <div class="share-icon">
+                                <img width="24px" height="24px" src="{{ asset('frontend/images/email.png') }}">
+                            </div>
+                            <span class="share-label">Email</span>
+                        </button>
+                        <button onclick="share('Share (Twitter)')"
+                            class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
+                            <div class="share-icon">
+                                <img width="24px" height="24px" src="{{ asset('frontend/images/twitter.png') }}">
+                            </div>
+                            <span class="share-label">Twitter</span>
                         </button>
                         <button onclick="saveImage()"
                             class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
@@ -59,8 +80,6 @@
                             </div>
                             <span class="share-label">Kembali</span>
                         </a>
-                        <p><button>Share MDN!</button></p>
-                        <p class="result"></p>
                     </div>
                 </div>
             </div>
@@ -72,6 +91,8 @@
         const image = document.querySelector('#image');
         const url = document.querySelector('#url').getAttribute('data-url');
         const messageLogin = 'Anda belum melakukan login, silakan login terlebih daulu!';
+        const messageDesc = `SELAMAT: ada 1 kartu ucapan special untukmu, yuk lihat ucapannya dan bikin versi kamu disini ya
+    👉 https://arnottsgiftingmoments.com/ ada HADIAH SPECIAL dari GOOD TIME`
 
         function shareWa() {
             if (!myId) {
@@ -79,8 +100,10 @@
                 localStorage.setItem("recentImage", image.getAttribute('data-id'));
                 return window.location.href = '/login';
             }
-            return window.location.href = `whatsapp://send?text=${url} SELAMAT: ada 1 kartu ucapan special untukmu, yuk lihat ucapannya dan bikin versi kamu disini ya
-    👉 https://arnottsgiftingmoments.com/ ada HADIAH SPECIAL dari GOOD TIME&phone=`;
+            this.point('Share (Whatsapp)')
+                .then(() => {})
+                .catch(err => console.log(err))
+            return window.location.href = `whatsapp://send?text=${url} ${messageDesc}&phone=`;
 
         }
 
@@ -96,7 +119,7 @@
             a.click()
         }
 
-        async function share() {
+        async function share(via) {
             try {
                 let image = document.getElementById('image').src
                 const blob = await (await fetch(image)).blob();
@@ -104,16 +127,35 @@
                     type: blob.type
                 });
                 await navigator.share({
-                    title: 'Hello',
-                    text: 'Check out this image!',
+                    title: 'Kamu Mendapatkan Ucapan',
+                    text: messageDesc,
                     files: [files],
                 });
                 console.log('shared successfully');
+                await point(via);
                 return true;
             } catch (err) {
                 console.log(err)
                 alert(`Your system doesn't support sharing these files.`)
             }
+        }
+
+        function point(via) {
+            return new Promise((reject, resolve) => {
+                fetch('/api/point', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            via,
+                            member_id: myId,
+                        }),
+                    })
+                    .then(response => response.json())
+                    .then(rs => resolve('OK'))
+                    .catch(err => reject('Internal server error'))
+            });
         }
     </script>
 @endsection
