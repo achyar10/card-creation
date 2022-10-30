@@ -118,3 +118,30 @@
 .btn-share .share-label {
     width: 100%;
 }
+
+.cta-button {
+    display: flex;
+    flex-direction: column;
+}
+
+.cta-button .btn {
+    width: 250px;
+}
+
+@media screen and (min-width: 768px) {
+    .cta-button {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cta-button {
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .cta-button .btn {
+        width: 100%;
+    }
+}
