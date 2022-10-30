@@ -42,6 +42,13 @@ class LandingController extends Controller
         return view('profile.index');
     }
 
+    public function profileUpdate()
+    {
+        // $session = request()->session()->all();
+        // if (isset($session['login_member'])) return redirect()->route('theme.category');
+        return view('profile.update');
+    }
+
     public function historyPoint()
     {
         $socials = [

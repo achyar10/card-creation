@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Member;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
-use Illuminate\Support\Facades\Hash;
 
 class GoogleController extends Controller
 {
@@ -19,10 +18,14 @@ class GoogleController extends Controller
         try {
             $user = Socialite::driver('google')->user();
             $findMember = Member::where('oauth_id', $user->getId())->first();
+            return $user;
 
             if ($findMember) {
                 $request->session()->put('login_member', $findMember);
-                return redirect()->intended(route('theme.category'));
+                if (empty($findMember->fullname) && empty($findMember->phone)) {
+                    return redirect()->intended(route('profile.update'));
+                }
+                return redirect()->intended(route('profile'));
             }
             $new = Member::create([
                 'oauth_id' => $user->getId(),
@@ -32,7 +35,7 @@ class GoogleController extends Controller
                 'photo' => $user->getAvatar()
             ]);
             $request->session()->put('login_member', $new);
-            return redirect()->intended(route('theme.category'));
+            return redirect()->intended(route('profile.update'));
         } catch (\Throwable $th) {
             return redirect()->route('signIn');
         }
