@@ -1,6 +1,11 @@
 @extends('layouts')
 @section('title', 'Editor')
 @section('content')
+    <style>
+        .header-wrapper {
+            display: none;
+        }
+    </style>
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/pintura.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css') }}">
     <div class="main-content">
@@ -22,7 +27,10 @@
 
     <script type="module">
 
-        import { appendDefaultEditor } from '../frontend/vendor/pintura/pintura.js';
+        import {
+            appendDefaultEditor,
+            createNode
+        } from '../frontend/vendor/pintura/pintura.js';
 
         const dataImg = document.querySelector('#image');
         const preview = document.querySelector('#preview');
@@ -44,6 +52,13 @@
 
             // This will set a square crop aspect ratio
             // imageCropAspectRatio: 1,
+            layoutDirectionPreference: 'vertical',
+            layoutVerticalControlTabsPreference: 'top',
+            layoutVerticalUtilsPreference: 'top',
+            layoutVerticalToolbarPreference: 'bottom',
+            enableNavigateHistory: false,
+            enableZoomControls: true,
+            enableButtonRevert: false,
 
             // Stickers available to user
             stickers: [
@@ -72,8 +87,8 @@
             locale: { labelButtonExport: 'SIMPAN' },
             utils: [
                     'annotate',
-                    // 'sticker',
-                    // 'crop',
+                    'sticker',
+                    'crop',
                     'filter',
                     // 'finetune',
                     // 'frame',

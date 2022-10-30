@@ -60,19 +60,19 @@
                         </div>
                         <div class="gallery-controls"></div>
 
-                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="section section__home3" id="scrollspySection3">
-            <div class="section__content container">
-                <div class="col-md-6">
-                    <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
-                </div>
-                <div class="col-md-6 mb-4">
-                    <img class="d-block img-fluid home__logo"
-                        src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+    <section class="section section__home3" id="scrollspySection3">
+        <div class="section__content container">
+            <div class="col-lg-6">
+                <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
+            </div>
+            <div class="col-lg-6 mb-4">
+                <div class="d-flex flex-column flex-nowrap">
+                    <img class="d-block img-fluid home__logo" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                     <h3 class="my-4">Kumpulin Poin Reward Yuk!</h3>
                     <div class="point__counter mb-4">
                         @foreach ($points as $point)
@@ -86,7 +86,7 @@
                         dengan
                         poin terbanyak.</p>
                     <div class="w-100">
-                        <a class="btn btn-cust-yellow" href="{{ route('theme.category') }}">Ayo buat kartumu sekarang!</a>
+                        <a class="btn btn-cust-yellow" href="#">Ayo buat kartumu sekarang!</a>
                     </div>
                 </div>
             </div>
@@ -96,12 +96,12 @@
     <script>
         const imgs = document.querySelectorAll('.gallery-item');
 
-        for (const img of imgs) {
-            img.addEventListener("click", function() {
-                const id = img.getAttribute('data-id');
-                const redirect = `/theme?category_id=${id}`;
-                window.location.href = redirect;
-            });
-        }
-    </script>
+    for (const img of imgs) {
+        img.addEventListener("click", function() {
+            const id = img.getAttribute('data-id');
+            const redirect = `/theme?category_id=${id}`;
+            window.location.href = redirect;
+        });
+    }
+</script>
 @endsection
