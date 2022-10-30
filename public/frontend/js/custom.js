@@ -1,16 +1,27 @@
-let homeCarousel = document.querySelectorAll('.home__carousel .carousel-item')
+const sectionHome2 = document.querySelector(".section__home2");
+const sectionHome3 = document.querySelector(".section__home3");
+let scrollPos = 0;
+let windowY = 0;
 
-homeCarousel.forEach((el) => {
-    // number of slides per carousel-item
-    const minPerSlide = 4;
-    let next = el.nextElementSibling
-    for (var i=1; i<minPerSlide; i++) {
-        if (!next) {
-            // wrap carousel by using first child
-            next = homeCarousel[0]
+function checkPosition() {
+    windowY = window.scrollY;
+    if (windowY > sectionHome2.scrollHeight) {
+        let home2Children = sectionHome2.children;
+        for (let i = 0; i < home2Children.length; i++) {
+            home2Children[i].classList.remove("d-none");
         }
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
     }
-})
+
+    if (scrollPos > sectionHome2.scrollHeight + sectionHome3.scrollHeight) {
+        let home3Children = sectionHome3.children;
+        for (let i = 0; i < home3Children.length; i++) {
+            home3Children[i].classList.remove("d-none");
+        }
+    }
+
+    scrollPos = windowY;
+}
+
+if (sectionHome2) {
+    window.addEventListener("scroll", checkPosition);
+}
