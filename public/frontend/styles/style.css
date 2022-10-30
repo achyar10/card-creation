@@ -555,10 +555,85 @@ body {
     opacity: 0.4;
 }
 
+.socials {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.socials .social-icon {
+    margin: 0 1rem;
+}
+
+.social-icon {
+    max-width: 24px;
+}
+
+.hashtags {
+    font-weight: bold;
+    margin-right: 0.5rem;
+    color: var(--bs-white);
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.profile .profile-img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-right: 1rem;
+}
+
+.profile-img > img {
+    width: 64px;
+    height: 64px;
+    margin-right: 1rem;
+    border-radius: var(--bs-border-radius-pill);
+}
+
+.profile .profile-name {
+    margin-bottom: 1rem;
+}
+
+.profile .profile-info:not(:last-child) {
+    margin-bottom: 0;
+}
+
+.profile .profile-info:last-child {
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 991px) {
+    .profile {
+        align-items: center;
+    }
+
+    .profile .logout-btn {
+        display: none;
+    }
+
+    .profile .profile-name {
+        margin-bottom: .5rem;
+    }
+
+    .profile-img > img {
+        margin-right: 0;
+    }
+}
+
 /* Main Content */
 
-.content-wrapper {
-    /* max-width: 768px; */
+/* .content-wrapper {
+    max-width: 768px;
     padding-top: 2rem;
     padding-bottom: 2rem;
     margin: auto;
@@ -607,29 +682,6 @@ body {
     margin-right: -50%;
 }
 
-.socials {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.socials .social-icon {
-    margin: 0 1rem;
-}
-
-.social-icon {
-    max-width: 24px;
-}
-
-.hashtags {
-    font-weight: bold;
-    margin-right: 0.5rem;
-    color: var(--bs-white);
-}
-
 .card-pick {
     margin-bottom: 2rem;
 }
@@ -657,13 +709,13 @@ body {
     .content-logo {
         max-width: 250px;
     }
-}
+} */
 
 /*
 * Member Point Card
 */
 
-.member-point-card .profile-icon {
+/* .member-point-card .profile-icon {
     width: 64px;
     height: 64px;
     border-radius: 50%;
@@ -733,22 +785,20 @@ body {
 
 .receipt-thumbnail {
     width: 100%;
-    /* width of container */
     height: 100px;
-    /* height of container */
     overflow: hidden;
     text-align: center;
 }
 
 .receipt-thumbnail img {
     height: 100%;
-}
+} */
 
 /*
 * Product Card
 */
 
-.product-card {
+/* .product-card {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -810,4 +860,4 @@ body {
 
 .copyright {
     font-size: 12px;
-}
+} */

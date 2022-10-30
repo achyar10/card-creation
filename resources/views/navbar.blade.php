@@ -32,11 +32,11 @@
                         href="{{ url('/disclaimer') }}">Disclaimer</a>
                 </li>
             </ul>
-            <div class="ms-4">
+            <div>
                 @if (!auth()->guard('members')->user())
                     <a href="/login" class="btn btn-cust-yellow">Login | Daftar</a>
                 @else
-                    <a href="{{ route('profile') }}" class="text-decoration-none">
+                    <a href="{{ route('profile') }}" class="d-inline-block text-decoration-none">
                         <div class="member-point">
                             <img class="point-icon rounded-circle p-1"
                                 src="{{ asset('frontend/images/decorations/cookie.png') }}" alt="point icon"

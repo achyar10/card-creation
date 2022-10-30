@@ -1,34 +1,33 @@
 @extends('layouts')
 @section('title', 'Profile')
 @section('content')
-    <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
-        data-bs-smooth-scroll="true" tabindex="0">
+    <div class="main-content">
         <div class="section__bg">
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
         </div>
 
         <section class="section">
-            <div class="container">
+            <div class="section__content container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-4">
                         <div class="card bg-transparent border-white mb-4">
                             <div class="card-body">
                                 <div class="row align-items-center">
-                                    <div class="col-lg-6">
-                                        <div class="d-flex flex-row flex-nowrap align-items-center mb-4">
-                                            <img class="img-fluid me-4 rounded-pill" src="{{ $member->photo }}">
-                                            <a href="{{ route('signOut') }}" class="btn btn-cust-white">
+                                    <div class="col-xl-6 col-lg-12 profile">
+                                        <div class="profile-img mb-4">
+                                            <img class="img-fluid" width="64" height="64" src="{{ $member->photo }}">
+                                            <a href="{{ route('signOut') }}" class="btn btn-cust-white logout-btn">
                                                 <img src="{{ asset('frontend/images/signup.png') }}" height="24"
                                                     class="ml-5">
                                                 <span class="">Logout</span>
                                             </a>
                                         </div>
-                                        <h4 class="mb-4">{{ $member->fullname }}</h4>
-                                        <p>{{ $member->phone }}</p>
-                                        <p>{{ $member->email }}</p>
+                                        <h4 class="profile-name">{{ $member->fullname }}</h4>
+                                        <p class="profile-info">{{ $member->phone }}</p>
+                                        <p class="profile-info">{{ $member->email }}</p>
                                     </div>
 
-                                    <div class="col-lg-6 d-flex align-items-stretch flex-column justify-content-center">
+                                    <div class="col-xl-6 col-lg-12 d-flex align-items-stretch flex-column justify-content-center">
                                         <div class="point__counter mb-4 d-flex flex-row flex-nowrap justify-content-center">
                                             @foreach ($points as $point)
                                                 <div class="point__digit_wrapper">
