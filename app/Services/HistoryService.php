@@ -24,17 +24,22 @@ class HistoryService
         return History::orderBy('id', 'desc')->get();
     }
 
+    public function getByMember($member_id)
+    {
+        return History::where('member_id', $member_id)->orderBy('id', 'desc')->get();
+    }
+
     public function getById($id)
     {
         return History::find($id);
     }
 
-    public function create()
+    public function create($via, $point, $member_id)
     {
         $data =  History::create([
-            'via' => $this->req->via,
-            'point' => $this->req->point,
-            'member_id' => $this->req->member_id,
+            'via' => $via,
+            'point' => $point,
+            'member_id' => $member_id,
         ]);
         return $data;
     }

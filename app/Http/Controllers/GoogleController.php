@@ -3,12 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Member;
+use App\Services\HistoryService;
+use App\Services\MemberService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class GoogleController extends Controller
 {
+    public function __construct(Request $request)
+    {
+        $this->member = new MemberService($request);
+        $this->history = new HistoryService($request);
+    }
+
     public function redirectToGoogle()
     {
         return Socialite::driver('google')->redirect();
@@ -32,9 +40,11 @@ class GoogleController extends Controller
             'oauth_from' => 'google',
             'name' => $user->getName(),
             'email' => $user->getEmail(),
-            'photo' => $user->getAvatar()
+            'photo' => $user->getAvatar(),
         ]);
-        $newMember = Member::where('id', $new->id())->first();
+        $this->member->updatePoint($new->id, 10);
+        $this->history->create('Sign Up (Email)', 10, $new->id);
+        $newMember = Member::where('id', $new->id)->first();
         Auth::guard('members')->login($newMember);
         return redirect()->intended(route('profile.update'));
     }

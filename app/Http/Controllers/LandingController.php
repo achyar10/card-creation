@@ -8,6 +8,7 @@ use App\Services\CardService;
 use App\Services\CategoryService;
 use App\Services\DisclaimerService;
 use App\Services\FaqService;
+use App\Services\HistoryService;
 use App\Services\MemberService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -21,6 +22,7 @@ class LandingController extends Controller
         $this->card = new CardService($request);
         $this->faq = new FaqService($request);
         $this->disclaimer = new DisclaimerService($request);
+        $this->history = new HistoryService($request);
     }
 
     public function index()
@@ -55,64 +57,80 @@ class LandingController extends Controller
         return view('profile.update');
     }
 
-    public function profileUpdatePost()
+    public function profileUpdatePost(Request $request)
     {
+        $request->validate(['fullname' => 'required', 'phone' => 'required']);
+
         $session = auth()->guard('members')->user();
         if (!isset($session)) return redirect()->route('signIn');
 
         $this->member->update($session->id);
+
+        if (isset($request->fullname)) {
+            $this->member->updatePoint($session->id, 5);
+            $this->history->create('Sign Up', 5, $session->id);
+        }
+        if (isset($request->phone)) {
+            $this->member->updatePoint($session->id, 5);
+            $this->history->create('Sign Up', 5, $session->id);
+        }
+
         return redirect()->route('profile');
     }
 
     public function historyPoint()
     {
+        $session = auth()->guard('members')->user();
         $socials = [
             [
                 'icon' => 'frontend/images/whatsapp.png',
                 'name' => 'WhatsApp (Share)',
-                'date' => date('d F'),
-                'point' => '+10'
             ],
             [
                 'icon' => 'frontend/images/email.png',
                 'name' => 'Share (Email)',
-                'date' => date('d F'),
-                'point' => '+10'
             ],
             [
                 'icon' => 'frontend/images/instagram.png',
                 'name' => 'Instagram (Share)',
-                'date' => date('d F'),
-                'point' => '+10'
             ],
             [
                 'icon' => 'frontend/images/twitter.png',
                 'name' => 'Twitter (Share)',
-                'date' => date('d F'),
-                'point' => '+10'
             ],
             [
                 'icon' => 'frontend/images/facebook.png',
                 'name' => 'Facebook (Share)',
-                'date' => date('d F'),
-                'point' => '+10'
             ],
             [
                 'icon' => 'frontend/images/email.png',
                 'name' => 'Sign Up (Email)',
-                'date' => date('d F'),
-                'point' => '+10'
             ],
             [
                 'icon' => 'frontend/images/signup.png',
                 'name' => 'Sign Up',
-                'date' => date('d F'),
-                'point' => '+5'
             ],
         ];
-        return view('profile.history', [
-            'socials' => $socials
-        ]);
+
+        $histories = $this->history->getByMember($session->id);
+
+        $result = [];
+        foreach ($histories as $key) {
+            foreach ($socials as $social) {
+                if ($social['name'] == $key->via) {
+                    array_push($result, [
+                        'name' => $social['name'],
+                        'icon' => $social['icon'],
+                        'point' => $key->point,
+                        'date' => date('d F Y')
+                    ]);
+                }
+            }
+        }
+        // return $result;
+        $data['points'] = $this->showPoint($session->point);
+        $data['socials'] = $result;
+        return view('profile.history', $data);
     }
 
     public function postLogin(Request $request)
