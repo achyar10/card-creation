@@ -4,17 +4,12 @@
     --color-foreground: white;
 }
 
-.pintura-editor-panel {
-    --color-background: transparent;
-    --color-foreground: white;
-}
-
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     .pintura-editor {
         --color-background: 0, 0, 0;
         --color-foreground: 255, 255, 255;
     }
-} */
+}
 
 /* size of the editor */
 
