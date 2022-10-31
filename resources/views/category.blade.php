@@ -13,6 +13,8 @@
             <img class="section__img chocochip chocochip4 animate__animated animate__infinite"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
             <img class="section__img chocochip chocochip5 animate__animated animate__infinite" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip6 animate__animated animate__infinite" src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip7 animate__animated animate__infinite" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
         </div>
         <section class="section">
             <div class="section__content container">
@@ -45,7 +47,7 @@
                     <h5 class="w-100 text-center mb-5">Pilih desainmu disini</h5>
                     <div class="row w-100 mb-3">
                         @foreach ($cards as $row)
-                            <div class="col-6 col-md-3 mb-4">
+                            <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-4">
                                 <a href="{{ url("/editor/$row->id") }}">
                                     <img class="img-fluid rounded" src="{{ asset('card/' . $row->image) }}">
                                 </a>
