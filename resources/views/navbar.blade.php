@@ -18,11 +18,11 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('/moment') ? 'active' : '' }}"
-                        href="/#scrollspySection2">Moment</a>
+                        href="/#scrollspySection2">Momen</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#rulesModal">Aturan
-                        Main</a>
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#rulesModal">Cara
+                        Ikutan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('faq') ? 'active' : '' }}" href="{{ url('/faq') }}">FAQ</a>

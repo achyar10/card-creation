@@ -19,7 +19,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -51,19 +52,22 @@
                 </div>
                 <div class="modal-body gt-modal-body">
                     <div class="gt-video text-center">
-                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/D0UnqGm_miA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/D0UnqGm_miA"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
                     </div>
-                    <h4 class="my-4">Aturan Main</h4>
+                    <h4 class="my-4">Cara Ikutan</h4>
                     <ol class="lh-lg mb-4">
-                        <li>Pilih kategori kartu ucapan yang cocok denganmu.</li>
-                        <li>Pilih template kartu ucapan yang cocok denganmu.</li>
-                        <li>Tambahkan kreasimu dengan menuliskan kata-kata mutiara atau upload photo/gambar yang kamu
-                            inginkan.</li>
-                        <li>Share ke orang tersayang, teman-teman, atau ke sosmedmu.</li>
-                        <li>Dapatkan kesempatan memenangkan undian berhadiah menarik.</li>
+                        <li>Pilih moment gifting card</li>
+                        <li>Pilih template kartu ucapan yang cocok denganmu</li>
+                        <li>Tambahkan ucapan yang ingin kamu sampaikan</li>
+                        <li>Share ke orang tersayang dan teman-temanmu</li>
+                        <li>Kumpulkan point sebanyak-banyaknya</li>
+                        <li>Dapatkan kesempatan memenangkan hadiah menarik</li>
                     </ol>
                     <div class="w-100">
-                        <button class="btn btn-cust-yellow" data-bs-dismiss="modal">Ayo buat kartumu sekarang!</button>
+                        <button class="btn btn-cust-yellow" data-bs-dismiss="modal">Kembali</button>
                     </div>
                 </div>
             </div>

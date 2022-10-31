@@ -26,7 +26,8 @@
                                     <p class="profile-info">{{ $member->email }}</p>
                                 </div>
 
-                                <div class="col-lg-6 col-md-12 d-flex align-items-stretch flex-column justify-content-center">
+                                <div
+                                    class="col-lg-6 col-md-12 d-flex align-items-stretch flex-column justify-content-center">
                                     <div class="point__counter mb-4 d-flex flex-row flex-nowrap justify-content-center">
                                         @foreach ($points as $point)
                                             <div class="point__digit_wrapper">
@@ -53,15 +54,14 @@
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
                             </div>
-                            <h4 class="my-4">Aturan Main</h4>
+                            <h4 class="my-4">Cara Ikutan</h4>
                             <ol class="lh-lg mb-4">
-                                <li>Pilih kategori kartu ucapan yang cocok denganmu.</li>
-                                <li>Pilih template kartu ucapan yang cocok denganmu.</li>
-                                <li>Tambahkan kreasimu dengan menuliskan kata-kata mutiara atau upload photo/gambar yang
-                                    kamu
-                                    inginkan.</li>
-                                <li>Share ke orang tersayang, teman-teman, atau ke sosmedmu.</li>
-                                <li>Dapatkan kesempatan memenangkan undian berhadiah menarik.</li>
+                                <li>Pilih moment gifting card</li>
+                                <li>Pilih template kartu ucapan yang cocok denganmu</li>
+                                <li>Tambahkan ucapan yang ingin kamu sampaikan</li>
+                                <li>Share ke orang tersayang dan teman-temanmu</li>
+                                <li>Kumpulkan point sebanyak-banyaknya</li>
+                                <li>Dapatkan kesempatan memenangkan hadiah menarik</li>
                             </ol>
                         </div>
                     </div>

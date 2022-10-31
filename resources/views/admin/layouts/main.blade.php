@@ -154,7 +154,12 @@
             $('.tags-input').tagify();
         });
         $(function() {
-            $('.data-tables').DataTable();
+            $('.data-tables').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copy', 'csv', 'excel', 'pdf', 'print'
+                ]
+            });
         });
     </script>
 </body>
