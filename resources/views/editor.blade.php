@@ -53,7 +53,7 @@
             ],
 
             // This will set a square crop aspect ratio
-            // imageCropAspectRatio: 1,
+            imageCropAspectRatio: 4 / 5,
             layoutDirectionPreference: 'vertical',
             layoutVerticalControlTabsPreference: 'top',
             layoutVerticalUtilsPreference: 'top',
