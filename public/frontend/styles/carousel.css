@@ -22,8 +22,8 @@
 }
 
 .gallery-item.gallery-item-selected {
-  border: 1px solid #F8DF33;
-  border-radius: 30px;
+  /* border: 1px solid #F8DF33; */
+  /* border-radius: 30px; */
   opacity: 1;
   left: 50%;
   transform: translateX(-50%);
