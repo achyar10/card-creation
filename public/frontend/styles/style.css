@@ -184,9 +184,15 @@ body {
         justify-content: center;
     }
 
-    .section__content>* {
-        flex-shrink: 0;
+    .section__content > * {
         width: 100%;
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width: 768px ) {
+    .section__content > * {
+        flex-shrink: 0;
         max-width: 100%;
         padding-right: calc(var(--bs-gutter-x) * .5);
         padding-left: calc(var(--bs-gutter-x) * .5);
