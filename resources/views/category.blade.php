@@ -48,8 +48,8 @@
                     <div class="row w-100 mb-3">
                         @foreach ($cards as $row)
                             <div class="col-6 col-md-4 col-lg-3 col-xl-2 mb-4">
-                                <a href="{{ url("/editor/$row->id") }}">
-                                    <img class="img-fluid rounded" src="{{ asset('card/' . $row->image) }}">
+                                <a class="d-block text-center card-thumbnail" href="{{ url("/editor/$row->id") }}">
+                                    <img class="rounded" src="{{ asset('card/' . $row->image) }}">
                                 </a>
                             </div>
                         @endforeach

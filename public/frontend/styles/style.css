@@ -630,6 +630,16 @@ body {
     margin-bottom: 1rem;
 }
 
+.card-thumbnail {
+    display: inline-block;
+    text-align: center;
+}
+
+.card-thumbnail img {
+    width: auto;
+    height: 200px;
+}
+
 @media screen and (max-width: 991px) {
     .profile {
         align-items: center;
