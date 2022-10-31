@@ -216,6 +216,15 @@ body {
         width: 60%;
         height: 60%;
     }
+
+    .section__home2 .title {
+        text-align: center;
+    }
+
+    .section__home3 .home3__content {
+        text-align: center;
+        align-items: center;
+    }
 }
 
 @media screen and (min-width: 1400px) {
@@ -244,6 +253,11 @@ body {
 
 .section__home2 {
     background-color: rgb(164 1 40 / 80%);
+}
+
+.section__home2 .title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .section__home2::after {

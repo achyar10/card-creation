@@ -48,11 +48,11 @@
                 </div>
             </div>
             <div class="section__content container d-none">
-                <div class="col-12 mb-5">
-                    <h3 class="w-50">Pilih Momen disini</h3>
+                <div class="col-12 title">
+                    <h2>Pilih Momen disini</h2>
                 </div>
                 <div class="col-12">
-                    <div class="gallery mt-5">
+                    <div class="gallery">
                         <div class="gallery-container">
                             @foreach ($categories as $category)
                                 <img class="gallery-item" style="cursor: pointer" data-id="{{ $category->id }}"
@@ -94,8 +94,8 @@
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <div class="d-flex flex-column flex-nowrap">
-                        <div class="w-100 d-block text-left">
+                    <div class="d-flex flex-column flex-nowrap home3__content">
+                        <div class="w-100 d-block">
                             <img class="img-fluid home__logo" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                         </div>
                         <h3 class="my-4">Kumpulin Poin Reward Yuk!</h3>
