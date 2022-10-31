@@ -18,55 +18,55 @@
         </div>
         <section class="section section__home1">
             <div class="section__content container">
-                <div class="col-md-6 text-center">
+                <div class="col-lg-6 col-md-12 text-center">
                     <img class="img-fluid mb-3" width="324px" height="575px" id="image" data-id="{{ $row->id }}"
                         src="{{ $row->url_path }}">
                 </div>
-                <div class="col-md-6 mb-4 pt-4 text-center">
+                <div class="col-lg-6 col-md-12 mb-4 pt-4 text-center">
                     <input type="hidden"
                         value="{{ auth()->guard('members')->user()? auth()->guard('members')->user()->id: null }}"
                         id="myId">
                     <h4 class="mb-3" id="url" data-url="{{ url('preview/' . $row->uuid) }}">Hore! Desainmu sudah
                         selesai!</h4>
                     <p class="mb-5">Ayo bagikan dengan keluarga dan orang terdekatmu</p>
-                    <div class="d-flex flex-column align-items-center w-100 text-center">
+                    <div class="d-flex flex-column align-items-center w-100 text-center cta-button">
                         <button onclick="shareWa()"
-                            class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <img width="24px" height="24px" src="{{ asset('frontend/images/whatsapp.png') }}">
                             </div>
                             <span class="share-label">WhatsApp</span>
                         </button>
                         <button onclick="share('Share (Facebook)')"
-                            class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <img width="24px" height="24px" src="{{ asset('frontend/images/facebook.png') }}">
                             </div>
                             <span class="share-label">Facebook</span>
                         </button>
                         <button onclick="share('Share (Instagram)')"
-                            class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <img width="24px" height="24px" src="{{ asset('frontend/images/instagram.png') }}">
                             </div>
                             <span class="share-label">Instagram</span>
                         </button>
                         <button onclick="share('Share (Email)')"
-                            class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <img width="24px" height="24px" src="{{ asset('frontend/images/email.png') }}">
                             </div>
                             <span class="share-label">Email</span>
                         </button>
                         <button onclick="share('Share (Twitter)')"
-                            class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <img width="24px" height="24px" src="{{ asset('frontend/images/twitter.png') }}">
                             </div>
                             <span class="share-label">Twitter</span>
                         </button>
                         <button onclick="saveImage()"
-                            class="btn btn-share btn-cust-white w-50 mb-3 text-center d-flex align-items-center justify-content-center">
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <i class="bx bx-download"></i>
                             </div>
@@ -74,7 +74,7 @@
                         </button>
 
                         <a href="{{ route('home') }}"
-                            class="btn btn-share btn-cust-yellow w-50 mt-5 text-center d-flex align-items-center justify-content-center">
+                            class="btn btn-share btn-cust-yellow mt-5 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <i class="bx bx-arrow-back"></i>
                             </div>

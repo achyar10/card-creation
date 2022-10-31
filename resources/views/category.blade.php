@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-12 content-body mb-4">
-                    <h5 class="w-100 text-center mb-3">Pilih desainmu disini</h5>
+                    <h5 class="w-100 text-center mb-5">Pilih desainmu disini</h5>
                     <div class="row w-100 mb-3">
                         @foreach ($cards as $row)
                             <div class="col-6 col-md-3 mb-4">

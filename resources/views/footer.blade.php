@@ -9,7 +9,7 @@
                 </script>
             </span>
         </a>
-        <div class="navbar-collapse collapse show justify-content-center">
+        <div class="navbar-collapse collapse show justify-content-end">
             <div class="navbar-nav fw-normal">
                 <a class="nav-link" href="{{ url('/#scrollspySection1') }}">Beranda</a>
                 <a class="nav-link" href="{{ url('/#scrollspySection2') }}">Moment</a>
@@ -18,11 +18,11 @@
                 <a class="nav-link" href="{{ url('/disclaimer') }}">Disclaimer</a>
             </div>
         </div>
-        <div class="float-end">
-            <a href="https://web.facebook.com/GoodTimeID" class="text-dark"><i class="bx bxl-facebook fs-3 p-3"></i></a>
-            <a href="https://www.instagram.com/goodtimeid" class="text-dark"><i
+        <div class="socials">
+            <a href="https://web.facebook.com/GoodTimeID" class="social-icon text-dark"><i class="bx bxl-facebook fs-3 p-3"></i></a>
+            <a href="https://www.instagram.com/goodtimeid" class="social-icon text-dark"><i
                     class="bx bxl-instagram fs-3 p-3"></i></a>
-            <a href="https://www.tiktok.com/@goodtimeid" class="text-dark"><i class="bx bxl-tiktok fs-3 p-3"></i></a>
+            <a href="https://www.tiktok.com/@goodtimeid" class="social-icon text-dark"><i class="bx bxl-tiktok fs-3 p-3"></i></a>
         </div>
     </div>
 </nav>
