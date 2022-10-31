@@ -121,6 +121,11 @@
 
         async function share(via) {
             try {
+                if (!myId) {
+                    alert(messageLogin);
+                    localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                    return window.location.href = '/login';
+                }
                 let image = document.getElementById('image').src
                 const blob = await (await fetch(image)).blob();
                 files = new File([blob], image, {
