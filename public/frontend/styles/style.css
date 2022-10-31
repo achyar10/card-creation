@@ -630,6 +630,10 @@ body {
     }
 }
 
+.copyright {
+    font-size: 12px;
+}
+
 /* Main Content */
 
 /* .content-wrapper {
@@ -857,7 +861,4 @@ body {
     height: 32px;
     font-weight: bold;
 }
-
-.copyright {
-    font-size: 12px;
-} */
+*/
