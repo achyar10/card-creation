@@ -22,6 +22,9 @@
                 <div class="ornament__wrapper goodtime_product">
                     <img class="ornament__img" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
                 </div>
+                <div class="ornament__wrapper goodtime_card_preview">
+                    <img class="ornament__img" src="{{ asset('frontend/images/icons/goodtime_card_preview.png') }}">
+                </div>
             </div>
             <div class="section__content container">
                 <div class="col-12 text-center">

@@ -381,8 +381,25 @@ body {
     width: 400px;
 }
 
-@media screen and (max-width: 768px) {
+.goodtime_card_preview {
+    top: 50vh;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+    animation: fadeIn;
+    animation-duration: 1.5s;
+}
+
+.goodtime_card_preview .ornament__img {
+    width: 400px;
+}
+
+@media screen and (max-width: 992px) {
     .goodtime_product {
+        display: none;
+    }
+
+    .goodtime_card_preview {
         display: none;
     }
 }
