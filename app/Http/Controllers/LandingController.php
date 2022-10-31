@@ -28,7 +28,7 @@ class LandingController extends Controller
     public function index()
     {
         $session = auth()->guard('members')->user();
-        $point = $session ? $session->point : 0;
+        $point = $session ? $session->point : 888;
         $data['points'] = $this->showPoint($point);
         $data['categories'] = $this->category->getCaro();
         return view('welcome', $data);
