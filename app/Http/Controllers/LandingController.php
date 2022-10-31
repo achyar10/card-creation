@@ -45,6 +45,9 @@ class LandingController extends Controller
     {
         $session = auth()->guard('members')->user();
         if (!isset($session)) return redirect()->route('signIn');
+
+        if (!isset($session->fullname) && !isset($session->phone)) return redirect()->route('profile.update');
+
         $data['member'] = $session;
         $data['points'] = $this->showPoint($session->point);
 
@@ -62,7 +65,13 @@ class LandingController extends Controller
 
     public function profileUpdatePost(Request $request)
     {
-        $request->validate(['fullname' => 'required', 'phone' => 'required']);
+        $request->validate([
+            'fullname' => 'required|alpha',
+            'phone' => 'required|numeric'
+        ], [
+            'fullname.required' => 'Nama wajib diisi!',
+            'fullname.alpha' => 'Nama harus karakter alfabet!'
+        ]);
 
         $session = auth()->guard('members')->user();
         if (!isset($session)) return redirect()->route('signIn');
