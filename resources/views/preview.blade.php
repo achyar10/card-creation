@@ -1,6 +1,7 @@
 @extends('layouts')
 @section('title', 'Kamu Mendapatkan Ucapan')
-@section('description', 'SELAMAT: ada 1 kartu ucapan special untukmu, yuk lihat ucapannya dan bikin versi kamu disini ya
+@section('description',
+    'SELAMAT: ada 1 kartu ucapan special untukmu, yuk lihat ucapannya dan bikin versi kamu disini ya
     👉 https://arnottsgiftingmoments.com/ ada HADIAH SPECIAL dari GOOD TIME')
 @section('og:title', 'Kamu Mendapatkan Ucapan')
 @section('og:image', $row->url_path)
@@ -25,11 +26,12 @@
         <section class="section section__home1">
             <div class="section__content container">
                 <div class="col-md-12 text-center">
-                    {{-- <h4 class="mb-3">Hore! Desainmu sudah selesai!</h4> --}}
-                    <p class="mb-5">Ayo bagikan dengan keluarga dan orang terdekatmu</p>
                     <img class="img-fluid mb-3" width="324px" height="575px" id="image" data-id="{{ $row->id }}"
                         src="{{ $row->url_path }}">
-                    <a href="{{ route('home') }}" class="btn btn-share btn-cust-yellow col-md-3 text-white mx-auto mt-5">
+                    <h4 class="mb-3">Hore! ini Desainmu untukmu</h4>
+                    <p class="mb-3">Ayo buat juga kartumu sekarang dan bagikan dengan keluarga dan orang terdekatmu</p>
+                    <a href="{{ route('home') }}"
+                        class="btn btn-share btn-cust-yellow col-md-3 text-white mx-auto mt-5 mb-5">
                         <span class="share-label">Buat Versi Kamu Klik Disini!</span>
                     </a>
                 </div>
