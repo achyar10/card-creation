@@ -17,13 +17,20 @@
                                         <img class="img-fluid" width="64" height="64" src="{{ $member->photo }}">
                                         <a href="{{ route('signOut') }}" class="btn btn-cust-white logout-btn">
                                             <img src="{{ asset('frontend/images/signup.png') }}" height="24"
-                                                class="ml-5">
+                                                class="ml-3">
                                             <span class="">Logout</span>
                                         </a>
                                     </div>
                                     <h4 class="profile-name">{{ $member->fullname }}</h4>
                                     <p class="profile-info">{{ $member->phone }}</p>
                                     <p class="profile-info">{{ $member->email }}</p>
+                                    <div class="mt-3 mb-3 d-lg-none">
+                                        <a href="{{ route('signOut') }}" class="btn btn-cust-white">
+                                            <img src="{{ asset('frontend/images/signup.png') }}" height="24"
+                                                class="ml-5">
+                                            <span class="">Logout</span>
+                                        </a>
+                                    </div>
                                 </div>
 
                                 <div

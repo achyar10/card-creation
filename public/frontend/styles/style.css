@@ -700,6 +700,10 @@ body {
     height: 200px;
 }
 
+.profile .logout-btn {
+    --bs-btn-padding-x: 1rem;
+}
+
 @media screen and (max-width: 991px) {
     .profile {
         align-items: center;

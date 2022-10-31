@@ -12,8 +12,8 @@
         <div class="navbar-collapse collapse show justify-content-end">
             <div class="navbar-nav fw-normal">
                 <a class="nav-link" href="{{ url('/#scrollspySection1') }}">Beranda</a>
-                <a class="nav-link" href="{{ url('/#scrollspySection2') }}">Moment</a>
-                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#rulesModal">Aturan Main</a>
+                <a class="nav-link" href="{{ url('/#scrollspySection2') }}">Momen</a>
+                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#rulesModal">Cara Ikutan</a>
                 <a class="nav-link" href="{{ url('/faq') }}">FAQ</a>
                 <a class="nav-link" href="{{ url('/disclaimer') }}">Disclaimer</a>
             </div>
