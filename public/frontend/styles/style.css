@@ -39,6 +39,8 @@ body {
 .footer-wrapper {
     background: var(--gt-yellow-bg);
     position: relative;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .main-content {
@@ -179,7 +181,7 @@ body {
 
 @media screen and (max-width: 768px) {
     .section__content {
-        flex-direction: column;
+        justify-content: center;
     }
 
     .section__content>* {
@@ -605,6 +607,28 @@ body {
 
 .social-icon {
     max-width: 24px;
+}
+
+.shops {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.shops .shop-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    margin-bottom: .5rem;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    background-color: rgb(255 255 255 / 40%);
+    text-align: center;
 }
 
 .hashtags {

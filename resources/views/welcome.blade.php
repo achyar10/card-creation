@@ -68,26 +68,51 @@
 
     <section class="section section__home3 animate__animated" id="scrollspySection3">
         <div class="section__content container d-none">
-            <div class="col-lg-6">
-                <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
-            </div>
-            <div class="col-lg-6 mb-4">
-                <div class="d-flex flex-column flex-nowrap">
-                    <img class="d-block img-fluid home__logo" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
-                    <h3 class="my-4">Kumpulin Poin Reward Yuk!</h3>
-                    <div class="point__counter mb-4">
-                        @foreach ($points as $point)
-                            <div class="point__digit_wrapper">
-                                <span class="point__digit">{{ $point }}</span>
-                            </div>
-                        @endforeach
-                        <span class="point__unit">Poin</span>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
+                    <h5 class="text-center my-4">Kunjungi Marketplace Arnott's</h5>
+                    <div class="shops">
+                        <a href="https://www.tokopedia.com/arnotts" class="shop-icon" target="_blank">
+                            <img width="36px" height="36px" src="{{ asset('frontend/images/icons/tokopedia.png') }}">
+                        </a>
+                        <a href="https://www.lazada.co.id/shop/arnotts" class="shop-icon" target="_blank">
+                            <img width="36px" height="36px" src="{{ asset('frontend/images/icons/lazada.png') }}">
+                        </a>
+                        <a href="https://www.jd.id/promotion/Arnotts/4Xbf75HqXTgw93MXyYJttzDGjwjT.html" class="shop-icon" target="_blank">
+                            <img width="36px" height="36px" src="{{ asset('frontend/images/icons/jdid.png') }}">
+                        </a>
+                        <a href="https://shopee.co.id/arnottsstore" class="shop-icon" target="_blank">
+                            <img width="36px" height="36px" src="{{ asset('frontend/images/icons/shopee.png') }}">
+                        </a>
+                        <a href="https://www.bukalapak.com/arnotts-official" class="shop-icon" target="_blank">
+                            <img width="36px" height="36px" src="{{ asset('frontend/images/icons/bukalapak.png') }}">
+                        </a>
+                        <a href="https://www.blibli.com/merchant/arnott-s-official-store/ARO-60058" class="shop-icon" target="_blank">
+                            <img width="36px" height="36px" src="{{ asset('frontend/images/icons/blibli.png') }}">
+                        </a>
                     </div>
-                    <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi peserta
-                        dengan
-                        poin terbanyak.</p>
-                    <div class="w-100">
-                        <a class="btn btn-cust-yellow" href="#">Ayo buat kartumu sekarang!</a>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="d-flex flex-column flex-nowrap">
+                        <div class="w-100 d-block text-left">
+                            <img class="img-fluid home__logo" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                        </div>
+                        <h3 class="my-4">Kumpulin Poin Reward Yuk!</h3>
+                        <div class="point__counter mb-4">
+                            @foreach ($points as $point)
+                                <div class="point__digit_wrapper">
+                                    <span class="point__digit">{{ $point }}</span>
+                                </div>
+                            @endforeach
+                            <span class="point__unit">Poin</span>
+                        </div>
+                        <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi peserta
+                            dengan
+                            poin terbanyak.</p>
+                        <div class="w-100">
+                            <a class="btn btn-cust-yellow" href="#">Ayo buat kartumu sekarang!</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -106,3 +131,4 @@
         }
     </script>
 @endsection
+
