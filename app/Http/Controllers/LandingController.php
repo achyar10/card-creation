@@ -66,11 +66,8 @@ class LandingController extends Controller
     public function profileUpdatePost(Request $request)
     {
         $request->validate([
-            'fullname' => 'required|alpha',
-            'phone' => 'required|numeric'
-        ], [
-            'fullname.required' => 'Nama wajib diisi!',
-            'fullname.alpha' => 'Nama harus karakter alfabet!'
+            'fullname' => 'required',
+            'phone' => 'required'
         ]);
 
         $session = auth()->guard('members')->user();
