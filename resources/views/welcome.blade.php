@@ -111,7 +111,7 @@
                             dengan
                             poin terbanyak.</p>
                         <div class="w-100">
-                            <a class="btn btn-cust-yellow" href="#">Ayo buat kartumu sekarang!</a>
+                            <a class="btn btn-cust-yellow" href="#scrollspySection2">Ayo buat kartumu sekarang!</a>
                         </div>
                     </div>
                 </div>
