@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="Cache-control" content="no-cache">
     <meta name="description" content="@yield('description')" />
     <meta property="og:title" content="@yield('og:title')" />
     <meta property="og:url" content="{{ url()->full() }}" />
@@ -25,8 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="{{ asset('frontend/styles/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('frontend/styles/carousel.css') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/styles/style.css?v=' . time()) }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 </head>
 
