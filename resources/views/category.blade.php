@@ -32,7 +32,7 @@
                             <input type="text" name="q" class="form-control custom-form-control"
                                 placeholder="Cari.." aria-label="Cari.." value="{{ request()->q }}">
                             <button type="submit" class="input-group-text" id="basic-addon1">
-                                <span class="material-symbols-outlined">
+                                <span class="material-symbols-outlined" style="margin-right: 0.5rem">
                                     search
                                 </span>
                             </button>
