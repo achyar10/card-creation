@@ -38,7 +38,7 @@
                             </button>
                         </div>
                     </form>
-                    <div class="row">
+                    <div class="row chip-wrapper">
                         @foreach ($tags as $row)
                             <div class="col-auto mb-2">
                                 <a class="chip {{ url()->full() == url('theme?category_id=' . $row->id) ? 'active' : '' }}"
