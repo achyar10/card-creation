@@ -42,7 +42,7 @@
                                 src="{{ asset('frontend/images/decorations/cookie.png') }}" alt="point icon"
                                 width="36" height="36">
                             <div class="point-wrapper">
-                                <span class="point">{{ auth()->guard('members')->user()->point }} Poin</span>
+                                <span class="point">{{ auth()->guard('members')->user()->point }} point reward</span>
                                 <img class="profile-icon rounded-circle"
                                     src="{{ auth()->guard('members')->user()->photo }}" alt="point icon">
                             </div>

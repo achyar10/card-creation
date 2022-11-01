@@ -32,9 +32,9 @@
                     <input type="hidden"
                         value="{{ auth()->guard('members')->user()? auth()->guard('members')->user()->id: null }}"
                         id="myId">
-                    <h4 class="mb-3" id="url" data-url="{{ url('preview/' . $row->uuid) }}">Hore! Desainmu sudah
+                    <h4 class="mb-3" id="url" data-url="{{ url('preview/' . $row->uuid) }}">Gift Card mu sudah
                         selesai!</h4>
-                    <p class="mb-5">Ayo bagikan dengan keluarga dan orang terdekatmu</p>
+                    <p class="mb-5">Ayo bagikan ke orang tersayang dan teman teman mu</p>
                     <div class="d-flex flex-column align-items-center w-100 text-center cta-button">
                         <button onclick="shareWa()"
                             class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">

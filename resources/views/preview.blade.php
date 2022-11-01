@@ -28,11 +28,11 @@
                 <div class="col-md-12 text-center">
                     <img class="img-fluid mb-3" width="324px" height="575px" id="image" data-id="{{ $row->id }}"
                         src="{{ $row->url_path }}">
-                    <h4 class="mb-3">Hore! ini Desainmu untukmu</h4>
-                    <p class="mb-3">Ayo buat juga kartumu sekarang dan bagikan dengan keluarga dan orang terdekatmu</p>
+                    <h4 class="mb-3">Anda mendapatkan gift card</h4>
+                    <p class="mb-3">Ayo buat gift cardmu sekarang, dan bagikan ke orang tersayang dan temanmu</p>
                     <a href="{{ route('home') }}"
                         class="btn btn-share btn-cust-yellow col-md-3 text-white mx-auto mt-5 mb-5">
-                        <span class="share-label">Buat Versi Kamu Klik Disini!</span>
+                        <span class="share-label">Mulai Sekarang</span>
                     </a>
                 </div>
             </div>

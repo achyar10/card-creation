@@ -27,7 +27,7 @@
                 <div class="col-12 text-center">
                     <img class="img-fluid home__logo animate__animated"
                         src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
-                    <p class="text-white lh-lg mb-4">Kamu bisa berkreasi seru membuat ucapan untuk diberikan kepada
+                    <p class="text-white lh-lg mb-4">Kamu bisa berkreasi seru membuat ucapan untuk diberikan<br>kepada
                         orang spesial di momen-momen istimewa</p>
                     <div class="cta-button">
                         <button type="button" class="btn btn-cust-white mb-3" data-bs-toggle="modal"
