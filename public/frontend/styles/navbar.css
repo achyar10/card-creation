@@ -121,18 +121,8 @@
         font-weight: 600;
     }
 
-    .gt-navbar .btn-cust-yellow {
-        --bs-btn-font-weight: 500;
-        --bs-btn-color: var(--bs-black);
-        --bs-btn-bg: rgb(247, 247, 245);
-        --bs-btn-border-color: rgb(247, 247, 245);
-        --bs-btn-hover-color: var(--bs-black);
-        --bs-btn-hover-bg: rgb(213, 212, 210);
-        --bs-btn-hover-border-color: rgb(213, 212, 210);
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: rgb(247, 247, 245);
-        --bs-btn-active-border-color: rgb(247, 247, 245);
-        background-image: none;
+    .gt-navbar .btn-cust-yellow,
+    .member-point {
+        border: 1px solid #454545;
     }
 }
