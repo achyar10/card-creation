@@ -100,4 +100,39 @@
         margin-top: .5rem;
         margin-bottom: .5rem;
     }
+
+    .gt-navbar {
+        --bs-navbar-padding-x: 0rem;
+        --bs-navbar-padding-y: 0.5rem;
+        --bs-navbar-font-weight: 600;
+        --bs-navbar-color: rgb(0, 0, 0);
+        --bs-navbar-hover-color: rgb(215, 2, 39);
+        --bs-navbar-active-color: rgb(215, 2, 39);
+        --bs-navbar-bg: rgb(255, 224, 30);
+        --bs-navbar-toggler-border-color: var(--bs-navbar-color);
+        --bs-navbar-nav-link-padding-x: 1rem;
+        --bs-navbar-link-padding-y: 0.5rem;
+        --bs-navbar-link-font-weight: 700;
+        --bs-navbar-link-color: var(--bs-navbar-color);
+        --bs-navbar-link-hover-color: var(--bs-navbar-hover-color);
+        --bs-navbar-link-disabled-color: var(--bs-navbar-disabled-color);
+        background-color: var(--bs-navbar-bg);
+        background-image: linear-gradient(57.35deg, #E8B363 6.86%, #E8BA6E 38.33%, #EFCC8F 51.33%, #E4B577 67.63%, #E39A3E 90.8%);
+        font-weight: 600;
+    }
+
+    .gt-navbar .btn-cust-yellow {
+        --bs-btn-font-weight: 500;
+        --bs-btn-color: var(--bs-black);
+        --bs-btn-bg: rgb(247, 247, 245);
+        --bs-btn-border-color: rgb(247, 247, 245);
+        --bs-btn-hover-color: var(--bs-black);
+        --bs-btn-hover-bg: rgb(213, 212, 210);
+        --bs-btn-hover-border-color: rgb(213, 212, 210);
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: rgb(247, 247, 245);
+        --bs-btn-active-border-color: rgb(247, 247, 245);
+        background-image: none;
+    }
 }
