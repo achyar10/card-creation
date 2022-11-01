@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link href="{{ asset('frontend/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link href="{{ asset('frontend/styles/style.css?v=1.0.3') }}" rel="stylesheet">
+    <link href="{{ asset('frontend/styles/style.css?v=1.0.4') }}" rel="stylesheet">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 </head>
 
@@ -74,7 +74,7 @@
     </div>
 
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/custom.js?v=1.0.0') }}"></script>
+    <script src="{{ asset('frontend/js/custom.js?v=1.0.1') }}"></script>
     <script src="{{ asset('frontend/js/carousel.js?v=1.0.0') }}"></script>
 </body>
 
