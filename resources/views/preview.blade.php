@@ -13,7 +13,7 @@
         <div class="section__bg">
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
         </div>
-        <div class="section__float_bg">
+        <div class="section__float_bg d-none">
             <img class="section__img chocochip chocochip1"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
             <img class="section__img chocochip chocochip2" src="{{ asset('frontend/images/decorations/chocochip.png') }}" />

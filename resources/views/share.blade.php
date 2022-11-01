@@ -7,19 +7,19 @@
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
         </div>
         <div class="section__float_bg">
-            <img class="section__img chocochip chocochip1 animate__animated animate__infinite"
+            <img class="section__img chocochip chocochip1 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
-            <img class="section__img chocochip chocochip2 animate__animated animate__infinite"
+            <img class="section__img chocochip chocochip2 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
-            <img class="section__img chocochip chocochip3 animate__animated animate__infinite"
+            <img class="section__img chocochip chocochip3 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
-            <img class="section__img chocochip chocochip4 animate__animated animate__infinite"
+            <img class="section__img chocochip chocochip4 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
-            <img class="section__img chocochip chocochip5 animate__animated animate__infinite"
+            <img class="section__img chocochip chocochip5 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
-            <img class="section__img chocochip chocochip6 animate__animated animate__infinite"
+            <img class="section__img chocochip chocochip6 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
-            <img class="section__img chocochip chocochip7 animate__animated animate__infinite"
+            <img class="section__img chocochip chocochip7 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
         </div>
         <section class="section section__home1">

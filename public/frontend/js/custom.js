@@ -25,3 +25,10 @@ function checkPosition() {
 if (sectionHome2) {
     window.addEventListener("scroll", checkPosition);
 }
+
+window.onload = () => {
+    const sectionFloat = document.querySelector('.section__float_bg');
+    if (sectionFloat) {
+        sectionFloat.classList.remove('d-none');
+    }
+}

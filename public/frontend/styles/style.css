@@ -80,10 +80,6 @@ body {
     height: 100%;
     z-index: 2;
     overflow: hidden;
-    animation: slideInDown;
-    /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 1s;
-    /* don't forget to set a duration! */
 }
 
 .section__img {
@@ -107,7 +103,7 @@ body {
     top: 470px;
     left: 7%;
     transform: rotate(15deg);
-    animation: rotating 15s linear infinite;
+    animation: rotating 15s linear infinite, zoomIn 0.7s;
 }
 
 .chocochip2 {
@@ -116,7 +112,7 @@ body {
     top: 250px;
     left: 15%;
     transform: rotate(15deg);
-    animation: rotatingCounterClockwise 17s linear infinite;
+    animation: rotatingCounterClockwise 17s linear infinite, zoomIn 0.7s;
 }
 
 .chocochip3 {
@@ -126,7 +122,7 @@ body {
     left: 5%;
     transform: rotate(60deg);
     filter: blur(3px);
-    animation: rotating 60s linear infinite;
+    animation: rotating 60s linear infinite, zoomIn 0.7s;
 }
 
 .chocochip4 {
@@ -135,7 +131,7 @@ body {
     top: 60px;
     left: 25%;
     transform: rotate(-15deg);
-    animation: rotatingCounterClockwise 22s linear infinite;
+    animation: rotatingCounterClockwise 22s linear infinite, zoomIn 0.7s;
 }
 
 .chocochip5 {
@@ -144,7 +140,7 @@ body {
     top: 200px;
     left: 75%;
     transform: rotate(10deg);
-    animation: rotating 23s linear infinite;
+    animation: rotating 23s linear infinite, zoomIn 0.7s;
 }
 
 .chocochip6 {
@@ -153,7 +149,7 @@ body {
     top: 10px;
     left: 90%;
     transform: rotate(10deg);
-    animation: rotatingCounterClockwise 23s linear infinite;
+    animation: rotatingCounterClockwise 23s linear infinite, zoomIn 0.7s;
 }
 
 .chocochip7 {
@@ -163,7 +159,7 @@ body {
     left: 85%;
     transform: rotate(10deg);
     filter: blur(2px);
-    animation: rotatingCounterClockwise 60s linear infinite;
+    animation: rotatingCounterClockwise 60s linear infinite, zoomIn 0.7s;
 }
 
 .section__content {
@@ -175,9 +171,7 @@ body {
     justify-content: start;
     z-index: 10;
     animation: fadeInUp;
-    /* referring directly to the animation's @keyframe declaration */
     animation-duration: .5s;
-    /* don't forget to set a duration! */
 }
 
 @media screen and (max-width: 768px) {
@@ -206,10 +200,8 @@ body {
     height: 40%;
     object-fit: contain;
     object-position: center;
-    animation: backInLeft;
-    /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 1s;
-    /* don't forget to set a duration! */
+    animation: zoomIn;
+    animation-duration: .7s;
 }
 
 @media screen and (max-width: 768px) {
