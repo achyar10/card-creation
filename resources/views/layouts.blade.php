@@ -74,7 +74,7 @@
     </div>
 
     <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/custom.js') }}"></script>
+    <script src="{{ asset('frontend/js/custom.js?v=' . time()) }}"></script>
     <script src="{{ asset('frontend/js/carousel.js?v=' . time()) }}"></script>
 </body>
 
