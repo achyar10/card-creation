@@ -12,7 +12,7 @@
                     <div class="card bg-transparent border-white mb-4">
                         <div class="card-body">
                             <div class="row align-items-center">
-                                <div class="col-lg-6 col-md-12 profile">
+                                <div class="col-md-12 mb-4 profile">
                                     <div class="profile-img mb-4">
                                         <img class="img-fluid" width="64" height="64" src="{{ $member->photo }}">
                                         <a href="{{ route('signOut') }}" class="btn btn-cust-white logout-btn">
@@ -34,7 +34,7 @@
                                 </div>
 
                                 <div
-                                    class="col-lg-6 col-md-12 d-flex align-items-stretch flex-column justify-content-center">
+                                    class="col-md-12 d-flex align-items-stretch flex-column justify-content-center">
                                     <div class="point__counter mb-4 d-flex flex-row flex-nowrap justify-content-center">
                                         @foreach ($points as $point)
                                             <div class="point__digit_wrapper">
@@ -43,10 +43,26 @@
                                         @endforeach
                                     </div>
                                     <h4 class="d-block w-100 mb-4 text-center">Poin</h4>
-                                    <a href="{{ route('history') }}" class="btn btn-cust-white">
-                                        <i class="bx bx-history fs-5"></i>
-                                        Riwayat Poin
-                                    </a>
+                                    <div class="leaderboard mb-4">
+                                        <h4 class="leaderboard__title">Riwayat Poinmu</h4>
+
+                                        @foreach ($socials as $social)
+                                            <div class="leaderboard__item">
+                                                <div class="leaderboard__rank">
+                                                    <span class="rank__icon">
+                                                        <img src="{{ asset($social['icon']) }}">
+                                                    </span>
+                                                    <p class="rank__name">
+                                                        <span class="text-white">{{ $social['name'] }}</span>
+                                                        <span class="text-white">{{ $social['date'] }}</span>
+                                                    </p>
+                                                </div>
+                                                <div class="leaderboard__point btn-cust-yellow">
+                                                    <span class="fw-bold">+{{ $social['point'] }}</span>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
                                 </div>
 
                             </div>

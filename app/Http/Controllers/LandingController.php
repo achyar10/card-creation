@@ -49,6 +49,54 @@ class LandingController extends Controller
         if (!isset($session->fullname) && !isset($session->phone)) return redirect()->route('profile.update');
 
         $data['member'] = $session;
+        $socials = [
+            [
+                'icon' => 'frontend/images/whatsapp.png',
+                'name' => 'Share (Whatsapp)',
+            ],
+            [
+                'icon' => 'frontend/images/email.png',
+                'name' => 'Share (Email)',
+            ],
+            [
+                'icon' => 'frontend/images/instagram.png',
+                'name' => 'Share (Instagram)',
+            ],
+            [
+                'icon' => 'frontend/images/twitter.png',
+                'name' => 'Share (Twitter)',
+            ],
+            [
+                'icon' => 'frontend/images/facebook.png',
+                'name' => 'Share (Facebook)',
+            ],
+            [
+                'icon' => 'frontend/images/email.png',
+                'name' => 'Sign Up (Email)',
+            ],
+            [
+                'icon' => 'frontend/images/signup.png',
+                'name' => 'Sign Up',
+            ],
+        ];
+
+        $histories = $this->history->getByMember($session->id);
+
+        $result = [];
+        foreach ($histories as $key) {
+            foreach ($socials as $social) {
+                if ($social['name'] == $key->via) {
+                    array_push($result, [
+                        'name' => $social['name'],
+                        'icon' => $social['icon'],
+                        'point' => $key->point,
+                        'date' => date('d F Y')
+                    ]);
+                }
+            }
+        }
+        // return $result;
+        $data['socials'] = $result;
         $data['points'] = $this->showPoint($session->point);
 
         $data['leaderboards'] = $this->member->leaderboard();
