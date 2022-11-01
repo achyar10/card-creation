@@ -1,6 +1,7 @@
 @extends('admin.layouts.main')
 @section('title', 'Daftar Member')
 @section('content')
+
     <div class="page-content">
         <div class="container-fluid">
             <div class="row">
@@ -27,7 +28,7 @@
                                             <th>Telepon</th>
                                             <th>Sign Up Via</th>
                                             <th>Point</th>
-                                            <th>Aksi</th>
+                                            {{-- <th>Aksi</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -40,9 +41,7 @@
                                                 <td>{{ $row->phone }}</td>
                                                 <td>{{ $row->oauth_from }}</td>
                                                 <td>{{ $row->point }}</td>
-                                                <td>
 
-                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
