@@ -7,9 +7,9 @@
         </div>
 
         <section class="section">
-            <div class="section__content container" style="max-width: 1140px;">
+            <div class="section__content container section__profile" style="max-width: 1140px;">
                 <div class="col-md-6 mb-4">
-                    <div class="card bg-transparent border-white mb-4">
+                    <div class="card bg-transparent mb-4">
                         <div class="card-body">
                             <div class="row align-items-center">
                                 <div class="col-lg-6 col-md-12 mb-4 profile">
@@ -44,34 +44,36 @@
                                     <h4 class="d-block w-100 mb-4 text-center">Poin</h4>
                                 </div>
 
-                                <div class="col-12">
-                                <div class="leaderboard mb-4">
-                                        <h4 class="leaderboard__title">Riwayat Poinmu</h4>
+                                <div class="col-12 profile-reward mb-4">
+                                    <img src="{{ asset('frontend/images/icons/goodtime_reward_1.png') }}">
+                                </div>
 
+                                <h4 class="leaderboard__title">Riwayat Poinmu</h4>
+                                <div class="col-12">
+                                    <div class="leaderboard mb-4">
                                         @foreach ($socials as $social)
-                                            <div class="leaderboard__item">
-                                                <div class="leaderboard__rank">
-                                                    <span class="rank__icon">
-                                                        <img src="{{ asset($social['icon']) }}">
-                                                    </span>
-                                                    <p class="rank__name">
-                                                        <span class="text-white">{{ $social['name'] }}</span>
-                                                        <span class="text-white">{{ $social['date'] }}</span>
-                                                    </p>
-                                                </div>
-                                                <div class="leaderboard__point btn-cust-yellow">
-                                                    <span class="fw-bold">+{{ $social['point'] }}</span>
-                                                </div>
+                                        <div class="leaderboard__item">
+                                            <div class="leaderboard__rank">
+                                                <span class="rank__icon">
+                                                    <img src="{{ asset($social['icon']) }}">
+                                                </span>
+                                                <p class="rank__name">
+                                                    <span class="text-white">{{ $social['name'] }}</span>
+                                                    <span class="text-white">{{ $social['date'] }}</span>
+                                                </p>
                                             </div>
+                                            <div class="leaderboard__point btn-cust-yellow">
+                                                <span class="fw-bold">+{{ $social['point'] }}</span>
+                                            </div>
+                                        </div>
                                         @endforeach
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
 
-                    <div class="card bg-transparent border-white">
+                    <div class="card bg-transparent">
                         <div class="card-body">
                             <div class="gt-video text-center">
                                 <iframe width="100%" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA"
@@ -92,7 +94,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card bg-transparent border-white mb-4">
+                    <div class="card bg-transparent mb-4">
                         <div class="card-body">
                             <div class="leaderboard mb-4">
                                 <h4 class="leaderboard__title">Peringkat Saya</h4>
@@ -108,8 +110,8 @@
                                     </div>
                                 </div>
                             </div>
+                            <h4 class="leaderboard__title">Semua Peringkat</h4>
                             <div class="leaderboard">
-                                <h4 class="leaderboard__title">Semua Peringkat</h4>
                                 @foreach ($leaderboards as $leaderboard)
                                     @if ($leaderboard->point > 0)
                                         <div class="leads leaderboard__item {{ $loop->iteration == 1 ? 'leaderboard__gold' : ($loop->iteration == 2 ? 'leaderboard__silver' : ($loop->iteration == 3 ? 'leaderboard__bronze' : 'leaderboard__regular')) }}"

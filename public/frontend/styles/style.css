@@ -174,27 +174,6 @@ body {
     animation-duration: .5s;
 }
 
-@media screen and (max-width: 767px) {
-    .section__content {
-        justify-content: center;
-    }
-
-    .section__content > * {
-        width: 100%;
-        max-width: 100%;
-    }
-}
-
-@media screen and (min-width: 768px ) {
-    .section__content > * {
-        flex-shrink: 0;
-        max-width: 100%;
-        padding-right: calc(var(--bs-gutter-x) * .5);
-        padding-left: calc(var(--bs-gutter-x) * .5);
-        margin-top: var(--bs-gutter-y);
-    }
-}
-
 .home__logo {
     width: 40%;
     height: 40%;
@@ -202,29 +181,6 @@ body {
     object-position: center;
     animation: zoomIn;
     animation-duration: .7s;
-}
-
-@media screen and (max-width: 767px) {
-    .home__logo {
-        width: 60%;
-        height: 60%;
-    }
-
-    .section__home2 .title {
-        text-align: center;
-    }
-
-    .section__home3 .home3__content {
-        text-align: center;
-        align-items: center;
-    }
-}
-
-@media screen and (min-width: 1400px) {
-    .home__logo {
-        width: 60%;
-        height: 60%;
-    }
 }
 
 .section__home1::after {
@@ -294,9 +250,9 @@ body {
 
 .point__digit_wrapper {
     background-color: var(--bs-white);
-    padding: 1.25rem;
+    padding: 0 1.25rem;
     margin-right: .5rem;
-    border-radius: var(--bs-border-radius);
+    border-radius: var(--bs-border-radius-xl);
 }
 
 .point__counter .point__digit {
@@ -306,16 +262,6 @@ body {
     -webkit-text-fill-color: transparent;
     font-size: 4rem;
     font-weight: 700;
-}
-
-@media screen and (max-width: 767px) {
-    .point__digit_wrapper {
-        padding: .75rem;
-    }
-
-    .point__counter .point__digit {
-        font-size: 2rem;
-    }
 }
 
 .point__counter .point__unit {
@@ -408,16 +354,6 @@ body {
     width: 400px;
 }
 
-@media screen and (max-width: 991px) {
-    .goodtime_product {
-        display: none;
-    }
-
-    .goodtime_card_preview {
-        display: none;
-    }
-}
-
 /* Carousel */
 
 .carousel-inner .carousel-item.active,
@@ -440,11 +376,13 @@ body {
     --gt-leaderboard-color-bg-dark: #ffffff;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     flex-grow: 1;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
-.leaderboard .leaderboard__title {
+.leaderboard__title {
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -671,8 +609,8 @@ body {
 .profile-img>img {
     width: 64px;
     height: 64px;
-    margin-right: 1rem;
     border-radius: var(--bs-border-radius-pill);
+    margin-right: 1rem;
 }
 
 .profile .profile-name {
@@ -701,6 +639,16 @@ body {
     --bs-btn-padding-x: 1rem;
 }
 
+.profile-reward {
+    display: none;
+    text-align: center;
+}
+
+.profile-reward img {
+    max-width: 100%;
+    height: 250px;
+}
+
 @media screen and (max-width: 991px) {
     .profile {
         align-items: center;
@@ -714,13 +662,91 @@ body {
         margin-bottom: .5rem;
     }
 
-    .profile-img>img {
+    .profile .profile-img,
+    .profile-img > img {
         margin-right: 0;
+    }
+
+    .profile-img > img {
+        width: 96px;
+        height: 96px;
     }
 
     .chip-wrapper {
         flex-wrap: nowrap;
         overflow-x: scroll;
+    }
+
+    .goodtime_product {
+        display: none;
+    }
+
+    .goodtime_card_preview {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .section__content {
+        justify-content: center;
+    }
+
+    .section__content > * {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .profile-reward {
+        display: block;
+    }
+
+    .section__profile .card {
+        border: none;
+    }
+}
+
+@media screen and (min-width: 768px ) {
+    .section__content > * {
+        flex-shrink: 0;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+        margin-top: var(--bs-gutter-y);
+    }
+
+    .section__profile .card {
+        border: 1px solid #ffffff;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .home__logo {
+        width: 60%;
+        height: 60%;
+    }
+
+    .section__home2 .title {
+        text-align: center;
+    }
+
+    .section__home3 .home3__content {
+        text-align: center;
+        align-items: center;
+    }
+
+    .point__digit_wrapper {
+        padding: 0 .75rem;
+    }
+
+    .point__counter .point__digit {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .home__logo {
+        width: 60%;
+        height: 60%;
     }
 }
 
