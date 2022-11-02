@@ -35,7 +35,6 @@ class Carousel {
             "gallery-nav-item gallery-item-last";
     }
     setCurrentState(target, selected, previous, previous2, next, next2, first, last) {
-        console.log(target);
         selected.forEach((el) => {
             el.classList.remove("gallery-item-selected");
             if (target.className == "gallery-controls-previous") {
