@@ -775,6 +775,41 @@ body {
         height: 36px;
         padding: .5rem;
     }
+
+    .chocochip1 {
+        top: 600px;
+        left: 7%;
+    }
+
+    .chocochip2 {
+        top: 320px;
+        left: 10%;
+    }
+
+    .chocochip3 {
+        top: 0;
+        left: -5%;
+    }
+
+    .chocochip4 {
+        top: 60px;
+        left: 75vw;
+    }
+
+    .chocochip5 {
+        top: 200px;
+        left: 75%;
+    }
+
+    .chocochip6 {
+        top: 550px;
+        left: 70vw;
+    }
+
+    .chocochip7 {
+        top: 400px;
+        left: 85%;
+    }
 }
 
 @media screen and (min-width: 1400px) {
