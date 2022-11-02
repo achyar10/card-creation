@@ -58,7 +58,7 @@
                     </div>
                     <h4 class="my-4">Cara Ikutan</h4>
                     <ol class="lh-lg mb-4">
-                        <li>Pilih moment gifting card</li>
+                        <li>Pilih moment gift card</li>
                         <li>Pilih template kartu ucapan yang cocok denganmu</li>
                         <li>Tambahkan ucapan yang ingin kamu sampaikan</li>
                         <li>Share ke orang tersayang dan teman-temanmu</li>
