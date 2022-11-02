@@ -39,7 +39,7 @@
         </section>
 
         <section class="section section__home2 animate__animated" id="scrollspySection2">
-            <div class="section__ornament d-none">
+            {{-- <div class="section__ornament d-none">
                 <div class="ornament__wrapper ornament__cut_left firework_left animate__animated">
                     <img class="ornament__img" src="{{ asset('frontend/images/decorations/firework.png') }}">
                 </div>
@@ -52,7 +52,7 @@
                 <div class="ornament__wrapper firework_right animate__animated">
                     <img class="ornament__img" src="{{ asset('frontend/images/decorations/firework.png') }}">
                 </div>
-            </div>
+            </div> --}}
             <div class="section__content container d-none">
                 <div class="col-12 title">
                     <h2>Pilih Momen disini</h2>
@@ -99,8 +99,7 @@
                             </a>
                             <a href="https://www.blibli.com/merchant/arnott-s-official-store/ARO-60058" class="shop-icon"
                                 target="_blank">
-                                <img width="36px" height="36px"
-                                    src="{{ asset('frontend/images/icons/blibli.png') }}">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/blibli.png') }}">
                             </a>
                         </div>
                     </div>
