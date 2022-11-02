@@ -124,12 +124,12 @@ class LandingController extends Controller
         $this->member->update($session->id);
 
         if (isset($request->fullname)) {
-            $this->member->updatePoint($session->id, 5);
-            $this->history->create('Sign Up', 5, $session->id);
+            $this->member->updatePoint($session->id, 10);
+            $this->history->create('Sign Up', 10, $session->id);
         }
         if (isset($request->phone)) {
-            $this->member->updatePoint($session->id, 5);
-            $this->history->create('Sign Up', 5, $session->id);
+            $this->member->updatePoint($session->id, 10);
+            $this->history->create('Sign Up', 10, $session->id);
         }
 
         return redirect()->route('profile');

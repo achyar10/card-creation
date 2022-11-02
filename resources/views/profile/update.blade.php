@@ -52,7 +52,7 @@
                                     </span>
                                     <span
                                         class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark"
-                                        style="z-index: 1;">+5
+                                        style="z-index: 1;">+10
                                         Poin
                                         <span class="visually-hidden">point</span>
                                     </span>
@@ -71,7 +71,7 @@
                                     </span>
                                     <span
                                         class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark"
-                                        style="z-index: 1;">+5
+                                        style="z-index: 1;">+10
                                         Poin
                                         <span class="visually-hidden">point</span>
                                     </span>
