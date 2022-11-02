@@ -32,8 +32,9 @@
                                         </a>
                                     </div>
                                 </div>
-
-                                <div class="col-lg-6 col-md-12 d-flex align-items-stretch flex-column justify-content-center">
+                                <h4 class="mb-3 d-lg-none text-center">Poin Reward</h4>
+                                <div
+                                    class="col-lg-6 col-md-12 d-flex align-items-stretch flex-column justify-content-center">
                                     <div class="point__counter mb-4 d-flex flex-row flex-nowrap justify-content-center">
                                         @foreach ($points as $point)
                                             <div class="point__digit_wrapper">
@@ -52,20 +53,20 @@
                                 <div class="col-12">
                                     <div class="leaderboard mb-4">
                                         @foreach ($socials as $social)
-                                        <div class="leaderboard__item">
-                                            <div class="leaderboard__rank">
-                                                <span class="rank__icon">
-                                                    <img src="{{ asset($social['icon']) }}">
-                                                </span>
-                                                <p class="rank__name">
-                                                    <span class="text-white">{{ $social['name'] }}</span>
-                                                    <span class="text-white">{{ $social['date'] }}</span>
-                                                </p>
+                                            <div class="leaderboard__item">
+                                                <div class="leaderboard__rank">
+                                                    <span class="rank__icon">
+                                                        <img src="{{ asset($social['icon']) }}">
+                                                    </span>
+                                                    <p class="rank__name">
+                                                        <span class="text-white">{{ $social['name'] }}</span>
+                                                        <span class="text-white">{{ $social['date'] }}</span>
+                                                    </p>
+                                                </div>
+                                                <div class="leaderboard__point btn-cust-yellow">
+                                                    <span class="fw-bold">+{{ $social['point'] }}</span>
+                                                </div>
                                             </div>
-                                            <div class="leaderboard__point btn-cust-yellow">
-                                                <span class="fw-bold">+{{ $social['point'] }}</span>
-                                            </div>
-                                        </div>
                                         @endforeach
                                     </div>
                                 </div>
