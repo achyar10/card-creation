@@ -566,7 +566,7 @@ body {
 .shops {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -576,13 +576,22 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1rem;
     margin-bottom: .5rem;
     border-radius: 50%;
     width: 48px;
     height: 48px;
     background-color: rgb(255 255 255 / 40%);
     text-align: center;
+}
+
+.shops .shop-icon:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.shops .shop-icon img {
+    width: 48px;
+    height: 48px;
+    padding: .5rem;
 }
 
 .hashtags {
@@ -740,6 +749,19 @@ body {
 
     .point__counter .point__digit {
         font-size: 3rem;
+    }
+
+    .shops .shop-icon {
+        margin-bottom: .5rem;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+    }
+
+    .shops .shop-icon img {
+        width: 36px;
+        height: 36px;
+        padding: .5rem;
     }
 }
 
