@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg gt-navbar bg-transparent" id="top-navbar">
     <div class="container">
-        <a class="navbar-brand" href="/">
-            <img src="{{ asset('frontend/images/icons/goodtime_logo.png') }}" alt="GoodTime logo" height="64">
+        <a class="navbar-brand" href="#">
+            {{-- <img src="{{ asset('frontend/images/icons/goodtime_logo.png') }}" alt="GoodTime logo" height="64"> --}}
         </a>
         <div class="navbar-info">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -11,7 +11,7 @@
                 </span>
             </button>
         </div>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div class="collapse navbar-collapse justify-content-end mt-2" id="navbarNav">
             <ul class="navbar-nav fw-normal">
                 <li class="nav-item">
                     <a class="nav-link" href="/#scrollspySection1">Beranda</a>
