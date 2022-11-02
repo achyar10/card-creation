@@ -54,7 +54,7 @@
             </div> --}}
             <div class="section__content container d-none">
                 <div class="col-12 title">
-                    <h2>Pilih Momen disini</h2>
+                    <h2 class="btn btn-cust-yellow">Pilih Momen disini</h2>
                 </div>
                 <div class="col-12">
                     <div class="gallery">

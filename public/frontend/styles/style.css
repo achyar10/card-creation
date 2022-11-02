@@ -207,6 +207,12 @@ body {
     margin-bottom: 2rem;
 }
 
+.section__home2 .title h2 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    cursor: default;
+}
+
 .section__home2::after {
     content: ' ';
     position: absolute;
@@ -735,6 +741,13 @@ body {
 
     .section__home2 .title {
         text-align: center;
+    }
+
+    .section__home2 .title h2 {
+        font-size: 2rem;
+        padding: .75rem 2rem;
+        cursor: default;
+        font-size: 1.5rem;
     }
 
     .section__home3 .home3__content {
