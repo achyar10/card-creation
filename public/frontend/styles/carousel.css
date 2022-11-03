@@ -189,15 +189,15 @@
     }
 
     .gallery-item.gallery-item-previous2 {
-        left: 30%;
+        left: 15%;
     }
 
     .gallery-item.gallery-item-previous {
-        left: 40%;
+        left: 20%;
     }
 
     .gallery-item.gallery-item-next {
-        left: 60%;
+        left: 80%;
     }
 
     .gallery-item.gallery-item-next2 {
