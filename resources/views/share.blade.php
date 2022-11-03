@@ -96,7 +96,7 @@
         const myId = document.querySelector('#myId').value;
         const image = document.querySelector('#image');
         const url = document.querySelector('#url').getAttribute('data-url');
-        const messageLogin = 'Login terlebih daulu!';
+        const messageLogin = 'Login terlebih dahulu!';
         const messageDesc =
             `Hai ada kartu ucapan special yang #DipBanget untuk kamu, yuk lihat ucapannya dan bikin versi kamu disini ya 👉 https://arnottsgiftingmoments.com/  ada hadiah special dari GOOD TIME untuk kamu.`
 
