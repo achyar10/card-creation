@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="col-12 profile-reward mb-4">
-                                    <img src="{{ asset('frontend/images/icons/goodtime_reward_1.png') }}">
+                                    <img src="{{ asset('frontend/images/icons/goodtime_rewards.png') }}">
                                 </div>
 
                                 <h4 class="leaderboard__title">Riwayat Poinmu</h4>

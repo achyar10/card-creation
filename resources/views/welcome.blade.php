@@ -27,7 +27,8 @@
                 <div class="col-12 text-center">
                     <img class="img-fluid home__logo animate__animated"
                         src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
-                    <p class="text-white lh-lg mb-4">Kamu bisa berkreasi seru membuat ucapan untuk diberikan<br>kepada orang tersayang dan teman-temanmu di momen-momen istimewa</p>
+                    <p class="text-white lh-lg mb-4">Kamu bisa berkreasi seru membuat ucapan untuk diberikan<br>kepada orang
+                        tersayang dan teman-temanmu di momen-momen istimewa</p>
                     <div class="cta-button">
                         <button type="button" class="btn btn-cust-white mb-3" data-bs-toggle="modal"
                             data-bs-target="#rulesModal">Cara Ikutan</button>
@@ -60,10 +61,8 @@
                     <div class="gallery">
                         <div class="gallery-container">
                             @foreach ($categories as $category)
-                                <img
-                                class="gallery-item"
-                                data-id="{{ $category->id }}"
-                                src="{{ asset('category/' . $category->thumbnail) }}">
+                                <img class="gallery-item" data-id="{{ $category->id }}"
+                                    src="{{ asset('category/' . $category->thumbnail) }}">
                             @endforeach
                         </div>
                         <div class="gallery-controls"></div>
@@ -77,7 +76,7 @@
             <div class="section__content container d-none">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
+                        <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_packshoot.png') }}">
                         <h5 class="text-center my-4">Kunjungi Marketplace Arnott's</h5>
                         <div class="shops">
                             <a href="https://www.tokopedia.com/arnotts" class="shop-icon" target="_blank">
