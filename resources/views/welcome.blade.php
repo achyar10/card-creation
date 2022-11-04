@@ -6,7 +6,7 @@
         <div class="section__bg">
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Good time background" />
         </div>
-        <div class="section__float_bg d-none">
+        {{-- <div class="section__float_bg d-none">
             <img class="section__img chocochip chocochip1 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
             <img class="section__img chocochip chocochip2 animate__animated"
@@ -21,7 +21,7 @@
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
             <img class="section__img chocochip chocochip7 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
-        </div>
+        </div> --}}
         <section class="section section__home1 animate__animated" id="scrollspySection1">
             <div class="section__content container">
                 <div class="col-12 text-center">
@@ -81,8 +81,7 @@
                         <h5 class="text-center my-4">Kunjungi Marketplace Arnott's</h5>
                         <div class="shops">
                             <a href="https://www.tokopedia.com/arnotts" class="shop-icon" target="_blank">
-                                <img width="36px" height="36px"
-                                    src="{{ asset('frontend/images/icons/tokopedia.png') }}">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/tokopedia.png') }}">
                             </a>
                             <a href="https://www.lazada.co.id/shop/arnotts" class="shop-icon" target="_blank">
                                 <img width="36px" height="36px" src="{{ asset('frontend/images/icons/lazada.png') }}">
@@ -95,8 +94,7 @@
                                 <img width="36px" height="36px" src="{{ asset('frontend/images/icons/shopee.png') }}">
                             </a>
                             <a href="https://www.bukalapak.com/arnotts-official" class="shop-icon" target="_blank">
-                                <img width="36px" height="36px"
-                                    src="{{ asset('frontend/images/icons/bukalapak.png') }}">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/bukalapak.png') }}">
                             </a>
                             <a href="https://www.blibli.com/merchant/arnott-s-official-store/ARO-60058" class="shop-icon"
                                 target="_blank">
