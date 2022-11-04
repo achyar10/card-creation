@@ -34,6 +34,7 @@
             createNode,
             createMarkupEditorToolStyle,
             createMarkupEditorToolStyles,
+            createMarkupEditorShapeStyleControls
         } from '../frontend/vendor/pintura/pintura.js';
 
         const dataImg = document.querySelector('#image');
@@ -57,7 +58,19 @@
                 // create the text tool style and override fontSize property
                 text: createMarkupEditorToolStyle('text', {
                     fontSize: '10%',
-                }),
+                })
+            }),
+            markupEditorShapeStyleControls: createMarkupEditorShapeStyleControls({
+                fontFamilyOptions: [
+                    [`Calibri, sans-serif`, 'Calibri'],
+                    [`Arial, sans-serif`, 'Arial'],
+                    [`'Poppins', sans-serif `, 'Poppins'],
+                    [`'Coolvetica Rg'`, 'Coolvetica'],
+                    [`'Childs Hand'`, `Child's Hand`],
+                    [`'Caviar Dreams'`, `Caviar Dreams`],
+                    [`'Bebas'`, 'Bebas']
+                    // Define additional custom fonts here
+                ],
             }),
 
             // This will set a square crop aspect ratio
@@ -77,17 +90,17 @@
                     "Markers",
                     [
                         {
-                            src: "sticker-one.svg",
+                            src: "/frontend/vendor/pintura/sticker-one.svg",
                             width: "5%",
                             alt: "One"
                         },
                         {
-                            src: "sticker-two.svg",
+                            src: "/frontend/vendor/pintura/sticker-two.svg",
                             width: "5%",
                             alt: "Two"
                         },
                         {
-                            src: "sticker-three.svg",
+                            src: "/frontend/vendor/pintura/sticker-three.svg",
                             width: "5%",
                             alt: "Three"
                         }
