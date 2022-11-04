@@ -870,6 +870,10 @@ body {
         font-size: 3rem;
     }
 
+    .shops {
+        margin-bottom: 5rem;
+    }
+
     .shops .shop-icon {
         margin-bottom: .5rem;
         border-radius: 50%;
