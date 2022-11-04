@@ -8,14 +8,6 @@
         </div>
 
         <section class="section section__home1">
-            <div class="section__ornament">
-                <div class="ornament__wrapper goodtime_product">
-                    <img class="ornament__img" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
-                </div>
-                <div class="ornament__wrapper goodtime_card_preview">
-                    <img class="ornament__img" src="{{ asset('frontend/images/icons/goodtime_card_preview.png') }}">
-                </div>
-            </div>
             <div class="section__content container">
                 <div class="col-md-6 text-center">
                     <img class="mb-3" height="150px" src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
