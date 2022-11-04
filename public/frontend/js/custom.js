@@ -50,6 +50,10 @@ if (chipWrapper) {
     chipPrevious.addEventListener("click", () => {
         let maxScrollLeft = chipWrapper.scrollWidth - chipWrapper.clientWidth
         chipWrapper.scrollLeft -= maxScrollLeft / 2
+
+        if (chipWrapper.scrollLeft == 0) {
+            chipWrapper.scrollLeft = maxScrollLeft
+        }
     });
 }
 
