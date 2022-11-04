@@ -120,6 +120,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1;
+    background: var(--gt-modal-bg);;
 }
 
 .section__float_bg {
@@ -424,8 +425,10 @@ body {
 /* Leaderboard */
 .leaderboard {
     --gt-leaderboard-gold-bg: linear-gradient(57.35deg, #E8B363 6.86%, #E8BA6E 38.33%, #EFCC8F 51.33%, #E4B577 67.63%, #E39A3E 90.8%);
-    --gt-leaderboard-silver-bg: #d70227;
-    --gt-leaderboard-bronze-bg: #7d001e;
+    --gt-leaderboard-silver-bg: linear-gradient(57.35deg, #E8B363 6.86%, #E8BA6E 38.33%, #EFCC8F 51.33%, #E4B577 67.63%, #E39A3E 90.8%);
+    --gt-leaderboard-bronze-bg: linear-gradient(57.35deg, #E8B363 6.86%, #E8BA6E 38.33%, #EFCC8F 51.33%, #E4B577 67.63%, #E39A3E 90.8%);
+    /* --gt-leaderboard-silver-bg: #d70227;
+    --gt-leaderboard-bronze-bg: #7d001e; */
     --gt-leaderboard-regular-bg: #ffffff;
     --gt-leaderboard-color-bg-light: #000000;
     --gt-leaderboard-color-bg-dark: #ffffff;
@@ -469,12 +472,12 @@ body {
 
 .leaderboard .leaderboard__silver {
     background: var(--gt-leaderboard-silver-bg);
-    color: var(--gt-leaderboard-color-bg-dark);
+    color: var(--gt-leaderboard-color-bg-light);
 }
 
 .leaderboard .leaderboard__bronze {
     background: var(--gt-leaderboard-bronze-bg);
-    color: var(--gt-leaderboard-color-bg-dark);
+    color: var(--gt-leaderboard-color-bg-light);
 }
 
 .leaderboard__rank .rank__icon,
@@ -520,8 +523,9 @@ body {
 
 .leaderboard__gold .leaderboard__point,
 .leaderboard__silver .leaderboard__point,
-.leaderboard__bronze .leaderboard__point {
-    background-color: var(--gt-leaderboard-regular-bg);
+.leaderboard__bronze .leaderboard__point,
+.leaderboard__regular .leaderboard__point {
+    background-color: rgb(255 255 255 / 60%);
     color: var(--gt-leaderboard-color-bg-light);
 }
 
@@ -837,6 +841,10 @@ body {
     .chip-wrapper {
         justify-content: center;
         overflow-x: hidden;
+    }
+
+    .chip-controls {
+        display: none;
     }
 }
 

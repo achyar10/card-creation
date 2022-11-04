@@ -122,7 +122,7 @@
                                                 <span class="rank__name">{{ $leaderboard->fullname }}</span>
                                             </div>
                                             <div
-                                                class="leaderboard__point {{ $loop->iteration == 1 ? 'bg-light bg-opacity-25' : 'bg-light' }}">
+                                                class="leaderboard__point">
                                                 <span>{{ $leaderboard->point }}</span>
                                             </div>
                                         </div>
@@ -149,8 +149,8 @@
                 rankMe.textContent = rank;
                 leadMyRank.classList.add(rank == 1 ? 'leaderboard__gold' : (rank == 2 ? 'leaderboard__silver' : (rank == 3 ?
                     'leaderboard__bronze' : 'leaderboard__regular')));
-                leadMyPoint.className = rank == 1 ? 'leaderboard__point bg-light bg-opacity-25' :
-                    'leaderboard__point bg-light'
+                // leadMyPoint.className = rank == 1 ? 'leaderboard__point bg-light bg-opacity-25' :
+                //     'leaderboard__point bg-light'
             }
         }
 
