@@ -516,8 +516,63 @@ body {
     color: var(--bs-white);
 }
 
+.chips {
+    position: relative;
+    width: 100%;
+    height: 56px;
+}
+
 .chip-wrapper {
     width: 100%;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding: 0 2.5rem;
+}
+
+.chip-wrapper .chip-item {
+    margin-right: 1rem;
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.chip-controls {
+    width: 100%;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.chip-controls button {
+    border: 0;
+    cursor: pointer;
+    font-size: 1.5rem;
+    background: var(--gt-yellow-bg);
+    color: var(--bs-black);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chip-controls button:hover {
+    background-color: rgb(255 255 255);
+    color: rgb(253 249 13 / 60%);
+}
+
+.chip-controls button:focus {
+    outline: none
 }
 
 .chip {
@@ -684,11 +739,6 @@ body {
     .profile-img > img {
         width: 96px;
         height: 96px;
-    }
-
-    .chip-wrapper {
-        flex-wrap: nowrap;
-        overflow-x: scroll;
     }
 
     .goodtime_product {

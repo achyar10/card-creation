@@ -27,8 +27,29 @@ if (sectionHome2) {
 }
 
 window.onload = () => {
-    const sectionFloat = document.querySelector('.section__float_bg');
+    const sectionFloat = document.querySelector(".section__float_bg");
     if (sectionFloat) {
-        sectionFloat.classList.remove('d-none');
+        sectionFloat.classList.remove("d-none");
     }
+};
+
+let chipWrapper = document.querySelector(".chip-wrapper");
+let chipNext = document.querySelector(".chip-next");
+let chipPrevious = document.querySelector(".chip-previous");
+
+if (chipWrapper) {
+    chipNext.addEventListener("click", () => {
+        let maxScrollLeft = chipWrapper.scrollWidth - chipWrapper.clientWidth
+        chipWrapper.scrollLeft += maxScrollLeft - chipWrapper.clientWidth
+
+        if (chipWrapper.scrollLeft == maxScrollLeft) {
+            chipWrapper.scrollLeft = 0
+        }
+    });
+
+    chipPrevious.addEventListener("click", () => {
+        let maxScrollLeft = chipWrapper.scrollWidth - chipWrapper.clientWidth
+        chipWrapper.scrollLeft -= maxScrollLeft / 2
+    });
 }
+

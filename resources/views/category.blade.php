@@ -38,14 +38,21 @@
                             </button>
                         </div>
                     </form>
-                    <div class="row chip-wrapper">
-                        @foreach ($tags as $row)
-                            <div class="col-auto mb-2">
+                    <div class="chips">
+                        <div class="chip-wrapper">
+                            @foreach ($tags as $row)
+                            <div class="chip-item">
                                 <a class="chip {{ url()->full() == url('theme?category_id=' . $row->id) ? 'active' : '' }}"
                                     href="?category_id={{ $row->id }}"><span>{{ $row->tag_name }}</span></a>
                             </div>
-                        @endforeach
+                            @endforeach
+                        </div>
+                        <div class="chip-controls">
+                            <button class="chip-previous"><i class="bx bx-chevron-left"></i></button>
+                            <button class="chip-next"><i class="bx bx-chevron-right"></i></button>
+                        </div>
                     </div>
+
                 </div>
                 <div class="col-12 content-body mb-4">
                     <h5 class="w-100 text-center mb-5">Pilih desainmu disini</h5>
