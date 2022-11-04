@@ -10,7 +10,7 @@
         <section class="section" id="">
             <div class="section__ornament">
                 <div class="ornament__wrapper goodtime_product">
-                    <img class="ornament__img" src="{{ asset('frontend/images/icons/goodtime_product_1.png') }}">
+                    <img class="ornament__img" src="{{ asset('frontend/images/icons/goodtime_packshoot.png') }}">
                 </div>
                 <div class="ornament__wrapper goodtime_card_preview">
                     <img class="ornament__img" src="{{ asset('frontend/images/icons/goodtime_card_preview.png') }}">
