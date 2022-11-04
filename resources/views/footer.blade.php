@@ -13,12 +13,13 @@
                 <a class="nav-link" href="{{ url('/disclaimer') }}">Disclaimer</a>
             </div>
         </div>
-        <span class="copyright fw-normal">Copyright
-            <script>
-                document.write(new Date().getFullYear())
-            </script>
-        </span>
+
         <div class="socials">
+            <span class="copyright fw-normal">Copyright
+                <script>
+                    document.write(new Date().getFullYear())
+                </script>
+            </span>
             <a href="https://web.facebook.com/GoodTimeID" class="social-icon text-dark"><i
                     class="bx bxl-facebook fs-3 p-3"></i></a>
             <a href="https://www.instagram.com/goodtimeid" class="social-icon text-dark"><i
