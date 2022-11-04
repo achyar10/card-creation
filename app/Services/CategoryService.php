@@ -21,7 +21,7 @@ class CategoryService
 
     public function getCaro()
     {
-        return Category::where('is_active', true)->orderBy('id', 'desc')->paginate(5);
+        return Category::where('is_active', true)->orderBy('id', 'desc')->paginate(7);
     }
 
     public function findAll()

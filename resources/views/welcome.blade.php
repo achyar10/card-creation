@@ -27,8 +27,7 @@
                 <div class="col-12 text-center">
                     <img class="img-fluid home__logo animate__animated"
                         src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
-                    <p class="text-white lh-lg mb-4">Kamu bisa berkreasi seru membuat ucapan untuk diberikan<br>kepada
-                        orang spesial di momen-momen istimewa</p>
+                    <p class="text-white lh-lg mb-4">Kamu bisa berkreasi seru membuat ucapan untuk diberikan<br>kepada orang tersayang dan teman-temanmu di momen-momen istimewa</p>
                     <div class="cta-button">
                         <button type="button" class="btn btn-cust-white mb-3" data-bs-toggle="modal"
                             data-bs-target="#rulesModal">Cara Ikutan</button>
@@ -55,14 +54,16 @@
             </div> --}}
             <div class="section__content container d-none">
                 <div class="col-12 title">
-                    <h2>Pilih Momen disini</h2>
+                    <h2 class="btn btn-cust-yellow">Pilih Momen disini</h2>
                 </div>
                 <div class="col-12">
                     <div class="gallery">
                         <div class="gallery-container">
                             @foreach ($categories as $category)
-                                <img class="gallery-item" style="cursor: pointer" data-id="{{ $category->id }}"
-                                    src="{{ asset('category/' . $category->thumbnail) }}">
+                                <img
+                                class="gallery-item"
+                                data-id="{{ $category->id }}"
+                                src="{{ asset('category/' . $category->thumbnail) }}">
                             @endforeach
                         </div>
                         <div class="gallery-controls"></div>
@@ -107,7 +108,7 @@
                                 <img class="img-fluid home__logo"
                                     src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                             </div>
-                            <h3 class="my-4">Kumpulin Poin Reward Yuk!</h3>
+                            <h3 class="my-4">Poin Rewardmu</h3>
                             <div class="point__counter mb-4">
                                 @foreach ($points as $point)
                                     <div class="point__digit_wrapper">

@@ -31,7 +31,9 @@
 
         import {
             appendDefaultEditor,
-            createNode
+            createNode,
+            createMarkupEditorToolStyle,
+            createMarkupEditorToolStyles,
         } from '../frontend/vendor/pintura/pintura.js';
 
         const dataImg = document.querySelector('#image');
@@ -51,6 +53,12 @@
                 ['eraser', 'Eraser', { disabled: false }],
                 // ['rectangle', 'Rectangle', { disabled: false }],
             ],
+            markupEditorToolStyles: createMarkupEditorToolStyles({
+                // create the text tool style and override fontSize property
+                text: createMarkupEditorToolStyle('text', {
+                    fontSize: '10%',
+                }),
+            }),
 
             // This will set a square crop aspect ratio
             // imageCropAspectRatio: 4 / 5,

@@ -121,7 +121,6 @@ body {
     top: 0;
     left: 5%;
     transform: rotate(60deg);
-    filter: blur(3px);
     animation: rotating 60s linear infinite, zoomIn 0.7s;
 }
 
@@ -206,6 +205,12 @@ body {
 
 .section__home2 .title {
     margin-bottom: 2rem;
+}
+
+.section__home2 .title h2 {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    cursor: default;
 }
 
 .section__home2::after {
@@ -566,7 +571,7 @@ body {
 .shops {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -576,13 +581,22 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-right: 1rem;
     margin-bottom: .5rem;
     border-radius: 50%;
     width: 48px;
     height: 48px;
     background-color: rgb(255 255 255 / 40%);
     text-align: center;
+}
+
+.shops .shop-icon:not(:last-child) {
+    margin-right: 1rem;
+}
+
+.shops .shop-icon img {
+    width: 48px;
+    height: 48px;
+    padding: .5rem;
 }
 
 .hashtags {
@@ -729,6 +743,13 @@ body {
         text-align: center;
     }
 
+    .section__home2 .title h2 {
+        font-size: 2rem;
+        padding: .75rem 2rem;
+        cursor: default;
+        font-size: 1.5rem;
+    }
+
     .section__home3 .home3__content {
         text-align: center;
         align-items: center;
@@ -740,6 +761,54 @@ body {
 
     .point__counter .point__digit {
         font-size: 3rem;
+    }
+
+    .shops .shop-icon {
+        margin-bottom: .5rem;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+    }
+
+    .shops .shop-icon img {
+        width: 36px;
+        height: 36px;
+        padding: .5rem;
+    }
+
+    .chocochip1 {
+        top: 600px;
+        left: 7%;
+    }
+
+    .chocochip2 {
+        top: 320px;
+        left: 10%;
+    }
+
+    .chocochip3 {
+        top: 0;
+        left: -5%;
+    }
+
+    .chocochip4 {
+        top: 60px;
+        left: 75vw;
+    }
+
+    .chocochip5 {
+        top: 200px;
+        left: 75%;
+    }
+
+    .chocochip6 {
+        top: 550px;
+        left: 70vw;
+    }
+
+    .chocochip7 {
+        top: 400px;
+        left: 85%;
     }
 }
 
