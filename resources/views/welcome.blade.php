@@ -77,7 +77,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_packshoot.png') }}">
-                        <h5 class="text-center my-4">Kunjungi Marketplace Arnott's</h5>
+                        <h5 class="text-center my-4">Kunjungi Marketplace</h5>
                         <div class="shops">
                             <a href="https://www.tokopedia.com/arnotts" class="shop-icon" target="_blank">
                                 <img width="36px" height="36px" src="{{ asset('frontend/images/icons/tokopedia.png') }}">
