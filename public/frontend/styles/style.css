@@ -596,17 +596,6 @@ body {
     width: auto;
 }
 
-.chip-controls {
-    width: 100%;
-    height: 56px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
 .chip-controls button {
     border: 0;
     cursor: pointer;
@@ -620,6 +609,16 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 10px;
+}
+
+.chip-controls .chip-previous {
+    left: 0;
+}
+
+.chip-controls .chip-next {
+    right: 0;
 }
 
 .chip-controls button:hover {
