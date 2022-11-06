@@ -65,7 +65,7 @@
                             </div>
                             <span class="share-label">Email</span>
                         </button>
-                        <button onclick="share('Share (Twitter)')"
+                        <button onclick="shareOnTwitter()"
                             class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <img width="24px" height="24px" src="{{ asset('frontend/images/twitter.png') }}">
@@ -124,6 +124,19 @@
                 .then(() => {})
                 .catch(err => console.log(err))
             const navUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            return window.open(navUrl, '_blank');
+        }
+
+        function shareOnTwitter() {
+            if (!myId) {
+                alert(messageLogin);
+                localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                return window.location.href = '/login';
+            }
+            this.point('Share (Twitter)')
+                .then(() => {})
+                .catch(err => console.log(err))
+            const navUrl = `https://twitter.com/intent/tweet?text=${url}`;
             return window.open(navUrl, '_blank');
         }
 
