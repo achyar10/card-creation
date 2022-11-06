@@ -6,7 +6,7 @@
         <div class="section__bg">
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
         </div>
-        <div class="section__float_bg">
+        {{-- <div class="section__float_bg">
             <img class="section__img chocochip chocochip1 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
             <img class="section__img chocochip chocochip2 animate__animated"
@@ -21,7 +21,7 @@
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
             <img class="section__img chocochip chocochip7 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
-        </div>
+        </div> --}}
         <section class="section section__home1">
             <div class="section__content container">
                 <div class="col-lg-6 col-md-12 text-center">
@@ -43,7 +43,8 @@
                             </div>
                             <span class="share-label">WhatsApp</span>
                         </button>
-                        <button onclick="share('Share (Facebook)')"
+
+                        <button onclick="shareOnFacebook()"
                             class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <img width="24px" height="24px" src="{{ asset('frontend/images/facebook.png') }}">
@@ -113,6 +114,19 @@
 
         }
 
+        function shareOnFacebook() {
+            if (!myId) {
+                alert(messageLogin);
+                localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                return window.location.href = '/login';
+            }
+            this.point('Share (Facebook)')
+                .then(() => {})
+                .catch(err => console.log(err))
+            const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+            return window.open(navUrl, '_blank');
+        }
+
         function saveImage() {
             if (!myId) {
                 alert(messageLogin);
@@ -147,7 +161,7 @@
                 return true;
             } catch (err) {
                 console.log(err)
-                alert(`Your system doesn't support sharing these files.`)
+                // alert(`Your system doesn't support sharing these files.`)
             }
         }
 
