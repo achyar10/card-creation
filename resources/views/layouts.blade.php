@@ -7,6 +7,7 @@
     <meta name="description" content="@yield('description')" />
     <meta property="og:title" content="@yield('og:title')" />
     <meta property="og:url" content="{{ url()->full() }}" />
+    <meta property="og:type" content="website" />
     <meta property="og:image" content="@yield('og:image')" />
     <meta property="og:image:width" content="@yield('og:image:width')">
     <meta property="og:image:height" content="@yield('og:image:height')">
