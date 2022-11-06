@@ -6,7 +6,7 @@
         <div class="section__bg">
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
         </div>
-        <div class="section__float_bg d-none">
+        {{-- <div class="section__float_bg d-none">
             <img class="section__img chocochip chocochip1 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
             <img class="section__img chocochip chocochip2 animate__animated"
@@ -21,7 +21,7 @@
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
             <img class="section__img chocochip chocochip7 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
-        </div>
+        </div> --}}
         <section class="section section__home1" id="">
             <div class="section__content container">
                 <div class="col-12 text-center">

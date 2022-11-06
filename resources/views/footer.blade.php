@@ -21,13 +21,13 @@
                 </script>
             </span>
             <a href="https://web.facebook.com/GoodTimeID" class="social-icon text-dark"><i
-                    class="bx bxl-facebook fs-3 p-3"></i></a>
+                    class="bx bxl-facebook fs-3 p-1"></i></a>
             <a href="https://www.instagram.com/goodtimeid" class="social-icon text-dark"><i
-                    class="bx bxl-instagram fs-3 p-3"></i></a>
+                    class="bx bxl-instagram fs-3 p-1"></i></a>
             <a href="https://www.tiktok.com/@goodtimeid" class="social-icon text-dark"><i
-                    class="bx bxl-tiktok fs-3 p-3"></i></a>
+                    class="bx bxl-tiktok fs-3 p-1"></i></a>
             <a href="https://www.youtube.com/channel/UCsK31f3tZZKl-eprV7X4hnw" class="social-icon text-dark"><i
-                    class="bx bxl-youtube fs-3 p-3"></i></a>
+                    class="bx bxl-youtube fs-3 p-1"></i></a>
         </div>
     </div>
 </nav>
