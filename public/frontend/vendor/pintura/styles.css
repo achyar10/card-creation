@@ -17,3 +17,23 @@
 .my-editor {
     height: 100vh;
 }
+
+.PinturaRoot[data-env~="portrait"][data-env~="narrow"][data-env~="has-navigation-preference-top"] {
+    grid-template-rows: -webkit-min-content -webkit-min-content auto;
+    grid-template-rows: min-content min-content auto;
+}
+
+.PinturaRoot[data-env~="portrait"][data-env~="narrow"][data-env~="has-navigation-preference-top"] > .PinturaMain {
+    grid-row: 3;
+    padding-bottom: 3rem;
+}
+
+.PinturaRoot[data-env~="portrait"][data-env~="narrow"][data-env~="has-navigation-preference-top"] > .PinturaNavMain {
+    grid-row: 2;
+    margin-top: 0.75em;
+    margin-bottom: 0;
+}
+
+.section {
+    min-height: 100%;
+}
