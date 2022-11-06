@@ -26,7 +26,7 @@ class MemberService
 
     public function leaderboard()
     {
-        return Member::select(['id', 'fullname', 'point'])->orderBy('point', 'desc')->get();
+        return Member::select(['id', 'fullname', 'point'])->orderBy('point', 'desc')->limit(10)->get();
     }
 
     public function getById($id)
