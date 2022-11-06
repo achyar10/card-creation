@@ -123,7 +123,7 @@
             this.point('Share (Facebook)')
                 .then(() => {})
                 .catch(err => console.log(err))
-            const navUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + url;
+            const navUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
             return window.open(navUrl, '_blank');
         }
 
