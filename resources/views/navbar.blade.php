@@ -10,6 +10,24 @@
                     menu
                 </span>
             </button>
+            <div>
+                @if (!auth()->guard('members')->user())
+                    <a href="/login" class="btn btn-cust-yellow">Login | Daftar</a>
+                @else
+                    <a href="{{ route('profile') }}" class="d-inline-block text-decoration-none">
+                        <div class="member-point">
+                            <img class="point-icon rounded-circle p-1"
+                                src="{{ asset('frontend/images/decorations/cookie.png') }}" alt="point icon"
+                                width="36" height="36">
+                            <div class="point-wrapper">
+                                <span class="point">{{ auth()->guard('members')->user()->point }} point reward</span>
+                                <img class="profile-icon rounded-circle"
+                                    src="{{ auth()->guard('members')->user()->photo }}" alt="point icon">
+                            </div>
+                        </div>
+                    </a>
+                @endif
+            </div>
         </div>
         <div class="collapse navbar-collapse justify-content-end mt-2" id="navbarNav">
             <ul class="navbar-nav fw-normal">
@@ -32,7 +50,7 @@
                         href="{{ url('/disclaimer') }}">Disclaimer</a>
                 </li>
             </ul>
-            <div>
+            <div class="navbar-info-desktop">
                 @if (!auth()->guard('members')->user())
                     <a href="/login" class="btn btn-cust-yellow">Login | Daftar</a>
                 @else

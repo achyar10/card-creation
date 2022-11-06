@@ -44,6 +44,9 @@
 .gt-navbar .navbar-info,
 .gt-navbar-yellow .navbar-info {
     display: flex;
+    justify-content: space-between;
+    flex: 1 1 100%;
+    width: 100%;
 }
 
 .member-point {
@@ -92,6 +95,11 @@
 }
 
 @media screen and (max-width: 991px) {
+
+    .gt-navbar .navbar-info-desktop {
+        display: none;
+    }
+
     .footer-navbar .socials {
         flex-grow: 1;
     }
