@@ -5,6 +5,16 @@
     margin-right: .5rem;
 }
 
+.btn .badge {
+    position: absolute;
+    top: 0;
+    left: 90%;
+    transform: translate(-50%,-50%);
+    border-radius: var(--bs-border-radius-pill);
+    background-color: var(--gt-yellow);
+    color: var(--bs-black);
+}
+
 .btn-cust {
     --bs-btn-padding-x: 2rem;
     --bs-btn-padding-y: .75rem;

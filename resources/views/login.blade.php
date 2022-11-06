@@ -34,7 +34,7 @@
                                 class="img-fluid social-icon" src="{{ asset('frontend/images/google.png') }}">
                             &nbsp;&nbsp;Email
                             <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">+10
+                                class="badge">+10
                                 Poin
                                 <span class="visually-hidden">point</span>
                             </span>
@@ -43,7 +43,7 @@
                                 class="img-fluid social-icon" src="{{ asset('frontend/images/facebook.png') }}">
                             &nbsp;&nbsp;Facebook
                             <span
-                                class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark">+10
+                                class="badge">+10
                                 Poin
                                 <span class="visually-hidden">point</span>
                             </span>
