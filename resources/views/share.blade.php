@@ -110,7 +110,7 @@
             this.point('Share (Whatsapp)')
                 .then(() => {})
                 .catch(err => console.log(err))
-            return window.location.href = `whatsapp://send?text=${url} ${messageDesc}&phone=`;
+            return window.location.href = `whatsapp://send?text=${url+'?via=wa'} ${messageDesc}&phone=`;
 
         }
 

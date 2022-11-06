@@ -1,8 +1,12 @@
 @extends('layouts')
 @section('title', 'Kamu Mendapatkan Ucapan')
 @section('description',
-    'Hai ada kartu ucapan special yang #DipBanget untuk kamu, yuk lihat ucapannya dan bikin versi
-    kamu disini ya 👉 https://arnottsgiftingmoments.com/ ada hadiah special dari GOOD TIME untuk kamu.')
+    request()->via == 'wa'
+    ? 'Hai ada kartu ucapan special yang #DipBanget untuk kamu, yuk lihat ucapannya dan bikin versi
+    kamu disini ya 👉 https://arnottsgiftingmoments.com/ ada hadiah special dari GOOD TIME untuk kamu.'
+    : 'Ada hadiah yang keren dan menarik dari GOOD TIME ! yang bisa kamu dapatkan 👌🏻✨ yuk bikin kartu ucapan spesial yang
+    #DipBanget dan kirim ke orang tersayang, jangan lupa ajak temanmu untuk ikutan disini
+    https://arnottsgiftingmoments.com/')
 @section('og:title', 'Kamu Mendapatkan Ucapan')
 @section('og:image', $row->url_path)
 {{-- @section('og:image:width', '1280')
