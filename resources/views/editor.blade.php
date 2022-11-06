@@ -64,8 +64,8 @@
                 fontFamilyOptions: [
                     [`Calibri, sans-serif`, 'Calibri'],
                     [`Arial, sans-serif`, 'Arial'],
-                    [`'Poppins', sans-serif `, 'Poppins'],
-                    [`'Coolvetica Rg'`, 'Coolvetica'],
+                    [`'Poppins', sans-serif`, 'Poppins'],
+                    [`'Coolvetica'`, 'Coolvetica'],
                     [`'Childs Hand'`, `Child's Hand`],
                     [`'Caviar Dreams'`, `Caviar Dreams`],
                     [`'Bebas'`, 'Bebas']

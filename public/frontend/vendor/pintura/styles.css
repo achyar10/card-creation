@@ -2,6 +2,7 @@
 .pintura-editor {
     --color-background: transparent;
     --color-foreground: white;
+    --font-family: 'Poppins', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
