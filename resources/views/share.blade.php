@@ -25,8 +25,10 @@
         <section class="section section__home1">
             <div class="section__content container">
                 <div class="col-lg-6 col-md-12 text-center">
-                    <img class="img-fluid mb-3" width="324px" height="575px" id="image" data-id="{{ $row->id }}"
+                    <div class="card-share">
+                        <img class="img-fluid mb-3" id="image" data-id="{{ $row->id }}"
                         src="{{ $row->url_path }}">
+                    </div>
                 </div>
                 <div class="col-lg-6 col-md-12 mb-4 pt-4 text-center">
                     <input type="hidden"

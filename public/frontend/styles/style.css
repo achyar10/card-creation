@@ -803,6 +803,11 @@ body {
     .goodtime_card_preview {
         display: none;
     }
+
+    .card-share img {
+        width: auto;
+        height: 300px;
+    }
 }
 
 @media screen and (max-width: 767px) {
