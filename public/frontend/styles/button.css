@@ -5,12 +5,13 @@
     margin-right: .5rem;
 }
 
-.btn .badge {
+.btn .badge,
+.input-group .badge {
     position: absolute;
     top: 0;
     left: 90%;
     transform: translate(-50%,-50%);
-    border-radius: var(--bs-border-radius-pill);
+    border-radius: var(--bs-border-radius-pill) !important;
     background-color: var(--gt-yellow);
     color: var(--bs-black);
 }
