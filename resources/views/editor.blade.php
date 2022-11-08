@@ -39,7 +39,7 @@
                         <li>Klik emoticon & gambar untuk mempercantik gift card</li>
                         <li>Klik tombol simpan atau centang emas dikanan atas untuk mengirim gift card</li>
                     </ol>
-                    <div class="w-100">
+                    <div class="w-100 text-center">
                         <button class="btn btn-cust-yellow" data-bs-dismiss="modal">Tutup</button>
                     </div>
                 </div>
