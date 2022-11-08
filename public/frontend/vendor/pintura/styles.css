@@ -34,6 +34,12 @@
     margin-bottom: 0;
 }
 
+.PinturaRoot[data-env~="portrait"][data-env~="is-compact"] > .PinturaNavMain button span {
+    visibility: visible;
+    font-size: 0.6875em;
+    margin: 0.5em;
+}
+
 .PinturaUtilFooter {
     padding: 0 0 7rem;
 }

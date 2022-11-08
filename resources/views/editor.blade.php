@@ -7,7 +7,7 @@
         }
     </style>
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/pintura.css?v=1.0.0') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css?v=1.0.1') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css?v=1.0.2') }}">
     <div class="main-content">
         <div class="section__bg">
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
@@ -57,7 +57,7 @@
             markupEditorToolStyles: createMarkupEditorToolStyles({
                 // create the text tool style and override fontSize property
                 text: createMarkupEditorToolStyle('text', {
-                    fontSize: '10%',
+                    fontSize: '10%'
                 })
             }),
             markupEditorShapeStyleControls: createMarkupEditorShapeStyleControls({
@@ -71,6 +71,7 @@
                     [`'Bebas'`, 'Bebas']
                     // Define additional custom fonts here
                 ],
+                fontStyleOptions: []
             }),
 
             // This will set a square crop aspect ratio
@@ -78,10 +79,14 @@
             layoutDirectionPreference: 'vertical',
             layoutVerticalControlTabsPreference: 'top',
             layoutVerticalUtilsPreference: 'top',
-            layoutVerticalToolbarPreference: 'bottom',
+            layoutVerticalToolbarPreference: 'top',
+            layoutVerticalControlGroupsPreference: 'top',
             enableNavigateHistory: false,
+            enableZoom: true,
             enableZoomControls: true,
             enableButtonRevert: false,
+            zoomLevel: '0.15',
+            zoomPresetOptions: [0.15, 0.25, 0.35, 1, 1.25, 1.5, 2, 3, 4, 6, 8, 16],
 
             // Stickers available to user
             stickers: [
