@@ -25,6 +25,27 @@
             </div>
         </section>
     </div>
+
+    <div class="modal fade gt-modal" id="cta" aria-hidden="true" tabindex="-1">
+        <div class="modal-dialog gt-modal-dialog">
+            <div class="modal-content gt-modal-content">
+                <div class="modal-header gt-modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body gt-modal-body">
+                    <h4 class="my-4">Step Pembuatan Gift Card</h4>
+                    <ol class="lh-lg mb-4">
+                        <li>Klik text untuk mulai membuat ucapan pada gift card</li>
+                        <li>Klik emoticon & gambar untuk mempercantik gift card</li>
+                        <li>Klik tombol simpan atau centang emas dikanan atas untuk mengirim gift card</li>
+                    </ol>
+                    <div class="w-100">
+                        <button class="btn btn-cust-yellow" data-bs-dismiss="modal">Tutup</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!--</div>-->
 
     <script type="module">
@@ -36,6 +57,11 @@
             createMarkupEditorToolStyles,
             createMarkupEditorShapeStyleControls,
         } from '../frontend/vendor/pintura/pintura.js';
+
+        const myModal = new bootstrap.Modal(document.getElementById("cta"), {});
+        document.onreadystatechange = function () {
+            myModal.show();
+        };
 
         const dataImg = document.querySelector('#image');
         const preview = document.querySelector('#preview');
