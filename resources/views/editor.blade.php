@@ -57,18 +57,19 @@
             markupEditorToolStyles: createMarkupEditorToolStyles({
                 // create the text tool style and override fontSize property
                 text: createMarkupEditorToolStyle('text', {
-                    fontSize: '10%'
+                    fontSize: '10%',
+                    
                 })
             }),
             markupEditorShapeStyleControls: createMarkupEditorShapeStyleControls({
                 fontFamilyOptions: [
-                    [`Calibri, sans-serif`, 'Calibri'],
-                    [`Arial, sans-serif`, 'Arial'],
-                    [`'Poppins', sans-serif`, 'Poppins'],
-                    [`'Coolvetica'`, 'Coolvetica'],
-                    [`'Childs Hand'`, `Child's Hand`],
-                    [`'Caviar Dreams'`, `Caviar Dreams`],
-                    [`'Bebas'`, 'Bebas']
+                    // [`Calibri, sans-serif`, 'Calibri'],
+                    // [`Arial, sans-serif`, 'Arial'],
+                    [`'Poppins'`, 'Poppins'],
+                    // [`'Coolvetica'`, 'Coolvetica'],
+                    // [`'Childs Hand'`, `Child's Hand`],
+                    // [`'Caviar Dreams'`, `Caviar Dreams`],
+                    // [`'Bebas'`, 'Bebas']
                     // Define additional custom fonts here
                 ],
                 fontStyleOptions: []
@@ -82,11 +83,11 @@
             layoutVerticalToolbarPreference: 'top',
             layoutVerticalControlGroupsPreference: 'top',
             enableNavigateHistory: false,
-            enableZoom: true,
-            enableZoomControls: true,
+            enableZoom: false,
+            enableZoomControls: false,
             enableButtonRevert: false,
-            zoomLevel: '0.15',
-            zoomPresetOptions: [0.15, 0.25, 0.35, 1, 1.25, 1.5, 2, 3, 4, 6, 8, 16],
+            // zoomLevel: '0.15',
+            // zoomPresetOptions: [0.15, 0.25, 0.35, 1, 1.25, 1.5, 2, 3, 4, 6, 8, 16],
 
             // Stickers available to user
             stickers: [
