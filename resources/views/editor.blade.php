@@ -34,7 +34,7 @@
             createNode,
             createMarkupEditorToolStyle,
             createMarkupEditorToolStyles,
-            createMarkupEditorShapeStyleControls
+            createMarkupEditorShapeStyleControls,
         } from '../frontend/vendor/pintura/pintura.js';
 
         const dataImg = document.querySelector('#image');
@@ -58,14 +58,13 @@
                 // create the text tool style and override fontSize property
                 text: createMarkupEditorToolStyle('text', {
                     fontSize: '10%',
-                    
                 })
             }),
             markupEditorShapeStyleControls: createMarkupEditorShapeStyleControls({
                 fontFamilyOptions: [
                     // [`Calibri, sans-serif`, 'Calibri'],
                     // [`Arial, sans-serif`, 'Arial'],
-                    [`'Poppins'`, 'Poppins'],
+                    [`'Poppins', sans-serif`, 'Poppins'],
                     // [`'Coolvetica'`, 'Coolvetica'],
                     // [`'Childs Hand'`, `Child's Hand`],
                     // [`'Caviar Dreams'`, `Caviar Dreams`],
