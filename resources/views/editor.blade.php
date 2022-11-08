@@ -119,8 +119,8 @@
             utils: [
                     'annotate',
                     'sticker',
-                    'crop',
-                    'filter',
+                    // 'crop',
+                    // 'filter',
                     // 'finetune',
                     // 'frame',
                     // 'resize',
