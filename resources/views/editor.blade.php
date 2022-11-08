@@ -107,7 +107,10 @@
                     ]
                 ]
             ],
-            locale: { labelButtonExport: 'SIMPAN' },
+            locale: {
+                labelButtonExport: 'SIMPAN',
+                annotateLabel: 'Edit'
+            },
             utils: [
                     'annotate',
                     'sticker',
