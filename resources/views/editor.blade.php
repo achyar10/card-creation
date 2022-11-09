@@ -33,7 +33,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body gt-modal-body">
-                    <h4 class="my-4">Step Pembuatan Gift Card</h4>
+                    <div class="d-flex flex-row flex-nowrap align-items-center justify-content-center my-4">
+                        <div class="icon-bulb btn-cust-yellow me-4">
+                            <i class='bx bx-bulb'></i>
+                        </div>
+                        <h5 class="m-0">Petunjuk Pembuatan Gift Card</h5>
+                    </div>
                     <ol class="lh-lg mb-4">
                         <li>Klik text untuk mulai membuat ucapan pada gift card</li>
                         <li>Klik emoticon yang kalian inginkan</li>
@@ -65,15 +70,12 @@
         };
 
         const ctaButton = createNode('Button', 'cta', {
-            // The button label
-            label: 'Hello world',
-            // An optional button SVG icon
-            icon: '<rect x="0" y="0" width="24" height="24" fill="red"/>',
-            // A click event handler
+            label: 'Tutorial',
+            class: 'PinturaButtonExport',
             onclick: () => {
                 myModal.show();
-            },
-        });
+            }
+        })
 
         const dataImg = document.querySelector('#image');
         const preview = document.querySelector('#preview');
@@ -85,22 +87,11 @@
             // The source image to load
             src: imageUrl,
             willRenderToolbar: (toolbar, env, redraw) => {
-                console.log(toolbar);
-                // logs: [ Array(4), Array(4), Array(4) ]
-
-                console.log(env);
-                // logs: { orientation: "landscape", verticalSpace: "short", … }
-
-                // call redraw to trigger a redraw of the editor state
-
                 // insert your item
                 toolbar[2][3].splice(
                     0,
                     0,
-                    createNode('Button', 'cta', {
-                        label: 'Tutorial',
-                        class: 'PinturaButtonExport'
-                    })
+                    ctaButton
                 );
                 return [
                     ...toolbar,

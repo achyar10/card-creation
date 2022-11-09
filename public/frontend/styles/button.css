@@ -126,6 +126,17 @@
     height: 24px;
 }
 
+.icon-bulb {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: var(--bs-border-radius-pill);
+    width: 56px;
+    height: 56px;
+    color: var(--bs-black);
+    font-size: 1.5rem;
+}
+
 .btn-share .share-label {
     width: 100%;
 }
