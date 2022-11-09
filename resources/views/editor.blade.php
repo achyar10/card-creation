@@ -147,29 +147,9 @@
             // Stickers available to user
             stickers: [
                 ["Emoji", ["⭐️", "😊", "👍", "👎", "☀️", "🌤", "🌥"]],
-                [
-                    "Markers",
-                    [
-                        {
-                            src: "/frontend/vendor/pintura/sticker-one.svg",
-                            width: "5%",
-                            alt: "One"
-                        },
-                        {
-                            src: "/frontend/vendor/pintura/sticker-two.svg",
-                            width: "5%",
-                            alt: "Two"
-                        },
-                        {
-                            src: "/frontend/vendor/pintura/sticker-three.svg",
-                            width: "5%",
-                            alt: "Three"
-                        }
-                    ]
-                ]
             ],
             locale: {
-                labelButtonExport: 'SIMPAN',
+                labelButtonExport: 'Simpan',
                 annotateLabel: 'Edit'
             },
             utils: [
