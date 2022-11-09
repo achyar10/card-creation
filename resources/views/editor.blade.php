@@ -99,8 +99,8 @@
             },
             enableMoveTool: true,
             markupEditorToolbar: [
-                ['move', 'Move', { disabled: false }],
                 ['text', 'Text', { disabled: false }],
+                ['move', 'Move', { disabled: false }],
                 // ['sharpie', 'Sharpie', { disabled: false }],
                 ['eraser', 'Eraser', { disabled: false }],
                 // ['rectangle', 'Rectangle', { disabled: false }],
