@@ -7,7 +7,7 @@
         }
     </style>
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/pintura.css?v=1.0.0') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css?v=1.0.3') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css?v=1.0.4') }}">
     <div class="main-content">
         <div class="section__bg">
             <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
