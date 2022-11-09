@@ -36,7 +36,8 @@
                     <h4 class="my-4">Step Pembuatan Gift Card</h4>
                     <ol class="lh-lg mb-4">
                         <li>Klik text untuk mulai membuat ucapan pada gift card</li>
-                        <li>Klik emoticon & gambar untuk mempercantik gift card</li>
+                        <li>Klik emoticon yang kalian inginkan</li>
+                        <li>Klik gambar untuk mempercantik gift card</li>
                         <li>Klik tombol simpan atau centang emas dikanan atas untuk mengirim gift card</li>
                     </ol>
                     <div class="w-100 text-center">
@@ -63,6 +64,17 @@
             myModal.show();
         };
 
+        const ctaButton = createNode('Button', 'cta', {
+            // The button label
+            label: 'Hello world',
+            // An optional button SVG icon
+            icon: '<rect x="0" y="0" width="24" height="24" fill="red"/>',
+            // A click event handler
+            onclick: () => {
+                myModal.show();
+            },
+        });
+
         const dataImg = document.querySelector('#image');
         const preview = document.querySelector('#preview');
         let imageUrl = dataImg.getAttribute('data-image');
@@ -72,6 +84,28 @@
         const pintura = appendDefaultEditor(".my-editor", {
             // The source image to load
             src: imageUrl,
+            willRenderToolbar: (toolbar, env, redraw) => {
+                console.log(toolbar);
+                // logs: [ Array(4), Array(4), Array(4) ]
+
+                console.log(env);
+                // logs: { orientation: "landscape", verticalSpace: "short", … }
+
+                // call redraw to trigger a redraw of the editor state
+
+                // insert your item
+                toolbar[2][3].splice(
+                    0,
+                    0,
+                    createNode('Button', 'cta', {
+                        label: 'Tutorial',
+                        class: 'PinturaButtonExport'
+                    })
+                );
+                return [
+                    ...toolbar,
+                ];
+            },
             enableMoveTool: true,
             markupEditorToolbar: [
                 ['move', 'Move', { disabled: false }],
