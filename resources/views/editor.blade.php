@@ -138,7 +138,7 @@
             layoutVerticalToolbarPreference: 'top',
             layoutVerticalControlGroupsPreference: 'top',
             enableNavigateHistory: false,
-            enableZoom: false,
+            enableZoom: true,
             enableZoomControls: false,
             enableButtonRevert: false,
             // zoomLevel: '0.15',
