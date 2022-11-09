@@ -35,6 +35,7 @@ Route::post('/register', [LandingController::class, 'createMember'])->name('reg'
 
 Route::get('/faq', [LandingController::class, 'faq'])->name('faq');
 Route::get('/disclaimer', [LandingController::class, 'disclaimer'])->name('disclaimer');
+Route::get('/viewer', [LandingController::class, 'pdfViewer'])->name('pdfViewer');
 Route::get('/profile', [LandingController::class, 'profile'])->name('profile');
 Route::get('/profile/update', [LandingController::class, 'profileUpdate'])->name('profile.update');
 Route::put('/profile/update', [LandingController::class, 'profileUpdatePost'])->name('profile.update');

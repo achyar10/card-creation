@@ -227,6 +227,28 @@ class LandingController extends Controller
         return view('disclaimer', $data);
     }
 
+    public function pdfViewer()
+    {
+        $fileType = request()->get('f');
+        $data = [
+            'title' => 'Disclaimer',
+            'file_path' => 'frontend/files/goodtime_disclaimer.pdf'
+        ];
+
+        switch ($fileType) {
+            case 'disclaimer':
+                $data['title'] = 'Disclaimer';
+                $data['file_path'] = asset('frontend/files/goodtime_disclaimer.pdf');
+                break;
+
+            default:
+                $data['title'] = 'Disclaimer';
+                $data['file_path'] = asset('frontend/files/goodtime_disclaimer.pdf');
+                break;
+        }
+        return view('pdf-viewer', $data);
+    }
+
     public function category()
     {
         // $session = request()->session()->all();
