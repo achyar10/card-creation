@@ -25,7 +25,7 @@
 
 .PinturaRoot[data-env~="portrait"][data-env~="narrow"][data-env~="has-navigation-preference-top"] > .PinturaMain {
     grid-row: 3;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
 }
 
 .PinturaRoot[data-env~="portrait"][data-env~="narrow"][data-env~="has-navigation-preference-top"] > .PinturaNavMain {
