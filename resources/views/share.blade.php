@@ -26,8 +26,7 @@
             <div class="section__content container">
                 <div class="col-lg-6 col-md-12 text-center">
                     <div class="card-share">
-                        <img class="img-fluid mb-3" id="image" data-id="{{ $row->id }}"
-                        src="{{ $row->url_path }}">
+                        <img class="img-fluid mb-3" id="image" data-id="{{ $row->id }}" src="{{ $row->url_path }}">
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 mb-4 pt-4 text-center">
@@ -101,7 +100,7 @@
         const url = document.querySelector('#url').getAttribute('data-url');
         const messageLogin = 'Login terlebih dahulu!';
         const messageDesc =
-            `Hai ada kartu ucapan special yang #DipBanget untuk kamu, yuk lihat ucapannya dan bikin versi kamu disini ya 👉 https://arnottsgiftingmoments.com/  ada hadiah special dari GOOD TIME untuk kamu.`
+            `Hai ada kartu ucapan special yang DipBanget untuk kamu, yuk lihat ucapannya dan bikin versi kamu disini ya 👉 https://arnottsgiftingmoments.com/  ada hadiah special dari GOOD TIME untuk kamu.`
 
         function shareWa() {
             if (!myId) {
