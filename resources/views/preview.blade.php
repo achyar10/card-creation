@@ -2,7 +2,7 @@
 @section('title', 'Kamu Mendapatkan Ucapan')
 @section('description',
     request()->via == 'wa'
-    ? 'Hai ada kartu ucapan special yang #DipBanget untuk kamu, yuk lihat ucapannya dan bikin versi
+    ? 'Hai ada kartu ucapan special yang DipBanget untuk kamu, yuk lihat ucapannya dan bikin versi
     kamu disini ya 👉 https://arnottsgiftingmoments.com/ ada hadiah special dari GOOD TIME untuk kamu.'
     : 'Ada hadiah yang keren dan menarik dari GOOD TIME ! yang bisa kamu dapatkan 👌🏻✨ yuk bikin kartu ucapan spesial yang
     #DipBanget dan kirim ke orang tersayang, jangan lupa ajak temanmu untuk ikutan disini
