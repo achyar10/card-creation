@@ -19,7 +19,7 @@
                     <div data-card="{{ $row->id }}"
                         data-id="{{ auth()->guard('members')->user()? auth()->guard('members')->user()->id: null }}"
                         id="image" data-image="{{ asset('/card/' . $row->image) }}" style="display: none;"></div>
-                    <div class="my-editor"></div>
+                    <div id="my-editor" class="my-editor"></div>
                     <a href="#" id="preview" style="display: none"></a>
                 </div>
             </div>
@@ -68,6 +68,11 @@
         document.onreadystatechange = function () {
             myModal.show();
         };
+
+        const myModalEl = document.getElementById('cta');
+        myModalEl.addEventListener('hide.bs.modal', event => {
+            openFullscreen();
+        });
 
         const ctaButton = createNode('Button', 'cta', {
             label: 'Tutorial',
@@ -225,6 +230,28 @@
             reader.onload = () => resolve(reader.result);
             reader.onerror = error => reject(error);
         });
+
+        const openFullscreen = () => {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.webkitRequestFullscreen) { /* Safari */
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) { /* IE11 */
+                elem.msRequestFullscreen();
+            }
+        }
+
+        const exitFullscreen = () => {
+            const elem = document.documentElement;
+            if (elem.exitFullscreen) {
+                elem.exitFullscreen();
+            } else if (elem.webkitExitFullscreen) { /* Safari */
+                elem.webkitExitFullscreen();
+            } else if (elem.msExitFullscreen) { /* IE11 */
+                elem.msExitFullscreen();
+            }
+        }
     </script>
 
 
