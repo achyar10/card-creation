@@ -153,7 +153,7 @@
             locale: {
                 labelButtonExport: 'Simpan',
                 annotateLabel: 'Text',
-                stickerLabel: 'Stiker/Gambar'
+                stickerLabel: 'Stiker'
             },
             utils: [
                     'annotate',
