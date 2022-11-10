@@ -3,9 +3,7 @@
 @section('content')
     <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
         data-bs-smooth-scroll="true" tabindex="0">
-        <div class="section__bg">
-            <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
-        </div>
+        <div class="section__bg"></div>
 
         <section class="section section__home1">
             <div class="section__content container">

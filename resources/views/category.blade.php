@@ -2,9 +2,7 @@
 @section('title', 'Kategori')
 @section('content')
     <div class="main-content">
-        <div class="section__bg">
-            <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
-        </div>
+        <div class="section__bg"></div>
         <div class="section__float_bg d-none">
             <img class="section__img chocochip chocochip1 animate__animated"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
