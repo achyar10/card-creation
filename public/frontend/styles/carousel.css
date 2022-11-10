@@ -212,4 +212,8 @@
         width: 48px !important;
         height: 48px !important;
     }
+
+    .gallery-item.gallery-item-selected {
+        width: 230px;
+    }
 }
