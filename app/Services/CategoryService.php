@@ -16,12 +16,12 @@ class CategoryService
 
     public function getAll()
     {
-        return Category::orderBy('id', 'desc')->paginate(10);
+        return Category::orderBy('order', 'asc')->paginate(10);
     }
 
     public function getCaro()
     {
-        return Category::where('is_active', true)->orderBy('id', 'asc')->paginate(7);
+        return Category::where('is_active', true)->orderBy('order', 'asc')->paginate(7);
     }
 
     public function findAll()
