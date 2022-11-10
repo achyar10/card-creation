@@ -255,7 +255,7 @@ class LandingController extends Controller
         // if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['categories'] = $this->category->findAll();
         $data['cards'] = $this->card->findAll();
-        $categories = Category::where('is_active', true)->get();
+        $categories = Category::where('is_active', true)->orderBy('order', 'asc')->get();
         $tags = [];
         // foreach ($categories as $key) {
         //     $pieces = json_decode($key->tags);
