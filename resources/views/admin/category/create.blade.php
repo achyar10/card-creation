@@ -24,7 +24,8 @@
                                             <label for="">Nama Kategori</label>
                                             <input type="text" name="tag_name"
                                                 class="form-control @error('tag_name') is-invalid @enderror"
-                                                value="{{ old('tag_name') }}" placeholder="Contoh: Happy New Year" autocomplete="off">
+                                                value="{{ old('tag_name') }}" placeholder="Contoh: Happy New Year"
+                                                autocomplete="off">
                                             @error('tag_name')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
@@ -35,8 +36,20 @@
                                             <label for="">Tags</label>
                                             <input type="text" name="tags"
                                                 class="form-control tags-input @error('tags') is-invalid @enderror"
-                                                placeholder="Contoh: #Newyear" value="{{ old('tags') }}" autocomplete="off">
+                                                placeholder="Contoh: #Newyear" value="{{ old('tags') }}"
+                                                autocomplete="off">
                                             @error('tags')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group mb-2">
+                                            <label for="">Urutan Ke</label>
+                                            <input type="number" name="order"
+                                                class="form-control @error('order') is-invalid @enderror"
+                                                value="{{ old('order') }}" placeholder="Contoh: 1" autocomplete="off">
+                                            @error('order')
                                                 <div class="invalid-feedback">
                                                     {{ $message }}
                                                 </div>

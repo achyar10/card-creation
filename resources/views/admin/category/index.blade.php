@@ -24,6 +24,7 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama Kategori</th>
+                                            <th>Urutan Ke</th>
                                             <th>Status</th>
                                             <th>Tanggal Update</th>
                                             <th>Aksi</th>
@@ -34,6 +35,7 @@
                                             <tr>
                                                 <td>{{ $rows->firstItem() + $key }}</td>
                                                 <td>{{ $row->tag_name }}</td>
+                                                <td>{{ $row->order }}</td>
                                                 <td>{{ $row->is_active ? 'Aktif' : 'Draft' }}</td>
                                                 <td>{{ $row->updated_at }}
                                                 </td>

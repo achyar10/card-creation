@@ -26,7 +26,7 @@ class CategoryService
 
     public function findAll()
     {
-        $query = Category::where('is_active', true)->orderBy('id', 'desc');
+        $query = Category::where('is_active', true)->orderBy('order', 'asc');
         if (isset($this->req->tag_name)) {
             $query->where('tag_name', 'like', '%' . $this->req->tag_name . '%');
         }
