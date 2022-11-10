@@ -46,7 +46,7 @@
                                 </div>
 
                                 <div class="col-12 profile-reward mb-4">
-                                    <img src="{{ asset('frontend/images/icons/goodtime_rewards.png') }}">
+                                    <img src="{{ asset('frontend/images/icons/goodtime_reward_2.png') }}">
                                 </div>
 
                                 <h4 class="leaderboard__title">Riwayat Poinmu</h4>
@@ -121,8 +121,7 @@
                                                 <span class="rank__icon">{{ $loop->iteration }}</span>
                                                 <span class="rank__name">{{ $leaderboard->fullname }}</span>
                                             </div>
-                                            <div
-                                                class="leaderboard__point">
+                                            <div class="leaderboard__point">
                                                 <span>{{ $leaderboard->point }}</span>
                                             </div>
                                         </div>
