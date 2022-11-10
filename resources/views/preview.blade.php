@@ -14,9 +14,7 @@
 @section('content')
     <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
         data-bs-smooth-scroll="true" tabindex="0">
-        <div class="section__bg">
-            <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
-        </div>
+        <div class="section__bg"></div>
         {{-- <div class="section__float_bg d-none">
             <img class="section__img chocochip chocochip1"
                 src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />

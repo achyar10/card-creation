@@ -2,9 +2,7 @@
 @section('title', 'Profile')
 @section('content')
     <div class="main-content">
-        <div class="section__bg">
-            <img class="section__img" src="{{ asset('frontend/images/bg/bg.png') }}" alt="Rainforest view with sunset" />
-        </div>
+       <div class="section__bg"></div>
 
         <section class="section">
             <div class="section__content container section__profile" style="max-width: 1140px;">
