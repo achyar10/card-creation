@@ -103,11 +103,13 @@
                 ];
             },
             enableMoveTool: true,
+            enableTapToAddText: false,
+            enableAutoSelectMoveTool: 'text',
             markupEditorToolbar: [
                 ['text', 'Text', { disabled: false }],
-                ['move', 'Move', { disabled: false }],
+                // ['move', 'Move', { disabled: true }],
                 // ['sharpie', 'Sharpie', { disabled: false }],
-                ['eraser', 'Eraser', { disabled: false }],
+                // ['eraser', 'Eraser', { disabled: false }],
                 // ['rectangle', 'Rectangle', { disabled: false }],
             ],
             markupEditorToolStyles: createMarkupEditorToolStyles({
@@ -150,7 +152,8 @@
             ],
             locale: {
                 labelButtonExport: 'Simpan',
-                annotateLabel: 'Edit'
+                annotateLabel: 'Text',
+                stickerLabel: 'Stiker/Gambar'
             },
             utils: [
                     'annotate',
