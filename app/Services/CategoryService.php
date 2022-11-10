@@ -63,6 +63,7 @@ class CategoryService
         $data = Category::find($id);
         $data->tag_name = $this->req->tag_name;
         $data->tags = $this->req->tags;
+        $data->order = $this->req->order;
         $data->is_active = $this->req->is_active;
         if ($this->req->thumbnail) $data->thumbnail = $this->upload('category', $this->req->thumbnail);
         $data->save();
