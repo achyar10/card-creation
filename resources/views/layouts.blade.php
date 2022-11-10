@@ -52,7 +52,7 @@
                 </div>
                 <div class="modal-body gt-modal-body">
                     <div class="gt-video text-center">
-                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/D0UnqGm_miA"
+                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/NYk6gnWFXZQ"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
