@@ -75,7 +75,7 @@
         });
 
         const ctaButton = createNode('Button', 'cta', {
-            label: 'Tutorial',
+            label: 'Petunjuk',
             class: 'PinturaButtonExport',
             onclick: () => {
                 myModal.show();
