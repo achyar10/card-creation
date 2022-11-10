@@ -77,7 +77,7 @@
                     <div class="card bg-transparent">
                         <div class="card-body">
                             <div class="gt-video text-center">
-                                <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ewo4Vq8V2PE"
+                                <iframe width="100%" height="315" src="https://www.youtube.com/watch?v=Cb8BhneP_1M"
                                     title="YouTube video player" frameborder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                                     allowfullscreen></iframe>
