@@ -7,7 +7,7 @@
         }
     </style>
     <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/pintura.css?v=1.0.0') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css?v=1.0.4') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/vendor/pintura/styles.css?v=1.0.5') }}">
     <div class="main-content">
         <div class="section__bg"></div>
 
@@ -59,7 +59,7 @@
             createNode,
             createMarkupEditorToolStyle,
             createMarkupEditorToolStyles,
-            createMarkupEditorShapeStyleControls,
+            createMarkupEditorShapeStyleControls
         } from '../frontend/vendor/pintura/pintura.js';
 
         const myModal = new bootstrap.Modal(document.getElementById("cta"), {});
@@ -127,7 +127,13 @@
                     // [`'Bebas'`, 'Bebas']
                     // Define additional custom fonts here
                 ],
-                fontStyleOptions: []
+                fontStyleOptions: [],
+                fontSizeOptions: [
+                    ['8%', 'Medium Small'],
+                    ['10%', 'Medium Large'],
+                    ['20%', 'Large']
+                ],
+                lineHeightOptions: false
             }),
 
             // This will set a square crop aspect ratio

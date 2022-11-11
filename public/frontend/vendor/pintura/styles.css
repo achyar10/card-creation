@@ -1,7 +1,7 @@
 /* bright / dark mode */
 .pintura-editor {
-    --color-background: transparent;
-    --color-foreground: white;
+    --color-background: 0, 0, 0;
+    --color-foreground: 255, 255, 255;
     --font-family: 'Poppins', sans-serif;
 }
 
