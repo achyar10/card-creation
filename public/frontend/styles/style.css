@@ -804,13 +804,12 @@ body {
 }
 
 .profile-reward {
-    display: none;
     text-align: center;
 }
 
 .profile-reward img {
     max-width: 100%;
-    height: auto;
+    height: 300px;
 }
 
 @media screen and (max-width: 991px) {
@@ -862,6 +861,10 @@ body {
 
     .profile-reward {
         display: block;
+    }
+
+    .profile-reward img {
+        height: auto;
     }
 
     .section__profile .card {
