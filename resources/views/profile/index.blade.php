@@ -2,7 +2,7 @@
 @section('title', 'Profile')
 @section('content')
     <div class="main-content">
-       <div class="section__bg"></div>
+        <div class="section__bg"></div>
 
         <section class="section">
             <div class="section__content container section__profile" style="max-width: 1140px;">
@@ -44,7 +44,7 @@
                                 </div>
 
                                 <div class="col-12 profile-reward mb-4">
-                                    <img src="{{ asset('frontend/images/icons/hadiah.png') }}">
+                                    <img src="{{ asset('frontend/images/icons/reward_news.png') }}">
                                 </div>
 
                                 <h4 class="leaderboard__title">Riwayat Poinmu</h4>
