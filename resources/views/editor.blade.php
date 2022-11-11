@@ -114,6 +114,7 @@
                 // create the text tool style and override fontSize property
                 text: createMarkupEditorToolStyle('text', {
                     fontSize: '10%',
+                    fontFamily: "'Poppins', sans-serif"
                 })
             }),
             markupEditorShapeStyleControls: createMarkupEditorShapeStyleControls({
