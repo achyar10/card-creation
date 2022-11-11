@@ -24,31 +24,35 @@ class FacebookController extends Controller
 
     public function handleCallbackFacebook(Request $request)
     {
-        $user = Socialite::driver('facebook')->user();
-        $findMember = Member::where('oauth_id', $user->getId())->first();
+        try {
+            $user = Socialite::driver('facebook')->user();
+            $findMember = Member::where('oauth_id', $user->getId())->first();
 
-        if ($findMember) {
-            Auth::guard('members')->login($findMember);
-            Member::where('id', $findMember->id)->update([
-                'photo' => $user->getAvatar(),
-                'name' => $user->getName(),
-            ]);
-            if (empty($findMember->fullname) && empty($findMember->phone)) {
-                return redirect()->intended(route('profile.update'));
+            if ($findMember) {
+                Auth::guard('members')->login($findMember);
+                Member::where('id', $findMember->id)->update([
+                    'photo' => $user->getAvatar(),
+                    'name' => $user->getName(),
+                ]);
+                if (empty($findMember->fullname) && empty($findMember->phone)) {
+                    return redirect()->intended(route('profile.update'));
+                }
+                return redirect()->intended(route('profile'));
             }
-            return redirect()->intended(route('profile'));
+            $new = Member::create([
+                'oauth_id' => $user->getId(),
+                'oauth_from' => 'facebook',
+                'name' => $user->getName(),
+                'email' => $user->getEmail(),
+                'photo' => $user->getAvatar(),
+            ]);
+            $this->member->updatePoint($new->id, 10);
+            $this->history->create('Sign Up (Email)', 10, $new->id);
+            $newMember = Member::where('id', $new->id)->first();
+            Auth::guard('members')->login($newMember);
+            return redirect()->intended(route('profile.update'));
+        } catch (\Throwable $th) {
+            return redirect()->route('signIn');
         }
-        $new = Member::create([
-            'oauth_id' => $user->getId(),
-            'oauth_from' => 'facebook',
-            'name' => $user->getName(),
-            'email' => $user->getEmail(),
-            'photo' => $user->getAvatar(),
-        ]);
-        $this->member->updatePoint($new->id, 10);
-        $this->history->create('Sign Up (Email)', 10, $new->id);
-        $newMember = Member::where('id', $new->id)->first();
-        Auth::guard('members')->login($newMember);
-        return redirect()->intended(route('profile.update'));
     }
 }
