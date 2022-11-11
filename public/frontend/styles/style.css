@@ -597,21 +597,43 @@ body {
 
 .chip-wrapper {
     width: 100%;
-    height: 56px;
+    height: 64px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: start;
-    overflow-x: hidden;
+    overflow-x: scroll;
     scroll-behavior: smooth;
     padding: 0 2.5rem;
+}
+
+.chip-wrapper::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(122, 122, 122, 0.2);
+    border-radius: 10px;
+    background-color: transparent;
+}
+
+.chip-wrapper::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+}
+
+.chip-wrapper::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(122, 122, 122, 0.2);
+    background-color: #afafaf;
 }
 
 .chip-wrapper .chip-item {
     margin-right: 1rem;
     flex: 0 0 auto;
     width: auto;
+}
+
+.chip-wrapper .chip-item:first-child {
+    margin-left: 1rem;
 }
 
 .chip-controls button {
@@ -862,7 +884,6 @@ body {
 
     .chip-wrapper {
         justify-content: center;
-        overflow-x: hidden;
     }
 
     .chip-controls {
