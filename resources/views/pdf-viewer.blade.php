@@ -11,12 +11,13 @@
 <body>
     <div class="w-100">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf_viewer.min.css" integrity="sha512-bhJalmRVg29JjmI5PVxobJ3xL71iUqk9yXhGjEtpuBg1tZ9LZZKF7Bdm8u6JifzvnxnsCB/PR9tZzmNEDE/BvQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <canvas id="pdf"></canvas>
+        <!-- <canvas id="pdf"></canvas> -->
+        <iframe class="w-100" style="height: 100vh;" src="https://docs.google.com/viewer?url={{ $file_path }}&embedded=true"
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.min.js" integrity="sha512-QJy1NRNGKQoHmgJ7v+45V2uDbf2me+xFoN9XewaSKkGwlqEHyqLVaLtVm93FzxVCKnYEZLFTI4s6v0oD0FbAlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.0.279/pdf.min.js" integrity="sha512-QJy1NRNGKQoHmgJ7v+45V2uDbf2me+xFoN9XewaSKkGwlqEHyqLVaLtVm93FzxVCKnYEZLFTI4s6v0oD0FbAlw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
     <script>
-        const url = '{{ $file_path }}';
+        /* const url = '{{ $file_path }}';
 
         // Loaded via <script> tag, create shortcut to access PDF.js exports.
         const pdfjsLib = window['pdfjs-dist/build/pdf'];
@@ -58,6 +59,6 @@
         }, function(reason) {
             // PDF loading error
             console.error(reason);
-        });
+        }); */
     </script>
 </body>

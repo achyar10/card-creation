@@ -241,6 +241,11 @@ class LandingController extends Controller
                 $data['file_path'] = asset('frontend/files/goodtime_disclaimer.pdf');
                 break;
 
+            case 'tnc':
+                $data['title'] = 'Terms & Condition';
+                $data['file_path'] = asset('frontend/files/goodtime_tnc.pdf');
+                break;
+
             default:
                 $data['title'] = 'Disclaimer';
                 $data['file_path'] = asset('frontend/files/goodtime_disclaimer.pdf');

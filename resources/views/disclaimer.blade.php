@@ -36,7 +36,7 @@
                         </div>
                     </div>
                     <div class="mt-4">
-                        <a class="btn btn-cust-yellow" href="{{ url('viewer?f=disclaimer') }}" target="_blank">Syarat &
+                        <a class="btn btn-cust-yellow" href="{{ url('viewer?f=tnc') }}" target="_blank">Syarat &
                             Ketentuan</a>
                     </div>
                 </div>
