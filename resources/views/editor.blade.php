@@ -102,7 +102,7 @@
             },
             enableMoveTool: true,
             enableTapToAddText: false,
-            // enableAutoSelectMoveTool: 'text',
+            enableAutoSelectMoveTool: 'text',
             markupEditorToolbar: [
                 ['text', 'Text', { disabled: false }],
                 // ['move', 'Move', { disabled: true }],
