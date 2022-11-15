@@ -5,7 +5,7 @@ let windowY = 0;
 
 function checkPosition() {
     windowY = window.scrollY;
-    if (windowY > sectionHome2.scrollHeight) {
+    if (windowY > sectionHome2.scrollHeight - 150) {
         let home2Children = sectionHome2.children;
         for (let i = 0; i < home2Children.length; i++) {
             home2Children[i].classList.remove("d-none");
