@@ -130,8 +130,8 @@
                 ],
                 fontStyleOptions: [],
                 fontSizeOptions: [
-                    ['8%', 'Medium Small'],
-                    ['10%', 'Medium Large'],
+                    ['8%', 'Small'],
+                    ['10%', 'Medium'],
                     ['20%', 'Large']
                 ],
                 lineHeightOptions: false
@@ -153,7 +153,18 @@
 
             // Stickers available to user
             stickers: [
-                ["Emoji", ["⭐️", "😊", "👍", "👎", "☀️", "🌤", "🌥"]],
+                [
+                    "Emoji",
+                    [
+                        "⭐️",
+                        "😊",
+                        "👍",
+                        "👎",
+                        "☀️",
+                        "🌤",
+                        "🌥"
+                    ]
+                ],
             ],
             locale: {
                 labelButtonExport: 'Simpan',
