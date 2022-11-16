@@ -106,14 +106,14 @@
                                     src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
                             </div>
                             <h3 class="my-4">Poin Rewardmu</h3>
-                            <div class="point__counter mb-4 d-flex flex-row flex-nowrap justify-content-center">
+                            <div class="point__counter mb-4 d-flex flex-row flex-nowrap">
                                     @foreach ($points as $point)
                                         <div class="point__digit_wrapper">
                                             <span class="point__digit text-center">{{ $point }}</span>
                                         </div>
                                     @endforeach
                                 </div>
-                                <h4 class="d-block w-100 mb-4 text-center">Poin</h4>
+                                <h4 class="d-block w-100 mb-4">Poin</h4>
                             </div>
                             <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi
                                 peserta
