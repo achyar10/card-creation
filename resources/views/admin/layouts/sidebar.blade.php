@@ -14,7 +14,7 @@
                         <span key="t-dashboards">Dashboard</span>
                     </a>
                 </li>
-
+                <li class="menu-title">Manajemen Kartu</li>
                 <li>
                     <a href="{{ route('category') }}" class="waves-effect">
                         <i class="bx bx-package"></i>
@@ -27,13 +27,27 @@
                         <span key="t-cards">Kartu</span>
                     </a>
                 </li>
+
+                <li class="menu-title">Kelola Member</li>
                 <li>
                     <a href="{{ route('member') }}" class="waves-effect">
                         <i class="bx bx-user"></i>
                         <span key="t-members">Member</span>
                     </a>
                 </li>
-
+                <li class="menu-title">Pengaturan</li>
+                <li>
+                    <a href="{{ route('faq') }}" class="waves-effect">
+                        <i class="bx bx-package"></i>
+                        <span key="t-faqs">FAQ</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('disclaimer') }}" class="waves-effect">
+                        <i class="bx bx-package"></i>
+                        <span key="t-disclaimers">Disclaimer</span>
+                    </a>
+                </li>
             </ul>
         </div>
         <!-- Sidebar -->

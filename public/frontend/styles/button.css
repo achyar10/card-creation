@@ -1,0 +1,169 @@
+/* Buttons */
+
+.btn .material-symbols-outlined {
+    margin-left: .5rem;
+    margin-right: .5rem;
+}
+
+.btn .badge,
+.input-group .badge {
+    position: absolute;
+    top: 0;
+    left: 90%;
+    transform: translate(-50%,-50%);
+    border-radius: var(--bs-border-radius-pill) !important;
+    background-color: var(--gt-yellow);
+    color: var(--bs-black);
+}
+
+.btn-cust {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-border-radius: 3rem;
+}
+
+.btn-cust-primary {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-font-weight: 500;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: rgb(215, 2, 39);
+    --bs-btn-border-color: rgb(215, 2, 39);
+    --bs-btn-border-radius: 3rem;
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: rgb(218, 21, 56);
+    --bs-btn-hover-border-color: rgb(218, 21, 56);
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: rgb(218, 21, 56);
+    --bs-btn-active-border-color: rgb(218, 21, 56);
+}
+
+.btn-cust-secondary {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-font-weight: 500;
+    --bs-btn-color: rgb(215 2 39);
+    --bs-btn-bg: var(--bs-white);
+    --bs-btn-border-color: rgb(215 2 39);
+    --bs-btn-border-radius: 3rem;
+    --bs-btn-hover-color: rgb(218, 21, 56);
+    --bs-btn-hover-bg: rgb(228, 228, 228);
+    --bs-btn-hover-border-color: rgb(218, 21, 56);
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: rgb(228, 228, 228);
+    --bs-btn-active-border-color: rgb(218, 21, 56);
+}
+
+.btn-cust-blue {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-font-weight: 500;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: rgb(24, 92, 238);
+    --bs-btn-border-color: rgb(24, 92, 238);
+    --bs-btn-border-radius: 3rem;
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: rgb(39, 104, 245);
+    --bs-btn-hover-border-color: rgb(39, 104, 245);
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: rgb(39, 104, 245);
+    --bs-btn-active-border-color: rgb(39, 104, 245);
+}
+
+.btn-cust-yellow {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-font-weight: 500;
+    --bs-btn-color: var(--bs-black);
+    --bs-btn-bg: rgb(255, 224, 30);
+    --bs-btn-border-color: rgb(255, 224, 30);
+    --bs-btn-border-radius: 3rem;
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-hover-bg: rgb(248, 222, 52);
+    --bs-btn-hover-border-color: rgb(248, 222, 52);
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: rgb(255, 224, 30);
+    --bs-btn-active-border-color: rgb(255, 224, 30);
+    border: 0;
+    background-image: linear-gradient(57.35deg, #E8B363 6.86%, #E8BA6E 38.33%, #EFCC8F 51.33%, #E4B577 67.63%, #E39A3E 90.8%);;
+}
+
+.btn-cust-white {
+    --bs-btn-padding-x: 2rem;
+    --bs-btn-padding-y: .75rem;
+    --bs-btn-font-weight: 500;
+    --bs-btn-color: var(--bs-black);
+    --bs-btn-bg: rgb(247, 247, 245);
+    --bs-btn-border-color: rgb(247, 247, 245);
+    --bs-btn-border-radius: 3rem;
+    --bs-btn-hover-color: var(--bs-black);
+    --bs-btn-hover-bg: rgb(213, 212, 210);
+    --bs-btn-hover-border-color: rgb(213, 212, 210);
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: rgb(247, 247, 245);
+    --bs-btn-active-border-color: rgb(247, 247, 245);
+}
+
+.btn-share {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.share-icon {
+    font-size: 1.5rem;
+}
+
+.share-icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.icon-bulb {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: var(--bs-border-radius-pill);
+    width: 56px;
+    height: 56px;
+    color: var(--bs-black);
+    font-size: 1.5rem;
+}
+
+.btn-share .share-label {
+    width: 100%;
+}
+
+.cta-button {
+    display: flex;
+    flex-direction: column;
+}
+
+.cta-button .btn {
+    width: 250px;
+}
+
+@media screen and (min-width: 768px) {
+    .cta-button {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .cta-button {
+        justify-content: center;
+        align-items: stretch;
+    }
+
+    .cta-button .btn {
+        width: 100%;
+    }
+}

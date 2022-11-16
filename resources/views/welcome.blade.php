@@ -1,36 +1,142 @@
 @extends('layouts')
 @section('title', 'Home')
 @section('content')
-    <div class="top-ornament">
-        <div class="row m-0 w-100">
-            <div class="col-6 m-0 p-0 text-start">
-                <img class="ornament topleft-ornament" src="{{ asset('frontend/images/element_2.png') }}">
+    <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" tabindex="0">
+        <div class="section__bg"></div>
+        {{-- <div class="section__float_bg d-none">
+            <img class="section__img chocochip chocochip1 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip2 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip3 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip4 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip5 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip6 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip7 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+        </div> --}}
+        <section class="section section__home1 animate__animated" id="scrollspySection1">
+            <div class="section__content container">
+                <div class="col-12 text-center">
+                    <img class="img-fluid home__logo animate__animated"
+                        src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                    <p class="text-white lh-lg mb-4">Kamu bisa berkreasi seru membuat ucapan untuk diberikan<br>kepada orang
+                        tersayang dan teman-temanmu di momen-momen istimewa</p>
+                    <div class="cta-button">
+                        <button type="button" class="btn btn-cust-white mb-3" data-bs-toggle="modal"
+                            data-bs-target="#rulesModal">Cara Ikutan</button>
+                        <a href="#scrollspySection2" class="btn btn-cust-yellow">Mulai Sekarang</a>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="col-6 m-0 p-0 text-end">
-                <img class="ornament topright-ornament" src="{{ asset('frontend/images/element_3.png') }}">
-            </div>
-        </div>
-    </div>
-    <div class="main-content container d-flex flex-column justify-content-center">
-        <div class="home-wrapper row">
-            <div class="col-12 text-center">
-                <img class="img-fluid center-ornament" src="{{ asset('frontend/images/m_element_3.png') }}">
-            </div>
-            <div class="col-12 text-center">
-                <a href="/login" class="btn btn-cust-secondary w-50">Mulai</a>
-            </div>
-        </div>
-    </div>
-    <div class="bottom-ornament">
-        <div class="row m-0 w-100 align-items-end ">
-            <div class="col-6 m-0 p-0 text-start">
-                <img class="ornament bottomleft-ornament" src="{{ asset('frontend/images/element_1.png') }}">
-            </div>
+        <section class="section section__home2 animate__animated" id="scrollspySection2">
+            {{-- <div class="section__ornament d-none">
+                <div class="ornament__wrapper ornament__cut_left firework_left animate__animated">
+                    <img class="ornament__img" src="{{ asset('frontend/images/decorations/firework.png') }}">
+                </div>
+                <div class="ornament__wrapper cloud_left animate__animated">
+                    <img class="ornament__img" src="{{ asset('frontend/images/decorations/cloud_left.png') }}">
+                </div>
+                <div class="ornament__wrapper cloud_right animate__animated">
+                    <img class="ornament__img" src="{{ asset('frontend/images/decorations/cloud_right.png') }}">
+                </div>
+                <div class="ornament__wrapper firework_right animate__animated">
+                    <img class="ornament__img" src="{{ asset('frontend/images/decorations/firework.png') }}">
+                </div>
+            </div> --}}
+            <div class="section__content container d-none">
+                <div class="col-12 title">
+                    <h2 class="btn btn-cust-yellow">Pilih Momen disini</h2>
+                </div>
+                <div class="col-12">
+                    <div class="gallery">
+                        <div class="gallery-container">
+                            @foreach ($categories as $category)
+                                <img class="gallery-item" data-id="{{ $category->id }}"
+                                    src="{{ asset('category/' . $category->thumbnail) }}">
+                            @endforeach
+                        </div>
+                        <div class="gallery-controls"></div>
 
-            <div class="col-6 m-0 p-0 text-end align-items-end ">
-                <img class="ornament bottomright-ornament" src="{{ asset('frontend/images/element_4.png') }}">
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
+
+        <section class="section section__home3 animate__animated" id="scrollspySection3">
+            <div class="section__content container d-none">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_packshoot.png') }}">
+                        <h5 class="text-center my-4">Kunjungi Marketplace</h5>
+                        <div class="shops">
+                            <a href="https://www.tokopedia.com/arnotts" class="shop-icon" target="_blank">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/tokopedia.png') }}">
+                            </a>
+                            <a href="https://www.lazada.co.id/shop/arnotts" class="shop-icon" target="_blank">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/lazada.png') }}">
+                            </a>
+                            <a href="https://www.jd.id/promotion/Arnotts/4Xbf75HqXTgw93MXyYJttzDGjwjT.html"
+                                class="shop-icon" target="_blank">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/jdid.png') }}">
+                            </a>
+                            <a href="https://shopee.co.id/arnottsstore" class="shop-icon" target="_blank">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/shopee.png') }}">
+                            </a>
+                            <a href="https://www.bukalapak.com/arnotts-official" class="shop-icon" target="_blank">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/bukalapak.png') }}">
+                            </a>
+                            <a href="https://www.blibli.com/merchant/arnott-s-official-store/ARO-60058" class="shop-icon"
+                                target="_blank">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/blibli.png') }}">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="d-flex flex-column flex-nowrap home3__content">
+                            <div class="w-100 d-block">
+                                <img class="img-fluid home__logo"
+                                    src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                            </div>
+                            <h3 class="my-4">Poin Rewardmu</h3>
+                            <div class="point__counter mb-4 d-flex flex-row flex-nowrap justify-content-center">
+                                    @foreach ($points as $point)
+                                        <div class="point__digit_wrapper">
+                                            <span class="point__digit text-center">{{ $point }}</span>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <h4 class="d-block w-100 mb-4 text-center">Poin</h4>
+                            </div>
+                            <p class="text-white lh-lg mb-4">Ikuti semua keseruannya dan dapatkan hadiah menarik bagi
+                                peserta
+                                dengan
+                                poin terbanyak.</p>
+                            <div class="w-100">
+                                <a class="btn btn-cust-yellow" href="#scrollspySection2">Ayo buat kartumu sekarang!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
     </div>
+
+    <script>
+        const imgs = document.querySelectorAll('.gallery-item');
+
+        for (const img of imgs) {
+            img.addEventListener("click", function() {
+                const id = img.getAttribute('data-id');
+                const redirect = `/theme?category_id=${id}`;
+                window.location.href = redirect;
+            });
+        }
+    </script>
 @endsection

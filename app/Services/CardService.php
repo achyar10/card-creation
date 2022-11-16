@@ -21,7 +21,14 @@ class CardService
 
     public function findAll()
     {
-        return Card::with('category')->orderBy('id', 'desc')->get();
+        $query = Card::where('is_active', true)->orderBy('id', 'desc');
+        if (isset($this->req->q)) {
+            $query->where('name', 'like', '%' . $this->req->q . '%');
+        }
+        if (isset($this->req->category_id)) {
+            $query->where('category_id', $this->req->category_id);
+        }
+        return $query->get();
     }
 
     public function getById($id)

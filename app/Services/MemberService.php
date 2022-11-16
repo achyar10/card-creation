@@ -24,6 +24,11 @@ class MemberService
         return Member::orderBy('name', 'asc')->get();
     }
 
+    public function leaderboard()
+    {
+        return Member::select(['id', 'fullname', 'point'])->orderBy('point', 'desc')->limit(10)->get();
+    }
+
     public function getById($id)
     {
         return Member::find($id);
@@ -33,8 +38,9 @@ class MemberService
     {
         $data =  Member::create([
             'name' => $this->req->name,
+            'fullname' => $this->req->fullname,
             'email' => $this->req->email,
-            'password' => Hash::make($this->req->password, ['rounds' => 10]),
+            'photo' => $this->req->photo,
             'phone' => $this->req->phone,
             'oauth_id' => $this->req->oauth_id,
         ]);
@@ -44,11 +50,15 @@ class MemberService
     public function update($id)
     {
         $data = Member::find($id);
-        $data->name = $this->req->name;
-        $data->email = $this->req->email;
+        $data->fullname = $this->req->fullname;
         $data->phone = $this->req->phone;
-        $data->oauth_id = $this->req->oauth_id;
         $data->save();
+        return $data;
+    }
+
+    public function updatePoint($id, $point)
+    {
+        $data = Member::where('id', $id)->increment('point', $point);
         return $data;
     }
 

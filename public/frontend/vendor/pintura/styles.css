@@ -1,15 +1,11 @@
 /* bright / dark mode */
 .pintura-editor {
-    --color-background: 255, 255, 255;
-    --color-foreground: 0, 0, 0;
+    --color-background: 0, 0, 0;
+    --color-foreground: 255, 255, 255;
+    --font-family: 'Poppins', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
-    html {
-        color: #fff;
-        background: #000;
-    }
-
     .pintura-editor {
         --color-background: 0, 0, 0;
         --color-foreground: 255, 255, 255;
@@ -17,6 +13,41 @@
 }
 
 /* size of the editor */
+
 .my-editor {
-    height: 95vh;
+    height: 100vh;
+}
+
+.PinturaRoot[data-env~="portrait"][data-env~="narrow"][data-env~="has-navigation-preference-top"] {
+    grid-template-rows: -webkit-min-content -webkit-min-content auto;
+    grid-template-rows: min-content min-content auto;
+}
+
+.PinturaRoot[data-env~="portrait"][data-env~="narrow"][data-env~="has-navigation-preference-top"] > .PinturaMain {
+    grid-row: 3;
+    padding-bottom: 2rem;
+}
+
+.PinturaRoot[data-env~="portrait"][data-env~="narrow"][data-env~="has-navigation-preference-top"] > .PinturaNavMain {
+    grid-row: 2;
+    margin-top: 0.75em;
+    margin-bottom: 0;
+}
+
+.PinturaRoot[data-env~="portrait"][data-env~="is-compact"] > .PinturaNavMain button span {
+    visibility: visible;
+    font-size: 0.6875em;
+    margin: 0.5em;
+}
+
+.PinturaUtilPanel {
+    flex-direction: column-reverse;
+}
+
+.PinturaUtilFooter {
+    padding: 0.5rem 0 0.5rem;
+}
+
+.section {
+    min-height: 100%;
 }

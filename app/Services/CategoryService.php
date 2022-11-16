@@ -16,14 +16,19 @@ class CategoryService
 
     public function getAll()
     {
-        return Category::orderBy('id', 'desc')->paginate(10);
+        return Category::orderBy('order', 'asc')->paginate(10);
+    }
+
+    public function getCaro()
+    {
+        return Category::where('is_active', true)->orderBy('order', 'asc')->paginate(7);
     }
 
     public function findAll()
     {
-        $query = Category::where('is_active', true)->orderBy('id', 'desc');
-        if (isset($this->req->tags)) {
-            $query->where('tags', 'like', '%' . $this->req->tags . '%');
+        $query = Category::where('is_active', true)->orderBy('order', 'asc');
+        if (isset($this->req->tag_name)) {
+            $query->where('tag_name', 'like', '%' . $this->req->tag_name . '%');
         }
         return $query->get();
     }
@@ -58,6 +63,7 @@ class CategoryService
         $data = Category::find($id);
         $data->tag_name = $this->req->tag_name;
         $data->tags = $this->req->tags;
+        $data->order = $this->req->order;
         $data->is_active = $this->req->is_active;
         if ($this->req->thumbnail) $data->thumbnail = $this->upload('category', $this->req->thumbnail);
         $data->save();

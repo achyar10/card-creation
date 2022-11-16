@@ -1,0 +1,55 @@
+
+.gt-modal-dialog {
+    width: 100%;
+    height: 100%;
+    max-width: 800px;
+    margin: 2rem auto 0px;
+    padding: 0 1rem;
+}
+
+.gt-modal-header {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    border: 0;
+}
+
+.gt-modal-header .btn-close {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: var(--gt-yellow);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.gt-modal-content {
+    background-color: var(--gt-modal-bg);
+    color: var(--gt-modal-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-clip: padding-box;
+    border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
+    border-radius: var(--bs-modal-border-radius);
+    outline: 0;
+}
+
+.gt-modal-body {
+    padding: 2rem;
+}
+
+.gt-modal-body .gt-video {
+    max-width: 800px;
+    width: 100%;
+}

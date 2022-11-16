@@ -1,81 +1,56 @@
 @extends('layouts')
 @section('title', 'Login')
 @section('content')
-    <div class="main-content container">
-        <div class="content-wrapper row">
-            <div class="col-12 text-center content-header mb-4">
-                <img class="img-fluid content-logo" src="{{ asset('frontend/images/m_element_3.png') }}">
-                <h1 class="text-white content-title">Halo</h1>
-                <h4 class="text-white content-subtitle">Silakan melakukan login</h4>
-            </div>
-            <div class="col-12 text-center content-content mb-4">
-                <form action="" method="post">
-                    @csrf
-                    @if (session('error'))
-                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
-                            {{ session('error') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @endif
-                    @error('phone')
-                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
-                            {{ $message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @enderror
-                    @error('password')
-                        <div class="alert alert-danger alert-dismissible fade show rounded-pill" role="alert">
-                            {{ $message }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    @enderror
-                    <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">
-                            <span class="material-symbols-outlined">
-                                phone
+    <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" tabindex="0">
+        <div class="section__bg"></div>
+        {{-- <div class="section__float_bg d-none">
+            <img class="section__img chocochip chocochip1 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip2 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip3 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip4 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip5 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip6 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip7 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+        </div> --}}
+        <section class="section section__home1" id="">
+            <div class="section__content container">
+                <div class="col-12 text-center">
+                    <img class="home__logo animate__animated"
+                        src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                    <h4 class="mb-4">Sebelum mulai, login dulu yuk!</h4>
+                    <p class="fs-6 fw-light mb-4">Silahkan memilih akun yang kamu miliki</p>
+                    <div class="cta-button">
+                        <a href="{{ route('google.login') }}" class="btn btn-cust-white mb-3 position-relative"> <img
+                                class="img-fluid social-icon" src="{{ asset('frontend/images/google.png') }}">
+                            &nbsp;&nbsp;Email
+                            <span
+                                class="badge">+10
+                                Poin
+                                <span class="visually-hidden">point</span>
                             </span>
-                        </span>
-                        <input type="number" name="phone" class="form-control custom-form-control"
-                            placeholder="No. Handphone" aria-label="No. Handphone" value="{{ old('phone') }}" autofocus>
-                    </div>
-
-                    <div class="input-group mb-4">
-                        <span class="input-group-text" id="basic-addon1">
-                            <span class="material-symbols-outlined">
-                                key
+                        </a>
+                        <a href="{{ route('facebook.login') }}" class="btn btn-cust-white mb-3 position-relative"> <img
+                                class="img-fluid social-icon" src="{{ asset('frontend/images/facebook.png') }}">
+                            &nbsp;&nbsp;Facebook
+                            <span
+                                class="badge">+10
+                                Poin
+                                <span class="visually-hidden">point</span>
                             </span>
-                        </span>
-                        <input type="password" name="password" class="form-control custom-form-control"
-                            placeholder="Password" aria-label="Password">
-                    </div>
-                    <button type="submit" class="btn btn-cust-secondary w-100">Masuk</button>
-                </form>
-            </div>
-
-            <div class="col-12 text-center content-footer">
-                <h4 class="text-white content-subtitle or-login mb-4">atau login dengan</h4>
-
-                <div class="row mb-4">
-                    <div class="col-4">
-                        <a href="{{ route('google.login') }}" class="btn btn-cust-secondary">
-                            <img class="img-fluid social-icon" src="{{ asset('frontend/images/google.png') }}">
-                        </a>
-                    </div>
-                    <div class="col-4">
-                        <a href="{{ route('facebook.login') }}" class="btn btn-cust-secondary">
-                            <img class="img-fluid social-icon" src="{{ asset('frontend/images/facebook.png') }}">
-                        </a>
-                    </div>
-                    <div class="col-4">
-                        <a href="{{ route('twitter.login') }}" class="btn btn-cust-secondary">
-                            <img class="img-fluid social-icon" src="{{ asset('frontend/images/twitter.png') }}">
                         </a>
                     </div>
                 </div>
-
-                <p class="text-white content-subtitle">Belum punya akun? <a href="/register"
-                        class="text-warning text-decoration-none fw-bold">Daftar</a></p>
             </div>
-        </div>
+        </section>
+
+
     </div>
 @endsection

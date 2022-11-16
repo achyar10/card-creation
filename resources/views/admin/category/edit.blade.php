@@ -47,6 +47,18 @@
                                             @enderror
                                         </div>
                                         <div class="form-group mb-2">
+                                            <label for="">Urutan Ke</label>
+                                            <input type="number" name="order"
+                                                class="form-control @error('order') is-invalid @enderror"
+                                                value="{{ old('order', $row->order) }}" placeholder="Contoh: 1"
+                                                autocomplete="off">
+                                            @error('order')
+                                                <div class="invalid-feedback">
+                                                    {{ $message }}
+                                                </div>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group mb-2">
                                             <label for="">Status Aktif <span class="text-danger">*</span></label>
                                             <select id="is_active" name="is_active"
                                                 class="form-control @error('is_active') is-invalid @enderror">

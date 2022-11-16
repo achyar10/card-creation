@@ -1,102 +1,198 @@
 @extends('layouts')
 @section('title', 'Share')
 @section('content')
-    <style>
-        .main-wrapper.with-bg {
-            background-image: none !important;
-        }
-
-        .chocochip:before {
-            background-image: none !important;
-        }
-    </style>
-    <div class="main-content container">
-        <div class="content-wrapper row">
-            <div class="col-12 content-header mb-4">
-                <h3 class="fw-bold">Kartu Ucapan Digitalmu Sudah Siap!</h3>
-            </div>
-            <div class="col-12 content-content mb-4">
-                <div class="container w-100 bg-light p-4 rounded mb-4">
-                    <h5 class="fw-bold mb-4">Preview</h5>
-                    <div class="w-100 text-center preview-image">
-                        <img class="img-fluid rounded" id="image" src="{{ $row->url_path }}">
+    <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
+        data-bs-smooth-scroll="true" tabindex="0">
+        <div class="section__bg"></div>
+        {{-- <div class="section__float_bg">
+            <img class="section__img chocochip chocochip1 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip2 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip3 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip4 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip5 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+            <img class="section__img chocochip chocochip6 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip2.png') }}" />
+            <img class="section__img chocochip chocochip7 animate__animated"
+                src="{{ asset('frontend/images/decorations/chocochip.png') }}" />
+        </div> --}}
+        <section class="section section__home1">
+            <div class="section__content container">
+                <div class="col-lg-6 col-md-12 text-center">
+                    <div class="card-share">
+                        <img class="img-fluid mb-3" id="image" data-id="{{ $row->id }}" src="{{ $row->url_path }}">
                     </div>
                 </div>
-
-                <div class="w-100">
-                    <h5 class="fw-bold mb-4">Bagikan</h5>
-                </div>
-
-                <button onclick="saveImage()" class="btn btn-cust-blue w-100 mb-4">
-                    <div class="w-100 d-flex flex-row justify-content-center">
-                        <span class="material-symbols-outlined">
-                            download
-                        </span>
-                        <span class="label">Simpan</span>
-                    </div>
-                </button>
-
-                <button onclick="share()" class="btn btn-cust btn-danger w-100 mb-4">
-                    <div class="w-100 d-flex flex-row justify-content-center">
-                        <span class="material-symbols-outlined">
-                            share
-                        </span>
-                        <span class="label">Share</span>
-                    </div>
-                </button>
-
-                <button onclick="share()" class="btn btn-cust btn-warning w-100 mb-4">
-                    <div class="w-100 d-flex flex-row justify-content-center">
-                        <span class="material-symbols-outlined">
-                            email
-                        </span>
-                        <span class="label">Send</span>
-                    </div>
-                </button>
-
-                <div class="row w-100 m-0">
-                    <div class="col-6">
-                        <a href="{{ route('theme.category') }}" class="btn btn-cust-secondary w-100 mb-4">
-                            Home
-                        </a>
-                    </div>
-
-                    <div class="col-6">
-                        <a href="{{ url('/editor/' . $row->card_id) }}" class="btn btn-cust-primary w-100 mb-4">
-                            <div class="w-100 d-flex flex-row justify-content-center">
-                                Ubah
+                <div class="col-lg-6 col-md-12 mb-4 pt-4 text-center">
+                    <input type="hidden"
+                        value="{{ auth()->guard('members')->user()? auth()->guard('members')->user()->id: null }}"
+                        id="myId">
+                    <h4 class="mb-3" id="url" data-url="{{ url('preview/' . $row->uuid) }}">Gift Card mu sudah
+                        selesai!</h4>
+                    <p class="mb-5">Ayo bagikan ke orang tersayang dan teman teman mu</p>
+                    <div class="d-flex flex-column align-items-center w-100 text-center cta-button">
+                        <button onclick="shareWa()"
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
+                            <div class="share-icon">
+                                <img width="24px" height="24px" src="{{ asset('frontend/images/whatsapp.png') }}">
                             </div>
+                            <span class="share-label">WhatsApp</span>
+                        </button>
+
+                        <button onclick="shareOnFacebook()"
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
+                            <div class="share-icon">
+                                <img width="24px" height="24px" src="{{ asset('frontend/images/facebook.png') }}">
+                            </div>
+                            <span class="share-label">Facebook</span>
+                        </button>
+                        <button onclick="share('Share (Instagram)')"
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
+                            <div class="share-icon">
+                                <img width="24px" height="24px" src="{{ asset('frontend/images/instagram.png') }}">
+                            </div>
+                            <span class="share-label">Instagram</span>
+                        </button>
+                        <button onclick="share('Share (Email)')"
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
+                            <div class="share-icon">
+                                <img width="24px" height="24px" src="{{ asset('frontend/images/email.png') }}">
+                            </div>
+                            <span class="share-label">Email</span>
+                        </button>
+                        <button onclick="shareOnTwitter()"
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
+                            <div class="share-icon">
+                                <img width="24px" height="24px" src="{{ asset('frontend/images/twitter.png') }}">
+                            </div>
+                            <span class="share-label">Twitter</span>
+                        </button>
+                        <button onclick="saveImage()"
+                            class="btn btn-share btn-cust-white mb-3 text-center d-flex align-items-center justify-content-center">
+                            <div class="share-icon">
+                                <i class="bx bx-download"></i>
+                            </div>
+                            <span class="share-label">Download</span>
+                        </button>
+
+                        <a href="{{ route('home') }}"
+                            class="btn btn-share btn-cust-yellow mt-5 text-center d-flex align-items-center justify-content-center">
+                            <div class="share-icon">
+                                <i class="bx bx-arrow-back"></i>
+                            </div>
+                            <span class="share-label">Kembali</span>
                         </a>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
     <script>
+        const myId = document.querySelector('#myId').value;
+        const image = document.querySelector('#image');
+        const url = document.querySelector('#url').getAttribute('data-url');
+        const messageLogin = 'Login terlebih dahulu!';
+        const messageDesc =
+            `Hai ada kartu ucapan special yang DipBanget untuk kamu, yuk lihat ucapannya dan bikin versi kamu disini ya 👉 https://arnottsgiftingmoments.com/  ada hadiah special dari GOOD TIME untuk kamu.`
+
+        function shareWa() {
+            if (!myId) {
+                alert(messageLogin);
+                localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                return window.location.href = '/login';
+            }
+            this.point('Share (Whatsapp)')
+                .then(() => {})
+                .catch(err => console.log(err))
+            return window.location.href = `whatsapp://send?text=${url+'?via=wa'} ${messageDesc}&phone=`;
+
+        }
+
+        function shareOnFacebook() {
+            if (!myId) {
+                alert(messageLogin);
+                localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                return window.location.href = '/login';
+            }
+            this.point('Share (Facebook)')
+                .then(() => {})
+                .catch(err => console.log(err))
+            const navUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            return window.open(navUrl, '_blank');
+        }
+
+        function shareOnTwitter() {
+            if (!myId) {
+                alert(messageLogin);
+                localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                return window.location.href = '/login';
+            }
+            this.point('Share (Twitter)')
+                .then(() => {})
+                .catch(err => console.log(err))
+            const navUrl = `https://twitter.com/intent/tweet?text=${url}`;
+            return window.open(navUrl, '_blank');
+        }
+
         function saveImage() {
+            if (!myId) {
+                alert(messageLogin);
+                localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                return window.location.href = '/login';
+            }
             var a = document.createElement('a');
             a.href = document.getElementById('image').src;
             a.download = document.getElementById('image').src;
             a.click()
         }
 
-        async function share() {
+        async function share(via) {
             try {
+                if (!myId) {
+                    alert(messageLogin);
+                    localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                    return window.location.href = '/login';
+                }
                 let image = document.getElementById('image').src
                 const blob = await (await fetch(image)).blob();
-                files = new File([blob], image, { type: blob.type });
+                files = new File([blob], image, {
+                    type: blob.type
+                });
                 await navigator.share({
-                    title: 'Hello',
-                    text: 'Check out this image!',
+                    title: 'Kamu Mendapatkan Ucapan',
+                    text: messageDesc,
                     files: [files],
                 });
                 console.log('shared successfully');
+                await point(via);
                 return true;
             } catch (err) {
                 console.log(err)
-                alert(`Your system doesn't support sharing these files.`)
+                // alert(`Your system doesn't support sharing these files.`)
             }
+        }
+
+        function point(via) {
+            return new Promise((reject, resolve) => {
+                fetch('/api/point', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            via,
+                            member_id: myId,
+                        }),
+                    })
+                    .then(response => response.json())
+                    .then(rs => resolve('OK'))
+                    .catch(err => reject('Internal server error'))
+            });
         }
     </script>
 @endsection

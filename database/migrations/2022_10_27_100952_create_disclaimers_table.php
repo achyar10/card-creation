@@ -13,8 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->text('tags')->nullable()->after('tag_name');
+        Schema::create('disclaimers', function (Blueprint $table) {
+            $table->id();
+            $table->text('description');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('categories', function (Blueprint $table) {
-            $table->dropColumn('tags');
-        });
+        Schema::dropIfExists('disclaimers');
     }
 };

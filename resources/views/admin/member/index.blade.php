@@ -1,6 +1,7 @@
 @extends('admin.layouts.main')
 @section('title', 'Daftar Member')
 @section('content')
+
     <div class="page-content">
         <div class="container-fluid">
             <div class="row">
@@ -21,22 +22,26 @@
                                     <thead class="bg-light">
                                         <tr>
                                             <th>No</th>
+                                            <th></th>
                                             <th>Nama</th>
                                             <th>Email</th>
                                             <th>Telepon</th>
-                                            <th>Aksi</th>
+                                            <th>Sign Up Via</th>
+                                            <th>Point</th>
+                                            {{-- <th>Aksi</th> --}}
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach ($rows as $row)
-                                            <tr>
+                                            <tr class="align-middle">
                                                 <td>{{ $loop->iteration }}</td>
-                                                <td>{{ $row->name }}</td>
+                                                <td><img src="{{ $row->photo }}" class="rounded" alt=""></td>
+                                                <td>{{ $row->fullname }}</td>
                                                 <td>{{ $row->email }}</td>
                                                 <td>{{ $row->phone }}</td>
-                                                <td>
-                                                    
-                                                </td>
+                                                <td>{{ $row->oauth_from }}</td>
+                                                <td>{{ $row->point }}</td>
+
                                             </tr>
                                         @endforeach
                                     </tbody>

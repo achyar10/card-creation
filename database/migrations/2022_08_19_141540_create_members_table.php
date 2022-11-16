@@ -16,9 +16,11 @@ return new class extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('fullname')->nullable();
             $table->string('email')->nullable();
-            $table->string('password');
-            $table->string('phone')->unique()->nullable();
+            $table->string('phone')->nullable();
+            $table->bigInteger('point')->nullable()->default(0);
+            $table->text('photo')->nullable();
             $table->string('oauth_id')->nullable();
             $table->string('oauth_from')->nullable();
             $table->timestamps();

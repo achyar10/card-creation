@@ -4,7 +4,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DisclaimerController;
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\FaqController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\InstagramController;
 use App\Http\Controllers\LandingController;
@@ -31,10 +33,18 @@ Route::post('/login', [LandingController::class, 'postLogin'])->name('signIn');
 Route::get('/register', [LandingController::class, 'register'])->name('reg');
 Route::post('/register', [LandingController::class, 'createMember'])->name('reg');
 
+Route::get('/faq', [LandingController::class, 'faq'])->name('faq');
+Route::get('/disclaimer', [LandingController::class, 'disclaimer'])->name('disclaimer');
+Route::get('/viewer', [LandingController::class, 'pdfViewer'])->name('pdfViewer');
+Route::get('/profile', [LandingController::class, 'profile'])->name('profile');
+Route::get('/profile/update', [LandingController::class, 'profileUpdate'])->name('profile.update');
+Route::put('/profile/update', [LandingController::class, 'profileUpdatePost'])->name('profile.update');
+Route::get('/history', [LandingController::class, 'historyPoint'])->name('history');
 Route::get('/theme', [LandingController::class, 'category'])->name('theme.category');
 Route::get('/template/{id}', [LandingController::class, 'template'])->name('theme.template');
 Route::get('/editor/{id}', [LandingController::class, 'editor'])->name('theme.editor');
 Route::get('/share/{id}', [LandingController::class, 'share'])->name('theme.share');
+Route::get('/preview/{uuid}', [LandingController::class, 'preview'])->name('theme.preview');
 
 Route::middleware(['guest'])->controller(AuthController::class)->group(function () {
     Route::get('/auth/login', 'index')->name('login');
@@ -93,6 +103,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::get('/category/{id}/detail', 'show')->name('detail');
     });
 
+
     // Card
     Route::controller(CardController::class)->group(function () {
         Route::get('/card', 'index')->name('card');
@@ -113,5 +124,22 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::put('/member/{id}/edit', 'update');
         Route::delete('/member', 'destroy')->name('member');
         Route::get('/member/{id}/detail', 'show')->name('detail');
+    });
+
+    // FAQ
+    Route::controller(FaqController::class)->group(function () {
+        Route::get('/faq', 'index')->name('faq');
+        Route::get('/faq/create', 'create')->name('faqCreate');
+        Route::post('/faq', 'store')->name('faq');
+        Route::get('/faq/{id}/edit', 'edit');
+        Route::put('/faq/{id}/edit', 'update');
+        Route::delete('/faq', 'destroy')->name('faq');
+        Route::get('/faq/{id}/detail', 'show')->name('detail');
+    });
+
+    // Disclaimer
+    Route::controller(DisclaimerController::class)->group(function () {
+        Route::get('/disclaimer', 'index')->name('disclaimer');
+        Route::put('/disclaimer', 'update')->name('disclaimer');
     });
 });
