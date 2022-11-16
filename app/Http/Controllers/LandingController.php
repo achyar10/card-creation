@@ -28,7 +28,7 @@ class LandingController extends Controller
     public function index()
     {
         $session = auth()->guard('members')->user();
-        $point = $session ? $session->point : 888;
+        $point = $session ? $session->point : 88888;
         $data['points'] = $this->showPoint($point);
         $data['categories'] = $this->category->getCaro();
         return view('welcome', $data);
@@ -316,7 +316,7 @@ class LandingController extends Controller
 
     private function showPoint($point)
     {
-        $digit = str_pad($point, 3, '0', STR_PAD_LEFT);
+        $digit = str_pad($point, 5, '0', STR_PAD_LEFT);
         $points = [];
         for ($i = 0; $i < strlen($digit); $i++) {
             array_push($points, $digit[$i]);

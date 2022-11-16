@@ -10,7 +10,7 @@
                     <div class="card bg-transparent mb-4">
                         <div class="card-body">
                             <div class="row align-items-center">
-                                <div class="col-lg-6 col-md-12 mb-4 profile">
+                                <div class="col-lg-12 col-md-12 mb-4 profile">
                                     <div class="profile-img mb-4">
                                         <img class="img-fluid" width="64" height="64" src="{{ $member->photo }}">
                                         <a href="{{ route('signOut') }}" class="btn btn-cust-white logout-btn">
@@ -32,7 +32,7 @@
                                 </div>
                                 <h4 class="mb-3 d-lg-none text-center">Poin Reward</h4>
                                 <div
-                                    class="col-lg-6 col-md-12 d-flex align-items-stretch flex-column justify-content-center">
+                                    class="col-lg-12 col-md-12 d-flex align-items-stretch flex-column justify-content-center">
                                     <div class="point__counter mb-4 d-flex flex-row flex-nowrap justify-content-center">
                                         @foreach ($points as $point)
                                             <div class="point__digit_wrapper">
