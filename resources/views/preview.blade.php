@@ -9,8 +9,8 @@
     https://arnottsgiftingmoments.com/')
 @section('og:title', 'Good Time Giftcard')
 @section('og:image', $url_path)
-{{-- @section('og:image:width', '1280')
-@section('og:image:height', '720') --}}
+@section('og:image:width', request()->via == 'wa' ? '720' : '630')
+@section('og:image:height', request()->via == 'wa' ? '1280' : '1008')
 @section('content')
     <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
         data-bs-smooth-scroll="true" tabindex="0">
