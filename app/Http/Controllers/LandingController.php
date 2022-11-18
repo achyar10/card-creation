@@ -297,7 +297,7 @@ class LandingController extends Controller
     public function preview($uuid)
     {
         $data['row'] = Creation::where('uuid', $uuid)->first();
-        $data['url_path'] = request()->via == 'wa' ? $data['row']->url_path :  asset('frontend/images/goodtime_banner.png');
+        $data['url_path'] = request()->via == 'wa' ? $data['row']->url_path :  asset('frontend/images/goodtime_thumbnail.png');
         return view('preview', $data);
     }
 
