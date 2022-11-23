@@ -15,11 +15,7 @@
         </div>
 
         <div class="socials">
-            <span class="copyright fw-normal">Copyright
-                <script>
-                    document.write(new Date().getFullYear())
-                </script>
-            </span>
+            <span class="copyright fw-normal">Copyright &copy {{ date('Y') }}</span>
             <a href="https://web.facebook.com/GoodTimeID" class="social-icon text-dark"><i
                     class="bx bxl-facebook fs-3 p-1"></i></a>
             <a href="https://www.instagram.com/goodtimeid" class="social-icon text-dark"><i
