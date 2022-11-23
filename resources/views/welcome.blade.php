@@ -24,7 +24,8 @@
             <div class="section__content container">
                 <div class="col-12 text-center">
                     <img class="img-fluid home__logo animate__animated"
-                        src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                        src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}"
+                        alt="Goodtime Gift Card Logo">
                     <p class="text-white lh-lg mb-4">Kamu bisa berkreasi seru membuat ucapan untuk diberikan<br>kepada orang
                         tersayang dan teman-temanmu di momen-momen istimewa</p>
                     <div class="cta-button">
@@ -74,7 +75,7 @@
             <div class="section__content container d-none">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_packshoot.png') }}">
+                        <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_packshoot.png') }}" alt="Goodtime Packshoot">
                         <h5 class="text-center my-4">Kunjungi Marketplace</h5>
                         <div class="shops">
                             <a href="https://www.tokopedia.com/arnotts" class="shop-icon" target="_blank">
@@ -103,7 +104,7 @@
                         <div class="d-flex flex-column flex-nowrap home3__content">
                             <div class="w-100 d-block">
                                 <img class="img-fluid home__logo"
-                                    src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}">
+                                    src="{{ asset('frontend/images/icons/goodtime_gift_logo.png') }}" alt="Goodtime Gift Card Logo">
                             </div>
                             <h3 class="my-4">Poin Rewardmu</h3>
                             <div class="point__counter mb-4 d-flex flex-row flex-nowrap">

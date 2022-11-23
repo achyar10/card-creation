@@ -891,10 +891,6 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-    .home__logo {
-        width: 60%;
-        height: 60%;
-    }
 
     .section__home2 .title {
         text-align: center;
