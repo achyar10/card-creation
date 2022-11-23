@@ -61,7 +61,7 @@
                         <div class="gallery-container">
                             @foreach ($categories as $category)
                                 <img class="gallery-item" data-id="{{ $category->id }}"
-                                    src="{{ asset('category/' . $category->thumbnail) }}">
+                                    src="{{ asset('category/' . $category->thumbnail) }}" alt="" loading="lazy">
                             @endforeach
                         </div>
                         <div class="gallery-controls"></div>
