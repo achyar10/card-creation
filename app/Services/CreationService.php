@@ -91,6 +91,11 @@ class CreationService
                 break;
 
             default:
+                if ($data->share_whatsapp === 0) {
+                    $data->share_whatsapp = 1;
+                } else {
+                    return false;
+                }
                 return false;
         }
         $data->save();

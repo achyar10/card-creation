@@ -198,7 +198,7 @@
             let cardId = null;
 
             if (event) {
-                cardId = event.dataset.cardId;
+                cardId = parseInt(event.dataset.cardId, 10);
             }
 
             return fetch('/update-point', {
