@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ApiController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CardController;
 use App\Http\Controllers\CategoryController;
@@ -45,6 +46,7 @@ Route::get('/template/{id}', [LandingController::class, 'template'])->name('them
 Route::get('/editor/{id}', [LandingController::class, 'editor'])->name('theme.editor');
 Route::get('/share/{id}', [LandingController::class, 'share'])->name('theme.share');
 Route::get('/preview/{uuid}', [LandingController::class, 'preview'])->name('theme.preview');
+Route::post('/update-point', [ApiController::class, 'updatePoint'])->name('updatePoint');
 
 Route::middleware(['guest'])->controller(AuthController::class)->group(function () {
     Route::get('/auth/login', 'index')->name('login');
