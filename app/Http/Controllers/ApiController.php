@@ -65,10 +65,7 @@ class ApiController extends Controller
         $markAsShared = $this->creation->markAsShared($request->id, $request->via);
 
         if (!$markAsShared) {
-            return response([
-                'error' => 'Card already shared',
-                'debug' => $markAsShared
-            ], Response::HTTP_BAD_REQUEST);
+            return response(['error' => 'Card already shared'], Response::HTTP_BAD_REQUEST);
         }
 
         switch ($request->via) {
@@ -100,8 +97,7 @@ class ApiController extends Controller
         $this->member->updatePoint($request->member_id, 10);
         $this->history->create($via, 10, $request->member_id);
         return response()->json([
-            'message' => 'OK',
-            'debug' => $markAsShared
+            'message' => 'OK'
         ], 200);
     }
 
