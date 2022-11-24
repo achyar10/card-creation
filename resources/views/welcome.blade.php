@@ -52,7 +52,7 @@
                     <img class="ornament__img" src="{{ asset('frontend/images/decorations/firework.png') }}">
                 </div>
             </div> --}}
-            <div class="section__content container d-none">
+            <div class="section__content container">
                 <div class="col-12 title">
                     <h2 class="btn btn-cust-yellow">Pilih Momen disini</h2>
                 </div>
@@ -72,7 +72,7 @@
         </section>
 
         <section class="section section__home3 animate__animated" id="scrollspySection3">
-            <div class="section__content container d-none">
+            <div class="section__content container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_packshoot.png') }}" alt="Goodtime Packshoot">

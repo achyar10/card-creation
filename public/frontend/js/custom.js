@@ -1,4 +1,4 @@
-const sectionHome2 = document.querySelector(".section__home2");
+/* const sectionHome2 = document.querySelector(".section__home2");
 const sectionHome3 = document.querySelector(".section__home3");
 let scrollPos = 0;
 let windowY = 0;
@@ -31,7 +31,7 @@ window.onload = () => {
     if (sectionFloat) {
         sectionFloat.classList.remove("d-none");
     }
-};
+}; */
 
 let chipWrapper = document.querySelector(".chip-wrapper");
 let chipNext = document.querySelector(".chip-next");

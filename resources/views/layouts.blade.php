@@ -28,7 +28,11 @@
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href="{{ asset('frontend/css/bootstrap.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="{{ asset('frontend/styles/style.css?v=1.0.22') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/styles/button.min.css?v=1.0.22') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/styles/navbar.min.css?v=1.0.22') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/styles/modal.min.css?v=1.0.22') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/styles/carousel.min.css?v=1.0.22') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/styles/style.min.css?v=1.0.22') }}">
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
 
     <noscript>
@@ -86,9 +90,9 @@
         </div>
     </div>
 
-    <script src="{{ asset('frontend/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/custom.js?v=1.0.3') }}"></script>
-    <script src="{{ asset('frontend/js/carousel.js?v=1.0.1') }}"></script>
+    <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('frontend/js/custom.min.js?v=1.0.3') }}"></script>
+    <script src="{{ asset('frontend/js/carousel.min.js?v=1.0.1') }}"></script>
 </body>
 
 </html>
