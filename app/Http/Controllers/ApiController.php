@@ -99,7 +99,10 @@ class ApiController extends Controller
 
         $this->member->updatePoint($request->member_id, 10);
         $this->history->create($via, 10, $request->member_id);
-        return response()->json('OK', 200);
+        return response()->json([
+            'message' => 'OK',
+            'debug' => $markAsShared
+        ], 200);
     }
 
     public function upload($img, $path, $ext)
