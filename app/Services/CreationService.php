@@ -55,35 +55,35 @@ class CreationService
 
         switch ($via) {
             case 'wa':
-                if ($data->share_whatsapp === 0) {
+                if ($data->share_whatsapp === '0') {
                     $data->share_whatsapp = 1;
                 } else {
                     return false;
                 }
                 break;
             case 'fb':
-                if ($data->share_facebook === 0) {
+                if ($data->share_facebook === '0') {
                     $data->share_facebook = 1;
                 } else {
                     return false;
                 }
                 break;
             case 'ig':
-                if ($data->share_instagram === 0) {
+                if ($data->share_instagram === '0') {
                     $data->share_instagram = 1;
                 } else {
                     return false;
                 }
                 break;
             case 'email':
-                if ($data->share_email === 0) {
+                if ($data->share_email === '0') {
                     $data->share_email = 1;
                 } else {
                     return false;
                 }
                 break;
             case 'tw':
-                if ($data->share_twitter === 0) {
+                if ($data->share_twitter === '0') {
                     $data->share_twitter = 1;
                 } else {
                     return false;
@@ -91,12 +91,12 @@ class CreationService
                 break;
 
             default:
-                if ($data->share_whatsapp === 0) {
+                if ($data->share_whatsapp === '0') {
                     $data->share_whatsapp = 1;
                 } else {
                     return false;
                 }
-                return false;
+                break;
         }
         $data->save();
         return $data;
