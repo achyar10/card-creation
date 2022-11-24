@@ -96,7 +96,7 @@ class CreationService
                 } else {
                     return false;
                 }
-                return false;
+                break;
         }
         $data->save();
         return $data;
