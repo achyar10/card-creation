@@ -90,7 +90,7 @@ class LandingController extends Controller
                         'name' => $social['name'],
                         'icon' => $social['icon'],
                         'point' => $key->point,
-                        'date' => date('d F Y', $key->created_at)
+                        'date' => date('d F Y', strtotime($key->created_at))
                     ]);
                 }
             }
