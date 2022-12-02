@@ -1,5 +1,9 @@
 @extends('layouts')
-@section('title', 'Home')
+@section('title', 'Good Time Giftcard')
+@section('description', 'Kamu bisa berkreasi seru membuat ucapan untuk diberikan kepada orang tersayang dan teman-temanmu di momen-momen istimewa')
+@section('og:image', asset('frontend/images/goodtime_thumbnail.jpg'))
+@section('og:image:width', '300')
+@section('og:image:height', '300')
 @section('content')
     <div class="main-content" data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%"
         data-bs-smooth-scroll="true" tabindex="0">
@@ -31,7 +35,7 @@
                     <div class="cta-button">
                         <button type="button" class="btn btn-cust-white mb-3" data-bs-toggle="modal"
                             data-bs-target="#rulesModal">Cara Ikutan</button>
-                        <a href="#scrollspySection2" class="btn btn-cust-yellow">Mulai Sekarang</a>
+                        <a href="#scrollspySection2" class="btn btn-cust-yellow" aria-label="Ayo buat kartumu sekarang!">Mulai Sekarang</a>
                     </div>
                 </div>
             </div>
@@ -75,28 +79,26 @@
             <div class="section__content container">
                 <div class="row align-items-center">
                     <div class="col-lg-6">
-                        <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_packshoot.png') }}" alt="Goodtime Packshoot">
-                        <h5 class="text-center my-4">Kunjungi Marketplace</h5>
+                        <img class="img-fluid" src="{{ asset('frontend/images/icons/goodtime_packshoot.png') }}" width="100%" height="auto" alt="Goodtime Packshoot">
+                        <h3 class="text-center my-4 fs-5">Kunjungi Marketplace</h3>
                         <div class="shops">
-                            <a href="https://www.tokopedia.com/arnotts" class="shop-icon" target="_blank">
-                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/tokopedia.png') }}">
+                            <a href="https://www.tokopedia.com/arnotts" class="shop-icon" target="_blank" aria-label="Tokopedia Arnotts">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/tokopedia.png') }}" alt="Tokopedia Arnotts">
                             </a>
-                            <a href="https://www.lazada.co.id/shop/arnotts" class="shop-icon" target="_blank">
-                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/lazada.png') }}">
+                            <a href="https://www.lazada.co.id/shop/arnotts" class="shop-icon" target="_blank" aria-label="Lazada Arnotts">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/lazada.png') }}" alt="Lazada Arnotts">
                             </a>
-                            <a href="https://www.jd.id/promotion/Arnotts/4Xbf75HqXTgw93MXyYJttzDGjwjT.html"
-                                class="shop-icon" target="_blank">
-                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/jdid.png') }}">
+                            <a href="https://www.jd.id/promotion/Arnotts/4Xbf75HqXTgw93MXyYJttzDGjwjT.html" class="shop-icon" target="_blank" aria-label="JDID Arnotts">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/jdid.png') }}" alt="JDID Arnotts">
                             </a>
-                            <a href="https://shopee.co.id/arnottsstore" class="shop-icon" target="_blank">
-                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/shopee.png') }}">
+                            <a href="https://shopee.co.id/arnottsstore" class="shop-icon" target="_blank" aria-label="Shopee Arnotts">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/shopee.png') }}" alt="Shopee Arnotts">
                             </a>
-                            <a href="https://www.bukalapak.com/arnotts-official" class="shop-icon" target="_blank">
-                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/bukalapak.png') }}">
+                            <a href="https://www.bukalapak.com/arnotts-official" class="shop-icon" target="_blank" aria-label="Bukalapak Arnotts">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/bukalapak.png') }}" alt="Bukalapak Arnotts">
                             </a>
-                            <a href="https://www.blibli.com/merchant/arnott-s-official-store/ARO-60058" class="shop-icon"
-                                target="_blank">
-                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/blibli.png') }}">
+                            <a href="https://www.blibli.com/merchant/arnott-s-official-store/ARO-60058" class="shop-icon" target="_blank" aria-label="Blibli Arnotts">
+                                <img width="36px" height="36px" src="{{ asset('frontend/images/icons/blibli.png') }}" alt="Blibli Arnotts">
                             </a>
                         </div>
                     </div>
@@ -121,7 +123,7 @@
                                 dengan
                                 poin terbanyak.</p>
                             <div class="w-100">
-                                <a class="btn btn-cust-yellow" href="#scrollspySection2">Ayo buat kartumu sekarang!</a>
+                                <a class="btn btn-cust-yellow" href="#scrollspySection2" aria-label="Ayo buat kartumu sekarang!">Ayo buat kartumu sekarang!</a>
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg gt-navbar bg-transparent" id="top-navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#" aria-label="Goodtime Logo">
             {{-- <img src="{{ asset('frontend/images/icons/goodtime_logo.png') }}" alt="GoodTime logo" height="64"> --}}
         </a>
         <div class="navbar-info">
