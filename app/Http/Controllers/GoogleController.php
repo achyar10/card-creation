@@ -48,7 +48,7 @@ class GoogleController extends Controller
                 'photo' => $user->getAvatar(),
             ]);
             $this->member->updatePoint($new->id, 10);
-            $this->history->create('Sign Up (Email)', 10, $new->id);
+            $this->history->create('Sign Up (Email)', 10, $new->id, null, $request->getClientIp());
             $newMember = Member::where('id', $new->id)->first();
             Auth::guard('members')->login($newMember);
             return redirect()->intended(route('profile.update'));
