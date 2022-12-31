@@ -29,6 +29,7 @@ class GoogleController extends Controller
             $findMember = Member::where('oauth_id', $user->getId())->first();
 
             if ($findMember) {
+                if (!$findMember->is_active) return redirect()->route('signIn')->with('error', 'Account anda diblokir karena melanggar ketentuan');
                 Auth::guard('members')->login($findMember);
                 Member::where('id', $findMember->id)->update([
                     'photo' => $user->getAvatar(),
@@ -47,7 +48,7 @@ class GoogleController extends Controller
                 'photo' => $user->getAvatar(),
             ]);
             $this->member->updatePoint($new->id, 10);
-            $this->history->create('Sign Up (Email)', 10, $new->id);
+            $this->history->create('Sign Up (Email)', 10, $new->id, null, $request->getClientIp());
             $newMember = Member::where('id', $new->id)->first();
             Auth::guard('members')->login($newMember);
             return redirect()->intended(route('profile.update'));

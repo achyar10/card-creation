@@ -20,7 +20,10 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KVNCK0YLB"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
         gtag('js', new Date());
 
         gtag('config', 'G-4KVNCK0YLB');
@@ -50,8 +53,9 @@
     <link rel="stylesheet" href="{{ asset('frontend/styles/modal.min.css?v=1.0.22') }}">
     <link rel="stylesheet" href="{{ asset('frontend/styles/carousel.min.css?v=1.0.22') }}">
     <link rel="stylesheet" href="{{ asset('frontend/styles/style.min.css?v=1.0.22') }}">
+    <link href="{{ asset('assets/libs/toastr/build/toastr.min.css') }}" rel="stylesheet" type="text/css" />
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
-
+    <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
         <link rel="stylesheet"
@@ -108,9 +112,25 @@
         </div>
     </div>
 
+    @if (session('error'))
+        <script>
+            $(function() {
+                toastr.error('{{ session('error') }}')
+            })
+        </script>
+    @endif
+    @if (session('success'))
+        <script>
+            $(function() {
+                toastr.success('{{ session('success') }}')
+            })
+        </script>
+    @endif
+
     <script src="{{ asset('frontend/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('frontend/js/custom.min.js?v=1.0.3') }}"></script>
     <script src="{{ asset('frontend/js/carousel.min.js?v=1.0.1') }}"></script>
+    <script src="{{ asset('assets/libs/toastr/build/toastr.min.js') }}"></script>
 </body>
 
 </html>

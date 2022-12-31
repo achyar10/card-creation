@@ -29,6 +29,7 @@ class FacebookController extends Controller
             $findMember = Member::where('oauth_id', $user->getId())->first();
 
             if ($findMember) {
+                if (!$findMember->is_active) return redirect()->route('signIn')->with('error', 'Account anda diblokir karena melanggar ketentuan');
                 Auth::guard('members')->login($findMember);
                 Member::where('id', $findMember->id)->update([
                     'photo' => $user->getAvatar(),

@@ -34,12 +34,14 @@ class HistoryService
         return History::find($id);
     }
 
-    public function create($via, $point, $member_id)
+    public function create($via, $point, $member_id, $creation_id = null, $ip_address = null)
     {
         $data =  History::create([
             'via' => $via,
             'point' => $point,
             'member_id' => $member_id,
+            'ip_address' => $ip_address,
+            'creation_id' => $creation_id,
         ]);
         return $data;
     }
@@ -50,6 +52,8 @@ class HistoryService
         $data->via = $this->req->via;
         $data->point = $this->req->point;
         $data->member_id = $this->req->member_id;
+        $data->ip_address = $this->req->ip_address;
+        $data->creation_id = $this->req->creation_id;
         $data->save();
         return $data;
     }

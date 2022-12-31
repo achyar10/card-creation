@@ -63,7 +63,11 @@ class MemberController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['title'] = 'Detail Member';
+        $data['uri'] = 'member';
+        $data['row'] = $this->member->getById($id);
+        $view = 'admin.member.detail';
+        return view($view, $data);
     }
 
     /**

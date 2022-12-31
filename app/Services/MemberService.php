@@ -43,6 +43,7 @@ class MemberService
             'photo' => $this->req->photo,
             'phone' => $this->req->phone,
             'oauth_id' => $this->req->oauth_id,
+            'is_active' => $this->req->is_active,
         ]);
         return $data;
     }
@@ -52,6 +53,7 @@ class MemberService
         $data = Member::find($id);
         $data->fullname = $this->req->fullname;
         $data->phone = $this->req->phone;
+        $data->is_active = $this->req->is_active;
         $data->save();
         return $data;
     }
