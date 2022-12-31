@@ -95,7 +95,7 @@ class ApiController extends Controller
         }
 
         $this->member->updatePoint($request->member_id, 10);
-        $this->history->create($via, 10, $request->member_id);
+        $this->history->create($via, 10, $request->member_id, $request->id, $request->getClientIp());
         return response()->json([
             'message' => 'OK'
         ], 200);

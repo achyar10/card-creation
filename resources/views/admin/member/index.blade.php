@@ -28,7 +28,8 @@
                                             <th>Telepon</th>
                                             <th>Sign Up Via</th>
                                             <th>Point</th>
-                                            {{-- <th>Aksi</th> --}}
+                                            <th>Status</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -41,6 +42,13 @@
                                                 <td>{{ $row->phone }}</td>
                                                 <td>{{ $row->oauth_from }}</td>
                                                 <td>{{ $row->point }}</td>
+                                                <td><span
+                                                        class="badge bg-{{ $row->is_active ? 'success' : 'danger' }}">{{ $row->is_active ? 'Aktif' : 'Block' }}</span>
+                                                </td>
+                                                <td>
+                                                    <a href="/admin/member/{{ $row->id }}/detail"
+                                                        class="btn btn-info btn-sm btn-rounded">Detail</a>
+                                                </td>
 
                                             </tr>
                                         @endforeach
