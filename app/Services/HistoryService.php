@@ -26,7 +26,9 @@ class HistoryService
 
     public function getByMember($member_id)
     {
-        return History::where('member_id', $member_id)->orderBy('id', 'desc')->get();
+        return History::where('member_id', $member_id)
+            ->with('creation')
+            ->orderBy('id', 'desc')->get();
     }
 
     public function getById($id)

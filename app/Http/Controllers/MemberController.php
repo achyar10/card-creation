@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\HistoryService;
 use App\Services\MemberService;
 use Illuminate\Http\Request;
 
@@ -11,6 +12,7 @@ class MemberController extends Controller
     public function __construct(Request $request)
     {
         $this->member = new MemberService($request);
+        $this->history = new HistoryService($request);
     }
 
     /**
@@ -66,6 +68,8 @@ class MemberController extends Controller
         $data['title'] = 'Detail Member';
         $data['uri'] = 'member';
         $data['row'] = $this->member->getById($id);
+        $data['histories'] = $this->history->getByMember($id);
+        // return $data;
         $view = 'admin.member.detail';
         return view($view, $data);
     }
@@ -111,5 +115,11 @@ class MemberController extends Controller
     {
         $this->member->delete($request->id);
         return redirect()->route('member')->with('success', 'Data berhasil dihapus');
+    }
+
+    public function updateStatus($id)
+    {
+        $this->member->status($id);
+        return redirect(url("/admin/member/$id/detail"))->with('success', 'Data berhasil diubah');
     }
 }

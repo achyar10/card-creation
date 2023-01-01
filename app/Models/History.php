@@ -10,4 +10,9 @@ class History extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function creation()
+    {
+        return $this->belongsTo(Creation::class);
+    }
 }
