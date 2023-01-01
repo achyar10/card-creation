@@ -58,6 +58,14 @@ class MemberService
         return $data;
     }
 
+    public function status($id)
+    {
+        $data = Member::find($id);
+        $data->is_active = $data->is_active ? 0 : 1;
+        $data->save();
+        return $data;
+    }
+
     public function updatePoint($id, $point)
     {
         $data = Member::where('id', $id)->increment('point', $point);

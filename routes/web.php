@@ -126,6 +126,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::put('/member/{id}/edit', 'update');
         Route::delete('/member', 'destroy')->name('member');
         Route::get('/member/{id}/detail', 'show')->name('detail');
+        Route::post('/member/{id}/status', 'updateStatus')->name('status');
     });
 
     // FAQ
