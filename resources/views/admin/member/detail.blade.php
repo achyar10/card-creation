@@ -52,7 +52,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-hover data-tables table-sm">
+                                <table class="table table-hover table-sm">
                                     <thead class="bg-light">
                                         <tr>
                                             <th>No</th>
@@ -66,9 +66,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($histories as $history)
+                                        @foreach ($histories as $key => $history)
                                             <tr class="align-middle">
-                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $histories->firstItem() + $key }}</td>
                                                 <td>{{ $history->via }}</td>
                                                 <td>{{ $history->point }}</td>
                                                 <td>{{ $history->ip_address }}</td>
@@ -88,6 +88,14 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="float-start">
+                                    Showing {{ $histories->firstItem() }}
+                                    to {{ $histories->lastItem() }}
+                                    of {{ $histories->total() }} entries
+                                </div>
+                                <div class="float-end">
+                                    {!! $histories->links() !!}
+                                </div>
                             </div>
                         </div>
                     </div>

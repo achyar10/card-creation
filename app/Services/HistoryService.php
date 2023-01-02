@@ -31,6 +31,14 @@ class HistoryService
             ->orderBy('id', 'desc')->get();
     }
 
+    public function getByMemberPage($member_id)
+    {
+        return History::where('member_id', $member_id)
+            ->with('creation')
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+    }
+
     public function getById($id)
     {
         return History::find($id);

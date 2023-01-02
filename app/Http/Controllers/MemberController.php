@@ -68,7 +68,7 @@ class MemberController extends Controller
         $data['title'] = 'Detail Member';
         $data['uri'] = 'member';
         $data['row'] = $this->member->getById($id);
-        $data['histories'] = $this->history->getByMember($id);
+        $data['histories'] = $this->history->getByMemberPage($id);
         // return $data;
         $view = 'admin.member.detail';
         return view($view, $data);
