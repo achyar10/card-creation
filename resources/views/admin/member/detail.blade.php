@@ -120,7 +120,7 @@
                                                 <td>{{ $creations->firstItem() + $key2 }}</td>
                                                 <td>{{ $creation->created_at }}</td>
                                                 <td>{{ isset($creation->card) ? $creation->card->name : '-' }}
-                                                <td>{{ isset($creation->card) ? $creation->card->category->name : '-' }}
+                                                <td>{{ isset($creation->card) ? $creation->card->category->tag_name : '-' }}
                                                 <td>
                                                     <a href="{{ $creation->url_path }}" class="btn btn-success btn-sm"
                                                         target="_blank">Lihat</a>
