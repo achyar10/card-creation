@@ -10,4 +10,9 @@ class Creation extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function card()
+    {
+        return $this->belongsTo(Card::class);
+    }
 }

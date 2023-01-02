@@ -30,6 +30,13 @@ class CreationService
         return Creation::find($id);
     }
 
+    public function getByMemberPage($member_id)
+    {
+        return Creation::where('member_id', $member_id)
+            ->orderBy('id', 'desc')
+            ->paginate(10);
+    }
+
     public function create()
     {
         $data =  Creation::create([
