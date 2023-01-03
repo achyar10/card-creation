@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\CreationService;
 use App\Services\HistoryService;
 use App\Services\MemberService;
 use Illuminate\Http\Request;
@@ -13,6 +14,7 @@ class MemberController extends Controller
     {
         $this->member = new MemberService($request);
         $this->history = new HistoryService($request);
+        $this->creation = new CreationService($request);
     }
 
     /**
@@ -68,7 +70,8 @@ class MemberController extends Controller
         $data['title'] = 'Detail Member';
         $data['uri'] = 'member';
         $data['row'] = $this->member->getById($id);
-        $data['histories'] = $this->history->getByMember($id);
+        $data['histories'] = $this->history->getByMemberPage($id);
+        $data['creations'] = $this->creation->getByMemberPage($id);
         // return $data;
         $view = 'admin.member.detail';
         return view($view, $data);

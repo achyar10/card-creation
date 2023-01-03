@@ -48,11 +48,11 @@
                                 Member</button>
                         </div>
                     </div>
-                    <h4>History Member</h4>
+                    <h4>History Point Member</h4>
                     <div class="card">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-hover data-tables table-sm">
+                                <table class="table table-hover table-sm">
                                     <thead class="bg-light">
                                         <tr>
                                             <th>No</th>
@@ -66,9 +66,9 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($histories as $history)
+                                        @foreach ($histories as $key => $history)
                                             <tr class="align-middle">
-                                                <td>{{ $loop->iteration }}</td>
+                                                <td>{{ $histories->firstItem() + $key }}</td>
                                                 <td>{{ $history->via }}</td>
                                                 <td>{{ $history->point }}</td>
                                                 <td>{{ $history->ip_address }}</td>
@@ -88,6 +88,55 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="float-start">
+                                    Showing {{ $histories->firstItem() }}
+                                    to {{ $histories->lastItem() }}
+                                    of {{ $histories->total() }} entries
+                                </div>
+                                <div class="float-end">
+                                    {!! $histories->links() !!}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h4>History Card Creations</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-sm">
+                                    <thead class="bg-light">
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Tanggal Buat Kartu</th>
+                                            <th>Nama Kartu</th>
+                                            <th>Kategori Kartu</th>
+                                            <th>Gambar Kartu</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($creations as $key2 => $creation)
+                                            <tr class="align-middle">
+                                                <td>{{ $creations->firstItem() + $key2 }}</td>
+                                                <td>{{ $creation->created_at }}</td>
+                                                <td>{{ isset($creation->card) ? $creation->card->name : '-' }}
+                                                <td>{{ isset($creation->card) ? $creation->card->category->tag_name : '-' }}
+                                                <td>
+                                                    <a href="{{ $creation->url_path }}" class="btn btn-success btn-sm"
+                                                        target="_blank">Lihat</a>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                                <div class="float-start">
+                                    Showing {{ $creations->firstItem() }}
+                                    to {{ $creations->lastItem() }}
+                                    of {{ $creations->total() }} entries
+                                </div>
+                                <div class="float-end">
+                                    {!! $creations->links() !!}
+                                </div>
                             </div>
                         </div>
                     </div>
