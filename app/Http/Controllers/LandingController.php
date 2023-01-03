@@ -45,6 +45,7 @@ class LandingController extends Controller
     {
         $session = auth()->guard('members')->user();
         if (!isset($session)) return redirect()->route('signIn');
+        if (!$session->is_active) return redirect()->route('signOut')->with('error', 'Account anda diblokir karena melanggar ketentuan');
 
         if (!isset($session->fullname) && !isset($session->phone)) return redirect()->route('profile.update');
 
@@ -256,7 +257,7 @@ class LandingController extends Controller
 
     public function category()
     {
-        // $session = request()->session()->all();
+
         // if (!isset($session['login_member'])) return redirect()->route('signIn');
         $data['categories'] = $this->category->findAll();
         $data['cards'] = $this->card->findAll();
@@ -284,12 +285,20 @@ class LandingController extends Controller
 
     public function editor($id)
     {
+        $session = auth()->guard('members')->user();
+        if ($session) {
+            if (!$session->is_active) return redirect()->route('signOut')->with('error', 'Account anda diblokir karena melanggar ketentuan');
+        }
         $data['row'] = $this->card->getById($id);
         return view('editor', $data);
     }
 
     public function share($id)
     {
+        $session = auth()->guard('members')->user();
+        if ($session) {
+            if (!$session->is_active) return redirect()->route('signOut')->with('error', 'Account anda diblokir karena melanggar ketentuan');
+        }
         $data['row'] = Creation::where('id', $id)->first();
         return view('share', $data);
     }
