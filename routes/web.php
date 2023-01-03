@@ -127,7 +127,8 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
         Route::delete('/member', 'destroy')->name('member');
         Route::get('/member/{id}/detail', 'show')->name('detail');
         Route::post('/member/{id}/status', 'updateStatus')->name('status');
-        Route::get('/member/{id}/export-history', 'exportCSV')->name('exportHistory');
+        Route::get('/member/{id}/export-history', 'exportHistoryCSV')->name('exportHistory');
+        Route::get('/member/{id}/export-creation', 'exportCreationCSV')->name('exportCreation');
     });
 
     // FAQ
