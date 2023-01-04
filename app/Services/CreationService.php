@@ -73,9 +73,12 @@ class CreationService
         $data = Creation::find($id);
         $now = Carbon::now();
         $lastCreation = Carbon::createFromFormat('Y-m-d H:i:s', $data->updated_at)->addMinutes(self::CREATION_DELAY_TIME);
+        $createdRecently = Carbon::createFromFormat('Y-m-d H:i:s', $data->updated_at)->equalTo(Carbon::createFromFormat('Y-m-d H:i:s', $data->created_at));
 
-        if (!$now->greaterThan($lastCreation)) {
-            return false;
+        if (!$createdRecently) {
+            if (!$now->greaterThan($lastCreation)) {
+                return false;
+            }
         }
 
         switch ($via) {
