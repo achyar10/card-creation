@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 class HistoryService
 {
 
+    private $req;
+
     public function __construct(Request $request)
     {
         $this->req = $request;
@@ -47,7 +49,7 @@ class HistoryService
     public function create($via, $point, $member_id, $creation_id = null, $ip_address = null)
     {
         $data =  History::create([
-            'via' => $via,
+            'via' => $this->_getVia($via),
             'point' => $point,
             'member_id' => $member_id,
             'ip_address' => $ip_address,
@@ -59,7 +61,7 @@ class HistoryService
     public function update($id)
     {
         $data = History::find($id);
-        $data->via = $this->req->via;
+        $data->via = $this->_getVia($this->req->via);
         $data->point = $this->req->point;
         $data->member_id = $this->req->member_id;
         $data->ip_address = $this->req->ip_address;
@@ -73,5 +75,36 @@ class HistoryService
         $data = History::find($id);
         $data->delete();
         return $data;
+    }
+
+    private function _getVia($value): string {
+
+        switch ($value) {
+            case 'wa':
+                $via = 'Share (Whatsapp)';
+                break;
+
+            case 'fb':
+                $via = 'Share (Facebook)';
+                break;
+
+            case 'ig':
+                $via = 'Share (Instagram)';
+                break;
+
+            case 'tw':
+                $via = 'Share (Twitter)';
+                break;
+
+            case 'email':
+                $via = 'Share (Email)';
+                break;
+
+            default:
+                $via = 'Share (Email)';
+                break;
+        }
+
+        return $via;
     }
 }
