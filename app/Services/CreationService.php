@@ -11,7 +11,7 @@ use Illuminate\Support\Str;
 class CreationService
 {
 
-    private const CREATION_DELAY_TIME = 15;
+    public const CREATION_DELAY_TIME = 15;
 
     private $req;
 
