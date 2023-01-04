@@ -51,6 +51,9 @@
                     <h4>History Point Member</h4>
                     <div class="card">
                         <div class="card-body">
+                            <a href="{{ url("/admin/member/$row->id/export-history") }}"
+                                class="btn btn-success btn-sm mb-3">Export
+                                CSV</a>
                             <div class="table-responsive">
                                 <table class="table table-hover table-sm">
                                     <thead class="bg-light">
@@ -103,6 +106,9 @@
                     <h4>History Card Creations</h4>
                     <div class="card">
                         <div class="card-body">
+                            <a href="{{ url("/admin/member/$row->id/export-creation") }}"
+                                class="btn btn-success btn-sm mb-3">Export
+                                CSV</a>
                             <div class="table-responsive">
                                 <table class="table table-hover table-sm">
                                     <thead class="bg-light">

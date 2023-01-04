@@ -31,9 +31,7 @@
                     <input type="hidden"
                         value="{{ auth()->guard('members')->user()? auth()->guard('members')->user()->id: null }}"
                         id="myId">
-                    <input type="hidden"
-                        value="{{ csrf_token() }}"
-                        id="csrfToken">
+                    <input type="hidden" value="{{ csrf_token() }}" id="csrfToken">
                     <h4 class="mb-3" id="url" data-url="{{ url('preview/' . $row->uuid) }}">Gift Card mu sudah
                         selesai!</h4>
                     <p class="mb-5">Ayo bagikan ke orang tersayang dan teman teman mu</p>
@@ -88,13 +86,13 @@
                             <span class="share-label">Download</span>
                         </button>
 
-                        <a href="{{ route('home') }}"
+                        {{-- <a href="{{ route('home') }}"
                             class="btn btn-share btn-cust-yellow mt-5 text-center d-flex align-items-center justify-content-center">
                             <div class="share-icon">
                                 <i class="bx bx-arrow-back"></i>
                             </div>
                             <span class="share-label">Kembali</span>
-                        </a>
+                        </a> --}}
                     </div>
                 </div>
             </div>
@@ -112,44 +110,44 @@
 
         function shareWa(event) {
             this.point('wa', event)
-            .then((response) => {
-                console.log(event)
-                if (!response.ok && response.status === 403) {
-                    alert(messageLogin);
-                    localStorage.setItem("recentImage", image.getAttribute('data-id'));
-                    return window.location.href = '/login';
-                }
-                return window.location.href = `whatsapp://send?text=${url+'?via=wa'} ${messageDesc}&phone=`;
-            })
-            .catch(err => console.error(err))
+                .then((response) => {
+                    console.log(event)
+                    if (!response.ok && response.status === 403) {
+                        alert(messageLogin);
+                        localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                        return window.location.href = '/login';
+                    }
+                    return window.location.href = `whatsapp://send?text=${url+'?via=wa'} ${messageDesc}&phone=`;
+                })
+                .catch(err => console.error(err))
         }
 
         function shareOnFacebook(event) {
             this.point('fb', event)
-            .then((response) => {
-                if (!response.ok && response.status === 403) {
-                    alert(messageLogin);
-                    localStorage.setItem("recentImage", image.getAttribute('data-id'));
-                    return window.location.href = '/login';
-                }
-                const navUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-                return window.open(navUrl, '_blank');
-            })
-            .catch(err => console.error(err))
+                .then((response) => {
+                    if (!response.ok && response.status === 403) {
+                        alert(messageLogin);
+                        localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                        return window.location.href = '/login';
+                    }
+                    const navUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    return window.open(navUrl, '_blank');
+                })
+                .catch(err => console.error(err))
         }
 
         function shareOnTwitter(event) {
             this.point('tw', event)
-            .then((response) => {
-                if (!response.ok && response.status === 403) {
-                    alert(messageLogin);
-                    localStorage.setItem("recentImage", image.getAttribute('data-id'));
-                    return window.location.href = '/login';
-                }
-                const navUrl = `https://twitter.com/intent/tweet?text=${url}`;
-                return window.open(navUrl, '_blank');
-            })
-            .catch(err => console.error(err))
+                .then((response) => {
+                    if (!response.ok && response.status === 403) {
+                        alert(messageLogin);
+                        localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                        return window.location.href = '/login';
+                    }
+                    const navUrl = `https://twitter.com/intent/tweet?text=${url}`;
+                    return window.open(navUrl, '_blank');
+                })
+                .catch(err => console.error(err))
         }
 
         function saveImage() {
@@ -167,14 +165,14 @@
         async function share(via, event) {
             try {
                 await this.point(via, event)
-                .then((response) => {
-                    if (!response.ok && response.status === 403) {
-                        alert(messageLogin);
-                        localStorage.setItem("recentImage", image.getAttribute('data-id'));
-                        return window.location.href = '/login';
-                    }
-                })
-                .catch(err => console.error(err))
+                    .then((response) => {
+                        if (!response.ok && response.status === 403) {
+                            alert(messageLogin);
+                            localStorage.setItem("recentImage", image.getAttribute('data-id'));
+                            return window.location.href = '/login';
+                        }
+                    })
+                    .catch(err => console.error(err))
 
                 let image = document.getElementById('image').src
                 const blob = await (await fetch(image)).blob();
@@ -202,26 +200,26 @@
             }
 
             return fetch('/update-point', {
-                method: 'POST',
-                credentials: 'same-origin',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    via,
-                    member_id: myId,
-                    id: cardId,
-                    _token: token
-                }),
-            })
-            .then(response => {
-                if (response.ok) {
-                    return response.json()
-                }
+                    method: 'POST',
+                    credentials: 'same-origin',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        via,
+                        member_id: myId,
+                        id: cardId,
+                        _token: token
+                    }),
+                })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    }
 
-                return response
-            })
-            .catch(error => console.log(error))
+                    return response
+                })
+                .catch(error => console.log(error))
         }
     </script>
 @endsection

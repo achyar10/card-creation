@@ -125,4 +125,72 @@ class MemberController extends Controller
         $this->member->status($id);
         return redirect(url("/admin/member/$id/detail"))->with('success', 'Data berhasil diubah');
     }
+
+    public function exportHistoryCSV($id)
+    {
+        $fileName = time() . '.csv';
+        $rows = $this->history->getByMember($id);
+
+        $headers = array(
+            "Content-type"        => "text/csv",
+            "Content-Disposition" => "attachment; filename=$fileName",
+            "Pragma"              => "no-cache",
+            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+            "Expires"             => "0"
+        );
+
+        $columns = array('Via', 'Point', 'IP Address', 'Tanggal Share', 'Tanggal Buat Kartu');
+
+        $callback = function () use ($rows, $columns) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+
+            foreach ($rows as $data) {
+                $row['via']  = $data->via;
+                $row['point']    = $data->point;
+                $row['ip_address']    = $data->ip_address;
+                $row['created_at']  = $data->created_at;
+                $row['card_date']  = isset($data->creation) ? $data->creation->created_at : '-';
+
+                fputcsv($file, array($row['via'], $row['point'], $row['ip_address'], $row['created_at'], $row['card_date']));
+            }
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
+
+    public function exportCreationCSV($id)
+    {
+        $fileName = time() . '.csv';
+        $rows = $this->creation->getByMember($id);
+
+        $headers = array(
+            "Content-type"        => "text/csv",
+            "Content-Disposition" => "attachment; filename=$fileName",
+            "Pragma"              => "no-cache",
+            "Cache-Control"       => "must-revalidate, post-check=0, pre-check=0",
+            "Expires"             => "0"
+        );
+
+        $columns = array('Tanggal Buat Kartu', 'Nama Kartu', 'Kategori Kartu');
+
+        $callback = function () use ($rows, $columns) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, $columns);
+
+            foreach ($rows as $data) {
+                $row['created_at']  = $data->created_at;
+                $row['card_name']    = isset($data->card) ? $data->card->name : '-';
+                $row['category']    = isset($data->card) ? $data->card->category->tag_name : '-';
+
+                fputcsv($file, array($row['created_at'], $row['card_name'], $row['category']));
+            }
+
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
 }
