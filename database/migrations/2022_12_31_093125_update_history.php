@@ -18,7 +18,7 @@ return new class extends Migration
         });
 
         Schema::table('histories', function (Blueprint $table) {
-            $table->foreignId('creation_id')->nullable()->constrained('cards')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('creation_id')->nullable()->constrained('creations')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
