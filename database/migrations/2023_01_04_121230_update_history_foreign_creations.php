@@ -14,11 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('histories', function (Blueprint $table) {
-            $table->string('ip_address')->nullable();
-        });
-
-        Schema::table('histories', function (Blueprint $table) {
-            $table->foreignId('creation_id')->nullable()->constrained('cards')->onUpdate('cascade')->onDelete('cascade');
+            $table->dropForeign(['creation_id']);
+            $table->foreign('creation_id')->references('id')->on('creations')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -31,7 +28,6 @@ return new class extends Migration
     {
         Schema::table('histories', function (Blueprint $table) {
             $table->dropForeign(['creation_id']);
-            $table->dropColumn('ip_address');
         });
     }
 };
