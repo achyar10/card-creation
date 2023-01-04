@@ -293,15 +293,15 @@ class LandingController extends Controller
             if (!$session->is_active) return redirect()->route('signOut')->with('error', 'Account anda diblokir karena melanggar ketentuan');
 
 
-            $creations = $this->creation->getByMemberPage($session->id);
-            if ($creations->count() > 0) {
-                $now = Carbon::now();
-                $lastCreation = Carbon::createFromFormat('Y-m-d H:i:s', $creations[0]->created_at)->addMinutes(CreationService::CREATION_DELAY_TIME);
+            // $creations = $this->creation->getByMemberPage($session->id);
+            // if ($creations->count() > 0) {
+            //     $now = Carbon::now();
+            //     $lastCreation = Carbon::createFromFormat('Y-m-d H:i:s', $creations[0]->created_at)->addMinutes(CreationService::CREATION_DELAY_TIME);
 
-                if (!$now->greaterThan($lastCreation)) {
-                    return redirect()->route('home')->with('error', 'Anda baru saja membuat Giftcard, harap tunggu 15 menit sebelum membuat Giftcard baru.');
-                }
-            }
+            //     if (!$now->greaterThan($lastCreation)) {
+            //         return redirect()->route('home')->with('error', 'Anda baru saja membuat Giftcard, harap tunggu 15 menit sebelum membuat Giftcard baru.');
+            //     }
+            // }
         }
         $data['row'] = $this->card->getById($id);
         return view('editor', $data);
