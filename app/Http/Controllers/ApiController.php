@@ -14,6 +14,12 @@ use Symfony\Component\HttpFoundation\Response;
 class ApiController extends Controller
 {
 
+    protected $member;
+
+    protected $history;
+
+    protected $creation;
+
     public function __construct(Request $request)
     {
         $this->member = new MemberService($request);
@@ -68,34 +74,8 @@ class ApiController extends Controller
             return response(['error' => 'Card already shared'], Response::HTTP_BAD_REQUEST);
         }
 
-        switch ($request->via) {
-            case 'wa':
-                $via = 'Share (Whatsapp)';
-                break;
-
-            case 'fb':
-                $via = 'Share (Facebook)';
-                break;
-
-            case 'ig':
-                $via = 'Share (Instagram)';
-                break;
-
-            case 'tw':
-                $via = 'Share (Twitter)';
-                break;
-
-            case 'email':
-                $via = 'Share (Email)';
-                break;
-
-            default:
-                $via = 'Share (Email)';
-                break;
-        }
-
         $this->member->updatePoint($request->member_id, 10);
-        $this->history->create($via, 10, $request->member_id, $request->id, $request->getClientIp());
+        $this->history->create($request->via, 10, $request->member_id, $request->id, $request->getClientIp());
         return response()->json([
             'message' => 'OK'
         ], 200);
