@@ -27,7 +27,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [LandingController::class, 'index'])->name('home');
+Route::get('/', function () {
+    return view('hello');
+});
+
+
+// Route::get('/', [LandingController::class, 'index'])->name('home');
 Route::get('/logout', [LandingController::class, 'logout'])->name('signOut');
 Route::get('/login', [LandingController::class, 'login'])->name('signIn');
 Route::post('/login', [LandingController::class, 'postLogin'])->name('signIn');
